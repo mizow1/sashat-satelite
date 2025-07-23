@@ -1,0 +1,6 @@
+{
+    "require": {
+        "opensearch-project/opensearch-php": "^2.0",
+        "aws/aws-sdk-php": "^3.228"
+    }
+}

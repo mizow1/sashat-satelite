@@ -1,0 +1,32 @@
+<Files ~ "favicon\.ico">
+    Require all granted
+</Files>
+
+RewriteEngine On
+
+# :443 以外は https へ
+RewriteCond %{SERVER_PORT} !^443
+SetEnvIfNoCase Remote_Addr "\A10\.243\.4\.18[8-9]\z" KYODO_MONITOR=1
+RewriteCond %{ENV:KYODO_MONITOR} !1 [OR]
+RewriteCond %{REQUEST_URI} !^/monitor/monitor.*$
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteCond %{HTTP:origin} ^$
+RewriteCond %{HTTP:amp-same-origin} ^(true)$
+RewriteRule . - [E=CORS_ORIGIN:%{REQUEST_SCHEME}://%{SERVER_NAME}]
+
+Header set Access-Control-Allow-Origin %{CORS_ORIGIN}e env=CORS_ORIGIN
+Header set Access-Control-Allow-Credentials true env=CORS_ORIGIN
+
+RewriteBase /web/
+RewriteCond %{REQUEST_URI} !^/sp/.*$
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{QUERY_STRING} !\&action=
+RewriteCond %{QUERY_STRING} !favicon.ico
+RewriteCond %{REQUEST_URI} !^/server-status.*$
+RewriteCond %{REQUEST_URI} !^/phpfpm_status.*$
+RewriteCond %{REQUEST_URI} !^/soon/.*$
+RewriteCond %{REQUEST_URI} !^/jump.html$
+RewriteRule !\.(css|js|jpg|jpeg|gif|png|htm|html|txt|php|pdf|ico|json|mp3|svg)$ index.php
+

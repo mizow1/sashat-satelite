@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="ja" lang="ja" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<base href="<!--{$smarty.const.ISP_BASE_URL}-->web/" />
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<meta http-equiv="Content-Script-Type" content="text/javascript" />
+		<meta name="viewport" content="width=device-width" />
+		<title><!--{if ISP == nifty}-->@nifty:<!--{/if}-->サイトマップ｜<!--{$smarty.const.CONTENTS_NAME}--></title>
+		<link rel="stylesheet" href="css/smp/sp.css" type="text/css" />
+		<script type="text/javascript" src="js/jquery1.8.js"></script>
+		<script type="text/javascript" src="js/smp/entry.js"></script>
+		<script type="text/javascript" src="js/smp/pagetop.js"></script>
+		<meta name="description" content="アウトワードが管理する「心震わす真実の声に誰もが驚愕◆涙占い大阪の嬢王 SASHA.t」のサイトマップをお伝えしています。">
+		<!--{include file="file:./parts/ga.html"}-->
+
+	</head>
+
+<body class="ow_body ow_lower">
+
+<!--{include file="file:../../../../../common/header_isp.html"}-->
+<!--{include file="file:./parts/header_menu.html"}-->
+
+	<div class="ow_main">
+
+		<div class="ow_bread">
+			<a href="<!--{$smarty.const.CONTENTS_URL}-->">TOP</a> &gt;
+			サイトマップ
+		</div>
+
+		<!-- ▼▼▼240208_追加ここから▼▼▼ -->
+		<div class="ow_page">
+			<h2 class="heading">サイトマップ</h2>
+			<dl class="info_list vertical">
+				<dt><!--{$smarty.const.CONTENTS_NAME}--></dt>
+				<dd>
+					<ul>
+						<li class="link_arrow"><a href="<!--{$smarty.const.ISP_BASE_URL}-->">TOP</a></li>
+						<li class="link_arrow"><a href="<!--{$smarty.const.ISP_BASE_URL}-->web/profile/#profile">監修者紹介</a></li>
+						<li class="link_arrow"><a href="<!--{$smarty.const.ISP_BASE_URL}-->web/profile/#about">占術紹介</a></li>
+						<li class="link_arrow"><a href="<!--{$smarty.const.ISP_BASE_URL}-->web/link/">おすすめ占い</a></li>
+						<li class="link_arrow"><a href="<!--{$smarty.const.ISP_BASE_URL}-->web/company/">販売責任者（運営者情報）</a></li>
+						<li class="link_arrow"><a href="<!--{$smarty.const.ISP_BASE_URL}-->web/policy/">プライバシーポリシー</a></li>
+						<li class="link_arrow"><a href="<!--{$smarty.const.ISP_BASE_URL}-->web/law/">特定商取引法に基づく表記</a></li>
+						<li class="link_arrow"><a href="http://contents.outward.jp/contact/" target="_blank">お問合わせ</a></li>
+						<li class="link_arrow"><a href="<!--{$smarty.const.ISP_BASE_URL}-->web/sitemap/">サイトマップ</a></li>
+					</ul>
+				</dd>
+			</dl>
+
+			<dl class="info_list vertical">
+				<dt>占いメニュー</dt>
+				<dd>
+					<ul>
+						<li class="link_arrow"><a href="<!--{$smarty.const.ISP_BASE_URL}-->web/?menu=13">【無料占い】当てすぎて鳥肌【何のために生まれた？】あなたがこの人生で果たすべき使命</a></li>
+						<li class="link_arrow"><a href="<!--{$smarty.const.ISP_BASE_URL}-->web/?menu=14">【無料占い】まさかの言葉にドキッ！【今あの人が、あなたに抱く想い】嘘偽りの無い本音</a></li>
+						<li class="link_arrow"><a href="<!--{$smarty.const.ISP_BASE_URL}-->web/?menu=15">【無料占い】次の恋人はこの人？『特別なご縁を感じます』あなたと結ばれる運命の人</a></li>
+						<!--{assign var="contents_count" value=0}-->
+						<!--{foreach name=outer key=key2 item=contents_data from=$contents_list}-->
+						<!--{if $contents_data.id < 500 && $contents_data.price_taxin > 1 || $contents_data.id > 900 && $contents_data.price_taxin <= 1}-->
+						<!--{assign var="contents_count" value=$contents_count+1}-->
+						<li class="link_arrow"><a href="<!--{$smarty.const.ISP_BASE_URL}-->web/?menu=<!--{$contents_data.id}-->"><!--{$contents_data.name_biglobe|default:$contents_data.name_rakuten|default:$contents_data.name}--></a></li>
+						<!--{/if}-->
+						<!--{/foreach}-->
+					</ul>
+				</dd>
+			</dl>
+			<dl class="info_list">
+				<dt>企業サイトURL</dt>
+				<dd>
+					<a href="https://www.outward.jp/" target="_blank">https://www.outward.jp/</a>
+				</dd>
+			</dl>
+			<dl class="info_list">
+				<dt>当社管理無料占いコンテンツ</dt>
+				<dd>
+					<a href="https://www.goodfortune.jp/" target="_blank">さちこい-よく当たる無料占い-</a>
+				</dd>
+			</dl>
+		</div>
+		<!-- /.ow_page -->
+		<!-- ▲▲▲240208_追加ここまで▲▲▲ -->
+	</div>
+	<!-- /.ow_main -->
+
+<!--{include file="file:./parts/footer_menu.html"}-->
+
+</body>
+</html>

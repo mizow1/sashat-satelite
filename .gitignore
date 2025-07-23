@@ -1,0 +1,75 @@
+# ログファイル
+*.log
+/tmp/log/
+/tmp/system_log/
+
+# キャッシュ・コンパイルファイル
+/tmp/compile/
+/tmp/compile_check/
+/tmp/sql_compile/
+
+# Google APIキー
+/libs/local/google/key/
+
+# セッションファイル・一時ファイル
+/tmp/
+*.tmp
+*.cache
+
+# OS固有ファイル
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEファイル
+.vscode/
+*.code-workspace
+.idea/
+*.swp
+*.swo
+*~
+
+# PHPキャッシュ
+opcache/
+
+# 環境設定ファイル（機密）
+.env
+.env.local
+.env.production
+
+# バックアップファイル
+*.bak
+*.backup
+*.old
+
+# Composer
+vendor/
+composer.lock
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# データベースダンプ
+*.sql
+*.dump
+
+# 証明書・秘密鍵
+*.pem
+*.p12
+*.key
+*.crt
+*.csr
+
+# アップロードファイル
+uploads/
+files/
+
+# サーバー固有設定
+.htaccess.local
+config.local.php
+
+# AWS設定
+aws/bin/

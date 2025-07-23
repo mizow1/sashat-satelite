@@ -1,0 +1,1396 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Foundation
+========================================================================== */
+
+/* Reset
+   ----------------------------------------------------------------- */
+* {
+	margin: 0px;
+	padding: 0px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+a {
+	margin:0;
+	padding:0;
+	font-size:inherit;
+	color: inherit;
+	vertical-align:baseline;
+	background:transparent;
+}
+ul,li{
+	list-style-type:none;
+}
+
+
+/* Base
+   ----------------------------------------------------------------- */
+html {
+	font-size: 16px;
+}
+body {
+	color: #fff;
+	min-width: 960px;
+	line-height: 1.3;
+	font-family:"游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" , "Meiryo UI" , "メイリオ" , Meiryo , "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
+	/* 明朝体は下記を使用
+	font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+	 */
+}
+img{
+	border-style: none;
+	vertical-align: top;
+	/* max-width: 100%; */
+}
+input {
+	vertical-align: middle;
+	padding: 10px;
+	font-size: 1.5em;
+}
+select {
+	vertical-align: middle;
+	padding: 1px;
+	border: 1px solid #888;
+	font-size: 1.5em;
+}
+
+/* ==========================================================================
+   Layout
+========================================================================== */
+
+/* body
+   ----------------------------------------------------------------- */
+.ow_body{
+	background: linear-gradient(to right,  #0b0a82 0%,#0b0a82 50%,#ff8aff 53%,#ff8aff 100%);
+}
+.ow_body_bg_01{
+	background: url(../../img/pc/common/body_bg_01.jpg) top center repeat-y;
+	overflow: hidden;
+}
+.ow_body_bg_02{
+	background: url(../../img/pc/common/body_bg_02.jpg) top center no-repeat;
+}
+
+/* header
+   ----------------------------------------------------------------- */
+.ow_header{
+	position: relative;
+	width: 640px;
+	height: 900px;
+	margin: 0 auto;
+}
+.ow_header_item{
+	position: absolute;
+display: none;
+}
+.ow_header_text_1{
+	width: 20%;
+	top: 17%;
+	right: 12%;
+}
+.ow_header_text_2{
+	width: 22%;
+	top: 17%;
+	left: 12%;
+}
+.ow_header_catch_1{
+	width: 95%;
+	top: 2%;
+	left: 0;
+  right: 0;
+  margin: 0 auto;
+animation: vibe_2 0.8s ease forwards;
+}
+.ow_header_catch_2{
+	width: 85%;
+	top: 8%;
+	left: 0;
+  right: 0;
+  margin: 0 auto;
+animation: slide_down 2.5s ease forwards;
+}
+.ow_header_title{
+	width: 113%;
+	top: 52%;
+	left: -9.5%;
+animation: slide_up 1.8s ease forwards;
+}
+
+/* ow_headline_btn */
+.ow_headline_btn {
+	position: absolute;
+  bottom: 0;
+}
+.ow_headline_btn_inner{
+	font-size: 0;
+	text-align: center;
+}
+.ow_headline_btn_item{
+	display: inline-block;
+	width: 50%;
+}
+.ow_headline_btn_item:first-child{
+	margin-left: 0;
+}
+
+/* nav
+   ----------------------------------------------------------------- */
+.ow_nav{
+	width: 640px;
+	margin: 0 auto;
+}
+.ow_nav .ow_nav_inner{
+	padding: 1%;
+	font-size: 0;
+	text-align: center;
+}
+.ow_nav .ow_nav_item{
+	display: inline-block;
+	width: 50%;
+}
+
+/* main
+   ----------------------------------------------------------------- */
+.ow_main{
+	overflow: hidden;
+}
+
+/* sp_contents
+   ----------------------------------------------------------------- */
+.ow_sp_contents{
+	max-width: 640px;
+  width: 640px;
+  margin: 0 auto;
+  font-size: 28px;
+}
+/* footer */
+.ow_footer{
+	text-align: center;
+	color: #fff;
+	padding: 3% 0;
+  width: 640px;
+  margin: 0 auto;
+}
+.ow_footer_menu > *{
+	display: inline-block;
+	margin: 0 2% 2% 0;
+}
+.footer_subInfo{
+	text-align: center;
+	margin-top: 3%;
+}
+.footer_subInfo img{
+	width: auto;
+	max-width: 100%;
+}
+
+/* ▽▽▽footerパーツ_サテライトサイト用に追記▽▽▽ */
+.footer_link{
+	text-align: center;
+	margin-top: 3%;
+}
+.footer_link_head {
+	margin-bottom: 1%;
+}
+/* △△△footerパーツ_サテライトサイト用に追記△△△ */
+
+/* ISP */
+.niftyHeader{
+	background: #000;
+	position: relative;
+}
+.niftyHeader table {
+	width: 900px;
+	margin: 0 auto;
+	background: #000;
+}
+.ow_nif {
+	display: none;
+}
+/* 規約 */
+.ow_rule{
+	text-align: center;
+	color: #fff;
+	padding: 30px 0px;
+	background: none;
+  width: 640px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   Object
+========================================================================== */
+
+/* menu系
+   ----------------------------------------------------------------- */
+/* common_menu */
+
+/* Component
+----------------------------------------------------------------- */
+
+/* menu */
+.ow_menu{ }
+/* ▼ow_menu_head内(icon+title)▼  */
+.ow_menu_head{
+	display: table;
+	table-layout: fixed;
+	 padding-bottom: 2%;
+}
+.ow_menu_icon{
+	display: table-cell;
+	vertical-align: top;
+	width: 22.2%;
+	position: relative;
+}
+.ow_menu_icon img{
+	max-width: 100%;
+}
+.ow_menu_title{
+	display: table-cell;
+	vertical-align: top;
+	padding-left: 3%;
+	font-size: 1.1em;
+	font-weight: bold;
+	color:#331efe;
+	line-height: 1.3;
+}
+/* .ow_menu_link{
+	font-family: "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif";
+} */
+.ow_menu_mid {}
+.ow_menu_tail{}
+.ow_menu_caption{
+	font-size: 0.85em;
+	color: #000;
+	line-height: 1.3;
+}
+/* color */
+.ow_yellow{
+	color: #ff0;
+}
+.ow_blue{
+	color: #00FFFF;
+}
+.ow_red{
+	color: #CC0000;
+}
+/* animationfが入ります */
+
+/* price(金額について)
+   ----------------------------------------------------------------- */
+.ow_menu_price{
+	display: block;/* 横並びの金額表記も全て縦落ちにするため */
+	text-align: right;
+	font-size: 0.85em;
+	padding-left: 0;
+	font-weight: bold;
+}
+
+.ow_premium_price{
+	color: #cc0000;
+	display: none;
+}
+.ow_default_price{
+	color: #242a7a;
+}
+.ow_included_b_price,
+.ow_update_b{
+  color : #000 ;
+}
+.ow_included_w_price{
+  color : #fff ;
+}
+.ow_included_y_price{
+  color : yellow ;
+}
+/* アニメーション
+----------------------------------------------------------------- */
+@keyframes slide_up{
+	0% { transform:translatey(50px); }
+	100% { transform:translatey(0px); }
+}
+@keyframes slide_down{
+	0% { transform:translatey(-50px); }
+	100% { transform:translatey(0px); }
+}
+@keyframes slide_right{
+	0% { transform:translateX(20%); }
+	100% { transform:translateX(0px); }
+}
+@keyframes slide_left{
+	0% { transform:translateX(-20%); }
+	100% { transform:translateX(0px); }
+}
+@keyframes slide_right_up{
+	0% { transform:translate(20%,20%); }
+	100% { transform:translate(0px,0px); }
+}
+@keyframes slide_left_up{
+	0% { transform:translate(-20%,20%); }
+	100% { transform:translate(0px); }
+}
+
+@keyframes vibe_2 {
+		0%{
+	 transform:rotate(0deg);
+	}
+		50%{
+	 transform: rotate(0deg);
+	}
+		60%{
+	 transform:rotate(-1deg);
+	}
+		70%{
+	 transform:rotate(1deg);
+	}
+		80%{
+	 transform:rotate(-1deg);
+	}
+		90%{
+	 transform:rotate(1deg);
+	}
+		100%{
+	 transform: rotate(0deg);
+	}
+}
+@keyframes vertical{
+	0% { transform:translateY(0); }
+  50% { transform:translateY(3%); }
+  100% { transform:translateY(0); }
+}
+@keyframes size_scale_fadein{
+	0%{
+		transform: scale(0,0);
+	}
+	50%{
+		transform: scale(1.2,1.2);
+	}
+	100% {
+		transform: scale(1,1);
+	}
+}
+@keyframes size_scale_fadein2{
+	0%{
+    transform: scale(5,5) translate(-50% , 50%);
+	}
+	70%{
+		transform: rotate(10deg);
+	}
+	80%{
+		transform: rotate(-10deg);
+	}
+	90%{
+		transform: rotate(10deg);
+	}
+  100% {
+    transform: scale(1,1) translateX(0);
+  }
+}
+@keyframes size_scale_fadein3{
+	0%{
+    transform: scale(5,5) translate(300% ,100%);
+	}
+  100% {
+    transform: scale(1,1) translate(0);
+  }
+}
+@keyframes rolling_in{
+	0%{
+		transform: scale(0,0)rotate(0deg);
+	}
+	30%{
+    transform: scale(0,0)rotate(0deg);
+	}
+  100% {
+    transform: scale(1,1) rotate(1080deg);
+  }
+}
+
+
+/* Component
+----------------------------------------------------------------- */
+
+/* ▽▽▽トップページここから▽▽▽ */
+
+/* ow_new */
+/* new_intro */
+.ow_new_intro {
+	position: relative;
+}
+.ow_new_intro_item{
+	position: absolute;
+}
+.ow_new_intro_title_1{
+	width: 57%;
+	top: 9%;
+	right: 12%;
+display: none;
+animation: slide_left 0.8s ease-out 0.01s forwards;
+}
+.ow_new_intro_title_2{
+	width: 72%;
+	top: 3%;
+	right: 0%;
+display: none;
+animation: slide_left 0.8s ease-out 0.01s forwards;
+}
+.ow_new_intro_title_3{
+	width: 101%;
+	top: 55%;
+  right : 0;
+  left  :0;
+  margin: 0 auto;
+display: none;
+animation: slide_up 1.5s ease-out 0.01s forwards;
+}
+.ow_intro_career{
+	width: 31%;
+	top: 3%;
+	left: 1%;
+display: none;
+animation: rolling_in 0.8s ease-out 0.01s forwards;
+}
+.ow_power_ward{
+	width: 97.5%;
+	top: 23%;
+	left: -9%;
+display: none;
+animation: size_scale_fadein 1.2s ease-out 0.01s forwards;
+}
+.ow_new_intro_teller{
+	width: 50%;
+	top: 5%;
+	right: -10%;
+}
+
+.ow_new{}
+.ow_new_top_wrap{
+	position: relative;
+}
+.ow_new .ow_menu{
+	/* padding: 0 6%; */
+}
+.ow_new .ow_menu:last-child{
+	background: none;
+	padding-bottom: 0;
+}
+.ow_new .ow_menu_title{
+  color : #a81247;
+}
+
+.ow_new_mid{
+	background: url(../../img/pc/top/new_mid.jpg) top center repeat-y;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+	padding: 0 8%;
+}
+.ow_new_mid .ow_update_b {
+  color: #000;
+  font-weight: normal;
+  font-size: 0.84em;
+}
+.ow_new .ow_menu:not(:last-child) {
+  background: url(../../img/pc/top/underline.png) bottom center no-repeat;
+  background-size: 100%;
+  padding-bottom: 4%;
+margin-bottom: 4%;
+}
+.ow_new_date{
+	text-align: right;
+	color: #660000;
+	padding-bottom: 1%;
+	font-size: 0.85em;
+	font-weight: bold;
+}
+
+/* ow_rec_intro */
+.ow_rec_intro{
+	position: relative;
+}
+.ow_rec_intro_item{
+	position: absolute;
+}
+.ow_rec_intro_title_1{
+	width: 97.5%;
+	top: 0%;
+	left: 0;
+	right: 0;
+	margin: auto;
+display: none;
+animation: slide_up 1s ease-out 0.01s forwards;
+}
+.ow_rec_intro_title_2{
+	width: 88%;
+	top: 8%;
+	left: 0;
+	right: 0;
+	margin: auto;
+display: none;
+animation: slide_up 1s ease-out 0.01s forwards;
+}
+.ow_eikyou_image{
+	width: 60%;
+	top: 21%;
+	left: -11%;
+opacity: 0;
+animation: slide_left 1s ease-out 0.01s forwards;
+}
+.ow_eikyou_text{
+	width: 62%;
+	top: 27%;
+	right: 0%;
+display: none;
+animation: slide_right 0.8s ease-out 0.01s forwards;
+}
+.ow_himotoku_image{
+	width: 69%;
+	top: 49.5%;
+	right: -5%;
+opacity: 0;
+animation: slide_right 1s ease-out 0.01s forwards;
+}
+.ow_himotoku_text{
+	width: 58%;
+	top: 52%;
+	left: 5%;
+display: none;
+animation: slide_left 0.8s ease-out 0.01s forwards;
+}
+.ow_bunki_image{
+	width: 63%;
+	top: 74%;
+	left: -6%;
+opacity: 0;
+animation: slide_left 1s ease-out 0.01s forwards;
+}
+.ow_bunki_text{
+	width: 53%;
+	top: 75%;
+	right: 5%;
+display: none;
+animation: slide_right 0.8s ease-out 0.01s forwards;
+}
+
+.ow_rec{
+	display: none;
+}
+.ow_rec_mid{
+	background: url(../../img/pc/top/rec_mid.png) top center repeat-y;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+}
+.ow_rec .ow_menu_mid{
+	background: url(../../img/pc/top/menu_mid_rec.png) top center repeat-y;
+/*
+	-webkit-background-size: 100%;
+	background-size: 100%;
+*/
+	padding: 0 7%;
+}
+.ow_rec .ow_menu_btn{
+	margin-top: 2%;
+}
+
+.ow_ninso_intro{
+	display: none;
+	position: relative;
+	width: 95%;
+	margin: 0 auto;
+}
+.ow_ninso_intro_item{
+	position: absolute;
+}
+.ow_ninso_intro_catch_1{
+	width: 32.7%;
+	top: 0;
+	left: 0;
+display: none;
+animation: size_scale_fadein 0.8s ease-out 0.01s forwards;
+}
+.ow_ninso_intro_catch_2{
+	width: 73.8%;
+	top: 2%;
+	left: 24%;
+display: none;
+animation: slide_left 0.8s ease-out 0.01s forwards;
+}
+.ow_ninso_intro_title{
+	width: 100%;
+	top: 17%;
+	left: 0;
+	right: 0;
+	margin: auto;
+opacity: 0;
+animation: slide_up 0.8s ease-out 0.01s forwards;
+}
+.ow_ninso_intro_hand{
+	width: 44.9%;
+	top: 40%;
+	left: 0;
+display: none;
+
+animation: slide_left 1.5s ease-out 0.01s forwards;
+}
+.ow_ninso_intro_baloon_1{
+	width: 45.6%;
+	top: 34%;
+	left: 3%;
+display: none;
+animation: slide_left 0.8s ease-out 0.01s forwards;
+}
+.ow_ninso_intro_baloon_2{
+	width: 44.1%;
+	top: 30%;
+	right: 0;
+display: none;
+animation: slide_right 0.8s ease-out 0.01s forwards;
+}
+.ow_ninso_intro_baloon_3{
+	width: 44.1%;
+	top: 76%;
+	left: 12%;
+display: none;
+animation: slide_left 0.8s ease-out 0.01s forwards;
+}
+.ow_ninso_intro_baloon_4{
+	width: 44.1%;
+	top: 59%;
+	right: 0;
+display: none;
+animation: slide_right 0.8s ease-out 0.01s forwards;
+}
+
+.ow_ninso{
+	display: none;
+}
+.ow_ninso textarea{
+	padding: 3%;
+	border-radius: 5px;
+	font-size: 1em;
+	box-shadow: 10px 10px 10px -10px rgb(0 0 0 / 80%) inset;
+}
+.ow_ninso textarea::placeholder {
+	font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+	color:#ccc;
+}
+.ow_ninso_btn {
+	width: 92%;
+	margin: 0 auto;
+	padding: 3% 0;
+}
+
+
+/* sample_intro */
+.ow_sample_intro{
+	position: relative;
+}
+.ow_sample_intro_item{
+	position: absolute;
+}
+.ow_sample_intro_title{
+	width: 101%;
+	top: 1.5%;
+	right: 0;
+	left: 0;
+	margin: auto;
+display: none;
+animation: slide_up 1s ease-out 0.01s forwards;
+}
+.ow_sample_intro_text{
+	width: 92%;
+	top: 20%;
+	right: 0%;
+  left: 0%;
+  margin: 0 auto;
+opacity: 0;
+animation: slide_up 1s ease-out 0.01s forwards;
+}
+.ow_sample_intro_title_2{
+  width: 101%;
+  top: 83%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+display: none;
+animation: slide_up 1s ease-out 0.01s forwards;
+}
+
+.ow_sample_intro_2{
+	position: relative;
+}
+.ow_sample_intro_teller{
+  width: 49%;
+  top:38%;
+  left:0;
+  right : 0;
+  margin: 0 auto;
+}
+.ow_sample_intro_idea_1{
+  width: 49%;
+  top:4%;
+  left:8%;
+opacity: 0;
+animation: vertical 3s linear 1s infinite;
+}
+.ow_sample_intro_idea_2{
+  width: 48%;
+  top:30%;
+  right:6%;
+opacity: 0;
+animation: vertical 3.5s linear 1s infinite;
+}
+.ow_sample_intro_idea_3{
+  width: 48%;
+  top:41%;
+  left: 2%;
+opacity: 0;
+animation: vertical 4s linear 1s infinite;
+}
+.ow_sample_intro_look_1{
+  width :40%;
+  top:43%;
+  left:5%;
+display: none;
+animation: slide_left 0.8s ease-out 0.01s forwards;
+}
+.ow_sample_intro_look_2{
+  width : 53%;
+  top:33%;
+  right : 2%;
+display: none;
+animation: slide_left 0.8s ease-out 0.01s forwards;
+}
+
+.ow_sample{
+	margin: 1% auto 0;
+  background: url(../../img/pc/top/sample_intro_mid.jpg) top center repeat-y;
+  background-size: 100%;
+}
+
+.ow_sample_menu_title{
+  width : 105%;
+	margin: 0 auto 0 -2%;
+}
+
+.ow_sample .ow_menu{
+  /* background: url(../../img/pc/top/underline.png) bottom center no-repeat; */
+	padding:0 8% 1%;
+}
+.ow_sample .ow_menu:last-child{
+  padding-bottom : 0%;
+}
+.ow_sample .ow_menu{
+  background: none;
+}
+.ow_sample .ow_menu_title{
+	color: #a81247;
+}
+/* ow_balloon_text */
+.ow_balloon_mid{
+  background: url(../../img/pc/top/ow_balloon_mid.png) top center repeat-y;
+  background-size: 100%;
+  padding: 0 5%;
+  font-size : 1.07em;
+  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+  line-height: 1.2;
+}
+/* ow_special */
+
+.ow_special_intro{
+	position: relative;
+}
+.ow_special_intro_item{
+	position: absolute;
+}
+.ow_special_intro_title{
+	width: 96%;
+	top: 6%;
+	left: 0;
+	right: 0;
+	margin: auto;
+display: none;
+animation: slide_left 0.8s ease-out 0.01s forwards;
+}
+.ow_special_intro_arawareru{
+	width: 63%;
+	top: 32%;
+	left: 0%;
+display: none;
+animation: slide_up 1s ease-out 0.01s forwards;
+}
+.ow_special_intro_saigo{
+	width: 53%;
+	top: 44%;
+	right: 20%;
+display: none;
+animation: slide_up 1s ease-out 0.01s forwards;
+}
+.ow_special_intro_suunen{
+	width: 46%;
+	top: 54.5%;
+	left: -1%;
+display: none;
+animation: slide_up 1s ease-out 0.01s forwards;
+}
+.ow_special_intro_speech_balloon{
+	width: 72%;
+	top: 22.5%;
+	left: 1%;
+display: none;
+animation: slide_right_up 0.8s ease-out 0.01s forwards;
+}
+.ow_special_intro_teller{
+  width: 62%;
+  top: 14%;
+  right: -14%;
+}
+.ow_special_mid{
+	background: url(../../img/pc/top/special_mid.jpg) top center repeat-y;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+}
+.ow_special_menu_title{
+	width: 88%;
+	margin: 0 auto 0 6.5%;
+}
+.ow_special .ow_menu_mid{
+	padding: 2% 9%;
+}
+.ow_special .ow_menu_title{
+  color: #4f37e4;
+}
+.ow_special .ow_menu:last-child{
+	padding-bottom: 0;
+}
+
+
+
+.ow_special .ow_menu:not(:last-child) {
+  /* background: url(../../img/pc/top/special_koumoku_btm.jpg) bottom center no-repeat;
+	-webkit-background-size: 100%;
+	background-size: 100%; */
+}
+.ow_special .ow_menu_tail{
+	padding-bottom: 2%;
+}
+.ow_special_menu_img{
+	width: 90%;
+	margin: 0 auto;
+}
+
+
+
+/* ow_free */
+/* ▽▽▽トップページパーツ▽▽▽ */
+/* ow_free */
+.ow_free{}
+.ow_free_mid{ }
+.ow_free_question{
+  position: relative;
+}
+.ow_free_question_item{
+  position: absolute;
+}
+.ow_free_question_teller{
+  width : 50%;
+  top:0%;
+  left : -16%;
+}
+.ow_free_question_text{
+  width : 73%;
+  top:9%;
+  right:2%;
+}
+.ow_free_btn{
+	position: relative;
+	padding-bottom: 3%;;
+}
+.ow_free_btn:last-of-type{
+	padding-bottom: 0;
+}
+/* category_nav */
+/*
+.ow_category_nav {
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	z-index: 200;
+}
+*/
+/* category navi固定css */
+.ow_category_nav_inner{
+	text-align: center;
+	font-size: 0;
+}
+.ow_category_item{
+	display: inline-block;
+	width: 33.3%;
+}
+
+/* category */
+.ow_category{
+}
+.ow_category .ow_menu_icon {
+	width: 22.8%;
+}
+/* 共通項目 */
+.ow_category_top_wrap{
+	position: relative;
+}
+.ow_category_top_item{
+  position: absolute;
+}
+.ow_category_mid{
+	background: url(../../img/pc/top/category_mid.jpg) top center repeat-y;
+  -webkit-background-size: 100%;
+	background-size: 100%;
+	padding: 10% 5% 0;
+}
+/* .ow_category_renai .ow_category_mid{
+	background: url(../../img/pc/top/category_mid_renai.jpg) top center repeat-y;
+  -webkit-background-size: 100%;
+	background-size: 100%;
+}
+.ow_category_deai .ow_category_mid{
+	background: url(../../img/pc/top/category_mid_deai.jpg) top center repeat-y;
+  -webkit-background-size: 100%;
+	background-size: 100%;
+}
+.ow_category_jinsei .ow_category_mid{
+	background: url(../../img/pc/top/category_mid_jinsei.jpg) top center repeat-y;
+  -webkit-background-size: 100%;
+	background-size: 100%;
+} */
+
+.ow_category_renai .ow_category_title{
+	width: 75%;
+	top: 31%;
+	left: 0;
+	right: 0;
+	margin: auto;
+display: none;
+animation: slide_up 1s ease-out 0.01s forwards;
+}
+.ow_category_deai .ow_category_title{
+	width: 66%;
+	top: 33%;
+	left: 0;
+	right: 0;
+	margin: auto;
+display: none;
+animation: slide_up 1s ease-out 0.01s forwards;
+}
+.ow_category_jinsei .ow_category_title{
+	width: 84%;
+	top: 33%;
+	left: 0;
+	right: 0;
+	margin: auto;
+display: none;
+animation: slide_up 1s ease-out 0.01s forwards;
+}
+
+.ow_category_sub_title{
+  width : 91%;
+  top:100%;
+  left: 0;
+  right :0;
+  margin: 0 auto ;
+}
+.ow_category_menu_small{
+	padding: 0% 0% 4% 0%;
+	margin-bottom: 4%;
+  background: url(../../img/pc/top/underline.png) bottom center no-repeat;
+	background-size: 100%;
+}
+.ow_category .ow_category_menu_small:last-child{
+	padding: 0% 0% 4% 0%;
+	margin: 4% 0 0;
+	background-size: 100%;
+}
+.ow_category_mid .ow_menu_title{
+  /* color: #ffff99; */
+}
+/* カテゴリ別スタイル */
+/* renai */
+/* .ow_category_renai .ow_category_menu_small{
+	background: url(../../img/pc/top/underline_renai.jpg) top center no-repeat;
+	background-size: 100%;
+} */
+.ow_category_renai .ow_menu_title{}
+/* deai */
+/* .ow_category_deai .ow_category_menu_small{
+	background: url(../../img/pc/top/underline_deai.jpg) top center no-repeat;
+  background-size: 100%;
+} */
+.ow_category_deai .ow_menu_title{}
+/* jinsei */
+/* .ow_category_jinsei .ow_category_menu_small{
+	background: url(../../img/pc/top/underline_jinsei.jpg) top center no-repeat;
+  background-size: 100%;
+} */
+.ow_category_jinsei .ow_menu_title{}
+/* △△△トップページここまで△△△ */
+
+
+
+
+
+/* ▽▽▽入力▽▽▽ */
+.ow_entry{
+	padding-bottom: 5%;
+}
+/* ow_entry_intro */
+.ow_entry_intro{
+	position: relative;
+}
+.ow_entry_intro_text_1{
+	width: 24%;
+	position: absolute;
+	top: 8%;
+	left: 8%;
+}
+.ow_entry_intro_text_2{
+	width: 23%;
+	position: absolute;
+	top: 8%;
+	right: 5%;
+}
+.ow_entry_intro_title{
+	width: 92%;
+	position: absolute;
+	top: 72%;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+}
+.ow_entry_btn{
+	width: 80%;
+	margin: 0 auto;
+	padding: 3% 0;
+}
+
+/* ow_sub_menu */
+.ow_sub_menu{
+	margin: 1% 0 3% 0;
+}
+.ow_sub_menu_mid{
+	background: url(../../img/pc/entry/sub_menu_mid.png) top center repeat-y;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+	padding: 0 3%;
+}
+.ow_sub_menu_list{
+	padding: 0 5% 3% 5%;
+}
+.ow_sub_menu_item{
+	background: url(../../img/pc/entry/sub_menu_line.png) bottom center no-repeat;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+	padding: 2% 4% 4% 4%;
+	font-size: 0.85em;
+	font-weight: bold;
+}
+.ow_sub_menu_item:last-of-type{
+	border-bottom: none;
+}
+/*
+.ow_dot_base{
+	background: url(../../img/pc/entry/sub_menu_list_item_dot.png) 1% 10px no-repeat;
+	-webkit-background-size: 5%;
+	background-size: 5%;
+}
+.ow_dot_2{
+	background: url(../../img/pc/entry/sub_menu_list_item_dot_2.png) 1% 10px no-repeat;
+	-webkit-background-size: 5%;
+	background-size: 5%;
+}
+.ow_dot_3{
+	background: url(../../img/pc/entry/sub_menu_list_item_dot_3.png) 1% 10px no-repeat;
+	-webkit-background-size: 5%;
+	background-size: 5%;
+}
+ .ow_dot_4{
+	background: url(../../img/pc/entry/sub_menu_list_item_dot_4.png) 1% 10px no-repeat;
+	-webkit-background-size: 5%;
+	background-size: 5%;
+}
+*/
+.ow_sub_menu_item_2{
+	color: #ffbfff;
+}
+.ow_sub_menu_item_3{
+	color: #ffff26;
+}
+/* .ow_sub_menu_item_4{
+	color: #72ff72;
+} */
+.ow_sub_menu_caption{
+	margin-top: 2%;
+}
+.ow_sub_menu_caption_mid {
+	background: url(../../img/pc/entry/sub_menu_caption_mid.png) top center repeat-y;
+	background-size: 100%;
+}
+.ow_sub_menu_caption_text{
+	text-align: center;
+	font-size: 0.7em;
+	line-height: 1.5;
+	color: #111;
+}
+
+
+/* ow_entry_form */
+.ow_entry_form{}
+.ow_entry_form_mid{
+	background: url(../../img/pc/entry/form_mid.png) top center repeat-y;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+	padding: 4% 3% 0;
+}
+.ow_my_form_mid,
+.ow_target_form_mid{
+	background: url(../../img/pc/entry/my_form_mid.png) top center repeat-y;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+}
+
+/* ow_form_body */
+.ow_form_body {
+	padding: 0 8%;
+}
+/* FORM_PARTS */
+/* リセット */
+input:-webkit-autofill{
+	/* 色はinput要素の背景色（ここでは#fff）にそろえる */
+	box-shadow: 0 0 0px 999px #FFF inset;
+}
+
+input[type="text"],
+input[type="date"],
+select,
+textarea{
+	width: 100%;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	outline: none;
+	vertical-align: middle;
+}
+select::-ms-expand {
+	-webkit-appearance:none;
+	-moz-appearance:none;
+	appearance:none;
+	display: none;
+}
+input[type="text"]:focus,
+select:focus,
+textarea:focus {
+	/* border: 1px solid #b70149;
+	transition: all 0.5s;
+	box-shadow: 0 0 1px 1px rgba(0,160,233,1); */
+}
+button{
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background: none;
+	border: none;
+	border-radius: 0;
+	outline: none;
+}
+
+
+/* form item */
+.ow_entry_form_item{
+	overflow: hidden;
+	padding-bottom: 3%;
+}
+.ow_entry_form_item:last-child{
+	padding: 2% 0 0 0;
+}
+.ow_entry_form_label{
+	font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+	font-size: 1.142em;
+	font-weight: bold;
+	color: #592508;
+}
+.ow_entry_form_label span{
+	font-size: 0.75em;
+	color: #ff0000;
+}
+.ow_entry_form_caution{
+	font-size: 0.71em;
+	color: #333;
+	padding-top: 1%;
+}
+
+/* 生年月日部分 */
+.ow_select{
+	position: relative;
+	float: left;
+	width: 28%;
+	margin-left: 2%
+}
+.ow_select:first-of-type{
+	margin-left: 0;
+}
+.ow_select_year{
+	width: 40%;
+}
+.ow_select::before{
+	position: absolute;
+	top: 40%;
+	right: 10px;
+	width: 0;
+	height: 0;
+	padding: 0;
+	content: '';
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	border-top: 12px solid #333333;
+	pointer-events: none;
+}
+
+.ow_entry_form_input , .ow_entry_form_select{
+	height: 70px;
+	border: 2px solid #ccbda2;
+	background: #fff;
+	/*border-radius: 8px;*/
+	font-size: 1.25em;
+	padding-left: 8px;
+}
+
+/* ラジオボタン */
+.ow_entry_form_radio_wrap label{
+	display: inline-block;
+	width: 50%;
+	text-align: center;
+}
+input[type="radio"] {
+	display: none;
+}
+input[type="radio"] + .ow_radiotxt {
+	text-indent: -9999px;
+	display: block;
+	width: 100%;
+	padding: 7% 0%;
+	cursor: pointer;
+}
+input[type="radio"] + .ow_radiotxt.male{
+	background: url(../../img/pc/entry/male.png) 0 0 no-repeat;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+}
+input[type="radio"] + .ow_radiotxt.female{
+	background: url(../../img/pc/entry/female.png) 0 0 no-repeat;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+}
+input[type="radio"]:checked + .ow_radiotxt.male{
+	background: url(../../img/pc/entry/male_on.png) 0 0 no-repeat;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+}
+input[type="radio"]:checked + .ow_radiotxt.female{
+	background: url(../../img/pc/entry/female_on.png) 0 0 no-repeat;
+	-webkit-background-size: 100%;
+	background-size: 100%;
+}
+
+/* error */
+.ow_error{
+	color: #ff0;
+	text-align: center;
+	padding: 20% 0 30%;
+}
+
+.ow_entry_form_save{
+	text-align: center;
+	padding: 5% 0 3% 0;
+	color: #333;
+}
+
+/* button */
+.ow_entry_form_btn_wrap{
+	padding-bottom: 5%;
+}
+.ow_entry_form_btn{
+	width: 90%;
+	margin: 0 auto;
+}
+.ow_entry_form_btn_text{
+	width: 96%;
+	margin: 0 auto;
+	text-align: center;
+	color: #FFF;
+	font-size: 0.85em;
+	padding: 3% 0;
+}
+.ow_entry_form_btn_text_2{
+	font-size: 0.65em;
+	padding-top: 3%;
+}
+.ow_entry_form_btn_text_border{
+	border-bottom: solid 2px #baaabb;
+}
+.ow_policy{
+	background: #040140;
+	width: 96%;
+	padding: 4% 5%;
+	margin: 0 auto;
+	font-size: 0.7em;
+	line-height: 1.6;
+}
+
+/* △△△入力△△△ */
+
+
+/* Utitlity
+----------------------------------------------------------------- */
+
+.ow_serif{
+	font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+}
+.ow_yumin{
+	font-family: "游明朝", "YuMincho", serif;
+}
+.ow_ofh{
+	overflow: hidden;
+}
+
+/* position */
+.ow_tac{
+	text-align: center;
+}
+.ow_vab{
+	vertical-align: bottom;
+}
+.ow_vat{
+	vertical-align: top;
+}
+.ow_abs {
+	position: absolute;
+}
+
+/* color */
+.ow_yellow{
+	color: #ff0;
+}
+.ow_blue{
+	color: #00FFFF;
+}
+.ow_red{
+	color: #ff0000;
+}
+.ow_pb{
+	padding-bottom: 2%;
+}
+/* text */
+.ow_marker {
+	background: linear-gradient(transparent 70%, #ffff00 0%);
+	display: inline;
+}

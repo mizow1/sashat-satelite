@@ -1,0 +1,342 @@
+<div class="ow_joint ow_tac">
+  <div class="ow_joint_title">
+    <img src="img/pc/result/joint_title.png" alt="鑑定頂いたあなたに特別割引メニューをご紹介します。　気になるほうのメニューをお選びください。" title="鑑定頂いたあなたに特別割引メニューをご紹介します。　気になるほうのメニューをお選びください。"/>
+  </div>
+</div>
+<!-- /.ow_joint -->
+
+<!--{foreach name=pickup key=pickup_key item=pickup_val from=$pickup}-->
+  <!--{assign var=pickup_contents_id value=$pickup_val.pickup_contents_data.id}-->
+  <!--{assign var=pickup_contents value=$pickup_val.pickup_contents_data}-->
+  <!--{assign var=pickup_base value=$pickup_val.pickup_base}-->
+
+
+<!-- conductor -->
+<div class="ow_conductor">
+
+  <!--{foreach name='result_loop' item='result' key='menu_id' from=$pickup_val.pickup_result_data}-->
+    <!--{assign var=menu_data value=$pickup_menu_data_list[$pickup_contents_id][$menu_id]}-->
+    <!--{assign var=menu_data_list value=$pickup_menu_data_list[$pickup_contents_id]}-->
+
+    <!--{if $menu_data.astrology_category == 1}-->
+
+      <!--{if $menu_data.card_sign != 0}-->
+
+      <!-- picture -->
+      <div class="ow_result_item ow_result_item_picture">
+        <div class="ow_result_item_top ow_tac">
+          <img class="ow_vab" src="img/pc/result/result_item_top_picture.jpg" alt="" />
+        </div>
+        <div class="ow_result_item_mid">
+          <div class="ow_result_title">
+            <div class="ow_result_title_mid"><!--{$menu_data.name}--></div>
+            <div class="ow_result_title_btm ow_tac">
+              <img class="ow_vat" src="img/pc/result/result_title_btm_picture.jpg" alt="" />
+            </div>
+          </div>
+          <div class="ow_result_body ow_result_body_set11">
+            <div class="ow_picture_area ow_tac">
+              <div class="ow_picture_canvas">
+                <img src="img/pc/result/picture_canvas.png" alt="" />
+              </div>
+              <div class="ow_picture_item ow_picture_item_main">
+                <img src="img/pc/result/picture/<!--{$menu_data.card_sign}-->.png" alt="" />
+              </div>
+              <div class="ow_picture_item ow_picture_item_hand">
+                <img src="img/pc/result/picture_hand.png" alt="" />
+              </div>
+              <div class="ow_picture_item ow_picture_item_caption">
+                <img src="img/pc/result/picture_item_caption.png" alt="今あなたに一番影響している背後の霊世界を描いてお伝えします　現在抱えている問題を紐解くヒントになるでしょう" title="今あなたに一番影響している背後の霊世界を描いてお伝えします　現在抱えている問題を紐解くヒントになるでしょう" />
+              </div>
+              <div class="ow_picture_text">
+                これが私の霊視で視えた霊景です
+              </div>
+              <div class="ow_picture_result">
+                <!--{$menu_data.reisi_text}-->
+              </div>
+            </div>
+            <!-- ow_result_body_imgarea -->
+            <div class="ow_result_body_text_wrap">
+              <div class="ow_result_body_text_top">
+                <img class="ow_vab" src="img/pc/result/result_body_text_top.png" alt="" />
+              </div>
+              <div class="ow_result_body_text">
+                <!--{$result.cut_body}-->
+              </div>
+              <div class="ow_result_body_text_btm">
+                <img class="ow_vat" src="img/pc/result/result_body_text_btm.png" alt="" />
+              </div>
+            </div>
+            <!-- /.ow_result_body_text_wrap -->
+          </div>
+          <!-- /.ow_result_body -->
+        </div>
+        <!-- /.ow_result_item_mid -->
+        <div class="ow_result_item_btm ow_tac">
+          <img class="ow_vat" src="img/pc/result/result_item_btm_picture.jpg" alt="" />
+        </div>
+      </div>
+      <!-- /.ow_result_item -->
+
+      <!--{else}-->
+
+      <!-- ow_result_item_base -->
+      <div class="ow_result_item ow_result_item_base">
+        <div class="ow_result_item_top ow_tac">
+          <img class="ow_vab" src="img/pc/result/result_item_top_base.jpg" alt="" />
+        </div>
+        <div class="ow_result_item_mid">
+          <div class="ow_result_title">
+            <div class="ow_result_title_mid"><!--{$menu_data.name}--></div>
+            <div class="ow_result_title_btm ow_tac">
+              <img class="ow_vat" src="img/pc/result/result_title_btm_base.jpg" alt="" />
+            </div>
+          </div>
+          <div class="ow_result_body ow_result_body_set11">
+            <div class="ow_result_body_text">
+              <!--{$result.cut_body}--><br>
+              <div class="ow_nc ow_nc_white">
+                <a href="javascript:form_submit('astrology_form<!--{$smarty.foreach.pickup.iteration}-->')" class="ow_nc_btn ow_nc_btn_default"></a>
+              </div>
+            </div>
+          </div>
+          <!-- /.ow_result_body -->
+        </div>
+        <!-- /.ow_result_item_mid -->
+      </div>
+      <!-- /.ow_result_item -->
+
+      <!--{/if}-->
+
+  <!--{elseif $menu_data.astrology_category == 2}-->
+
+  <!-- calender -->
+  <div class="ow_result_item ow_result_item_calender ow_result_item_calender_result">
+    <div class="ow_result_item_top ow_tac">
+      <img class="ow_vab" src="img/pc/result/result_item_top_base.jpg" alt="" />
+    </div>
+    <div class="ow_result_item_mid">
+      <div class="ow_result_title">
+        <div class="ow_result_title_mid"><!--{$menu_data.name}--></div>
+        <div class="ow_result_title_btm ow_tac">
+          <img class="ow_vat" src="img/pc/result/result_title_btm_base.jpg" alt="" />
+        </div>
+      </div>
+      <div class="ow_result_body ow_result_body_set11">
+        <div class="ow_calender_area ow_tac">
+          <div class="ow_calender_canvas">
+            <img src="img/pc/result/calender_canvas.jpg" alt=""/>
+          </div>
+          <div class="ow_calender_item ow_calender_hand">
+            <img src="img/pc/result/calender_hand.png" alt=""/>
+          </div>
+          <div class="ow_calender_item ow_calender_item_result">
+            20XX年XX月XX日
+          </div>
+        </div>
+        <!-- ./ow_calender -->
+        <div class="ow_result_body_text">
+          <!--{$result.cut_body}-->
+          <div class="ow_nc ow_nc_white">
+            <a href="javascript:form_submit('recomend_form<!--{$smarty.foreach.pickup.iteration}-->')" class="ow_nc_btn ow_nc_btn_default"></a>
+          </div>
+        </div>
+      </div>
+      <!-- /.ow_result_body -->
+    </div>
+    <!-- /.ow_result_item_mid -->
+    <!-- <div class="ow_result_item_btm ow_tac">
+      <img class="ow_vat" src="img/pc/result/result_item_btm_base.jpg" alt="" />
+    </div> -->
+  </div>
+  <!-- /.ow_result_item -->
+
+  <!--{elseif $menu_data.astrology_category == 3}-->
+
+  <!-- ow_result_item_song -->
+  <div class="ow_result_item ow_result_item_song ow_result_item_song_result">
+    <div class="ow_result_item_song_intro ow_tac">
+      <div class="ow_result_item_top">
+        <img class="ow_vab" src="img/pc/result/result_item_top_song.jpg" alt="" />
+      </div>
+      <div class="ow_result_item_song_item ow_result_item_song_item_title">
+        <img src="img/pc/result/result_item_song_item_title.png" alt="あなたにとって一番重要なのがこの部分" title="あなたにとって一番重要なのがこの部分" />
+      </div>
+      <div class="ow_result_item_song_item ow_result_item_song_item_caption">
+        <img src="img/pc/result/result_item_song_item_caption.png" alt="私がチヂン(太鼓)を打ち見えざる世界と繋がることで得たメッセージをあなたにお伝えします" title="私がチヂン(太鼓)を打ち見えざる世界と繋がることで得たメッセージをあなたにお伝えします" />
+      </div>
+      <div class="ow_result_item_song_item ow_result_item_song_item_bg">
+        <img src="img/pc/result/result_item_song_item_bg.png" alt=""/>
+      </div>
+      <div class="ow_result_item_song_item ow_result_item_song_item_teller_1">
+        <img src="img/pc/result/result_item_song_item_teller_1.png" alt=""/>
+      </div>
+      <div class="ow_result_item_song_item ow_result_item_song_item_teller_2">
+        <img src="img/pc/result/result_item_song_item_teller_2.png" alt=""/>
+      </div>
+      <div class="ow_result_item_song_item ow_song">
+        <img src="img/pc/result/song_<!--{$menu_data.song.song_id}-->.png" alt="<!--{$menu_data.song.song_text}-->" title="<!--{$menu_data.song.song_text}-->"/>
+      </div>
+    </div>
+    <!-- /.ow_result_item_song_intro -->
+    <div class="ow_result_item_mid">
+      <div class="ow_result_title">
+        <div class="ow_result_title_mid"><!--{$menu_data.name}--></div>
+        <div class="ow_result_title_btm ow_tac">
+          <img class="ow_vat" src="img/pc/result/result_title_btm_song.jpg" alt="" />
+        </div>
+      </div>
+      <div class="ow_result_body ow_result_body_set11">
+        <div class="ow_result_body_text">
+          <!--{$result.cut_body}-->
+          <div class="ow_nc">
+            <a href="javascript:form_submit('recomend_form<!--{$smarty.foreach.pickup.iteration}-->')" class="ow_nc_btn ow_nc_btn_default"></a>
+          </div>
+        </div>
+      </div>
+      <!-- /.ow_result_body -->
+    </div>
+    <!-- /.ow_result_item_mid -->
+    <div class="ow_result_item_btm ow_tac">
+      <img class="ow_vat" src="img/pc/result/result_item_btm_song.jpg" alt="" />
+    </div>
+  </div>
+  <!-- /.ow_result_item -->
+
+  <!--{/if}-->
+<!--{/foreach}-->
+
+<div class="ow_common_wrap">
+  <div class="ow_common_wrap_top ow_tac">
+    <img class="ow_vab ow_pc_inline" src="img/pc/common/common_wrap_top.jpg" alt="" />
+  </div>
+  <div class="ow_common_wrap_mid">
+
+    <div class="ow_common_menu">
+      <div class="ow_common_menu_top ow_tac">
+        <!--{if $pickup_val.pickup_contents_data.id > 500}-->
+        <img class="ow_vab" src="img/pc/common/common_menu_top_2.jpg" alt="購入者限定・割引メニュー" title="購入者限定・割引メニュー" />
+        <!--{else}-->
+        <img class="ow_vab" src="img/pc/common/common_menu_top_3.jpg" alt="" title="">
+        <!--{/if}-->
+      </div>
+      <div class="ow_common_menu_mid">
+        <div class="ow_menu_head">
+          <div class="ow_menu_icon">
+            <div class="ow_menu_category"><img src="img/pc/category/<!--{$pickup_contents.category}-->.png" alt="<!--{$category_data[$pickup_contents.category].name}-->　<!--{if $pickup_contents.target_count == 2}-->二<!--{else}-->一<!--{/if}-->人用" title="<!--{$category_data[$pickup_contents.category].name}-->　<!--{if $pickup_contents.target_count == 2}-->二<!--{else}-->一<!--{/if}-->人用" /></div>
+          </div>
+          <div class="ow_menu_title">
+            <!--{$pickup_val.pickup_contents_data.name_rakuten|default:$pickup_val.pickup_contents_data.name}-->
+          </div>
+        </div>
+      </div>
+      <img class="ow_vat" src="img/pc/common/common_menu_btm_2.jpg" alt="" />
+    </div>
+    <!-- /.ow_common_menu -->
+
+</div>
+<div class="ow_common_wrap_btm ow_tac">
+  <img class="ow_vat" src="img/pc/common/common_wrap_btm.jpg" alt="" />
+</div>
+</div>
+<!-- /.ow_common_wrap -->
+
+  <div class="ow_sub_menu">
+    <div class="ow_sub_menu_top ow_tac">
+      <img class="ow_vab" src="img/pc/entry/sub_menu_top_2.jpg" alt="以下の項目を鑑定します" title="以下の項目を鑑定します">
+    </div>
+    <div class="ow_sub_menu_mid">
+      <div class="ow_sub_menu_list">
+
+        <!--{if $contents_data.target_count == 1}-->
+        <div class="ow_sub_menu_item ow_sub_menu_item_2 ow_dot_2">
+          霊視で視た～あなたの魂について
+        </div>
+        <!--{elseif $contents_data.target_count == 2}-->
+        <div class="ow_sub_menu_item ow_sub_menu_item_2 ow_dot_2">
+          霊視で視た～あなたとあの人の魂について
+        </div>
+        <!--{/if}-->
+
+        <!--{foreach name=foo key=key2 item=val2 from=$menu_data_list}-->
+          <!--{if $smarty.foreach.foo.last && $contents_data.price_taxin > 1}-->
+          <div class="ow_sub_menu_item ow_sub_menu_item_4 ow_dot_2">
+            ユタ神様の真実を紐解く言葉<br>
+            <!--{$val2.note|default:$val2.name}-->
+          </div>
+          <div class="ow_sub_menu_item ow_sub_menu_item_4 ow_dot_2">
+            魂を清浄へと導く≪ユタ伝統の厄払い≫
+          </div>
+          <!--{elseif $val2.astrology_category == 1}-->
+            <!--{if $val2.card_sign != 0}-->
+            <div class="ow_sub_menu_item ow_sub_menu_item_3 ow_dot_3">
+              <!--{$val2.note|default:$val2.name}-->
+            </div>
+            <!--{else}-->
+            <div class="ow_sub_menu_item ow_sub_menu_item ow_dot_base">
+              <!--{$val2.note|default:$val2.name}-->
+            </div>
+            <!--{/if}-->
+          <!--{elseif $val2.astrology_category == 2}-->
+          <div class="ow_sub_menu_item ow_sub_menu_item ow_dot_base">
+            <!--{$val2.note|default:$val2.name}-->
+          </div>
+          <!--{elseif $val2.astrology_category == 3}-->
+          <div class="ow_sub_menu_item ow_sub_menu_item_3 ow_dot_3">
+            <!--{$val2.note|default:$val2.name}-->
+          </div>
+          <!--{/if}-->
+        <!--{/foreach}-->
+
+      </div>
+      <!-- /.ow_sub_menu_list -->
+      <div class="ow_conductor_caption">
+        <div class="ow_conductor_btn">
+          <a href="javascript:form_submit('recomend_form<!--{$smarty.foreach.pickup.iteration}-->')" class="ow_nc_btn ow_nc_btn_default"></a>
+        </div>
+        <div class="ow_conductor_caption_text ow_conductor_caption_text_border">
+          <span class="ow_conductor_caption_text_strong">「続きを見る」を押しますと<br>
+          鑑定結果の続きをご覧いただけます。</span><br>
+          <br>
+
+          <!--{if $pickup_val.pickup_contents_data.id > 500}-->
+          <span class="ow_conductor_caption_text_strong">このメニューは通常<!--{$pickup_val.pickup_base_contents_data.price_taxin|number_format}--><!--{$smarty.const.PRICE_UNIT}-->のところを<br>
+          <span class="ow_yellow"><!--{$pickup_val.pickup_contents_data.price_taxin|number_format}--><!--{$smarty.const.PRICE_UNIT}-->でご利用できます。</span></span><br>
+          <!--{else}-->
+          <div class="ow_entry_form_btn_text">
+            <div class="ow_premium_price ow_nif ow_yellow ow_nif">
+              プレミアム価格　<!--{$pickup_val.pickup_contents_data.price_off10|number_format}--><!--{$smarty.const.PRICE_UNIT}-->
+            </div>
+            <div class="ow_default_price ow_white">
+              <span class="ow_nif">通常価格　</span><!--{$pickup_val.pickup_contents_data.price_taxin|number_format}--><!--{$smarty.const.PRICE_UNIT}-->
+            </div>
+          </div>
+          <!--{/if}-->
+
+        </div>
+        <div class="ow_conductor_caption_text">
+          ご利用の前には、メニュー内容のご確認をお願いいたします。<br>
+          ご購入されるとサービス・コンテンツのご利用料金が発生いたします。
+        </div>
+      </div>
+      <!-- /.ow_sub_menu_caption -->
+    </div>
+    <!-- ow_sub_menu_mid -->
+    <div class="ow_sub_menu_btm ow_tac">
+      <img class="ow_vat" src="img/pc/entry/sub_menu_btm.jpg" alt="">
+    </div>
+  </div>
+  <!-- /.ow_sub_menu -->
+
+</div>
+<!-- /.ow_conductor -->
+
+<!--{/foreach}-->
+
+
+<!--{foreach from=$pickup item=val name=pickup}-->
+          <form id="astrology_form<!--{$smarty.foreach.pickup.iteration}-->" method="POST" action="./?menu=<!--{$val.pickup_contents_data.id}-->">
+            <input type="hidden" name="qid" value="<!--{$val.qid}-->">
+            <input type="hidden" name="nc" value="0">
+          </form>
+<!--{/foreach}-->

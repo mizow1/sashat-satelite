@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="ja" lang="ja" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<base href="<!--{$smarty.const.ISP_BASE_URL}-->web/">
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<meta name="viewport" content="width=device-width" />
+	<title><!--{if ISP == nifty}-->@nifty:<!--{/if}-->コラム記事一覧｜<!--{$smarty.const.CONTENTS_NAME}--></title>
+	<link rel="stylesheet" href="css/pc/common.css" type="text/css" />
+	<script type="text/javascript" src="js/jquery1.8.js"></script>
+	<script type="text/javascript" src="js/form_submit.js"></script>
+	<script src="js/jquery.tile.js" type="text/javascript"></script>
+	<meta name="description" content="算命学に関するコラム記事の一覧ページです。運勢や相性についての詳しい解説をお読みいただけます。">
+	<!--{include file="file:./parts/ga.html"}-->
+</head>
+<body class="ow_body">
+
+<!--{include file="file:../../../../../common/header_isp.html"}-->
+<div class="ow_body_bg_01">
+<div class="ow_body_bg_02">
+
+<!--{include file="file:./parts/header_menu.html"}-->
+
+	<div class="ow_main">
+
+		<div class="ow_bread">
+			<a href="<!--{$smarty.const.CONTENTS_URL}-->">TOP</a> &gt;
+			コラム記事一覧
+		</div>
+
+<div class="ow_sp_contents">
+		<div class="ow_column_list">
+			<div class="ow_column_list_title ow_tac">
+				<h1>コラム記事一覧</h1>
+			</div>
+			
+			<div class="ow_column_list_count">
+				<p>全<!--{$total_articles}-->件の記事</p>
+			</div>
+			
+			<!--{if $articles}-->
+				<div class="ow_column_articles">
+					<!--{foreach from=$articles item=article}-->
+						<div class="ow_column_article_item">
+							<div class="ow_column_article_title">
+								<h2><a href="/column/<!--{$article.id}-->/"><!--{$article.title}--></a></h2>
+							</div>
+							<div class="ow_column_article_meta">
+								<span class="ow_column_post_date">公開日：<time datetime="<!--{$article.post_date}-->"><!--{$article.formatted_post_date}--></time></span>
+							</div>
+							<div class="ow_column_article_summary">
+								<!--{$article.summary}-->
+							</div>
+							<!--{if $article.seo_keywords}-->
+								<div class="ow_column_article_keywords">
+									<span class="ow_column_keywords_label">キーワード：</span>
+									<span class="ow_column_keywords_list"><!--{$article.seo_keywords}--></span>
+								</div>
+							<!--{/if}-->
+							<div class="ow_column_article_link">
+								<a href="/column/<!--{$article.id}-->/" class="ow_column_read_more">続きを読む</a>
+							</div>
+						</div>
+					<!--{/foreach}-->
+				</div>
+				
+				<!--{if $total_pages > 1}-->
+					<div class="ow_column_pagination">
+						<!--{if $current_page > 1}-->
+							<a href="/column/?page=<!--{$current_page-1}-->" class="ow_column_pagination_prev">前へ</a>
+						<!--{/if}-->
+						
+						<!--{section name=page start=1 loop=$total_pages+1}-->
+							<!--{assign var="i" value=$smarty.section.page.index}-->
+							<!--{if $i == $current_page}-->
+								<span class="ow_column_pagination_current"><!--{$i}--></span>
+							<!--{else}-->
+								<a href="/column/?page=<!--{$i}-->" class="ow_column_pagination_link"><!--{$i}--></a>
+							<!--{/if}-->
+						<!--{/section}-->
+						
+						<!--{if $current_page < $total_pages}-->
+							<a href="/column/?page=<!--{$current_page+1}-->" class="ow_column_pagination_next">次へ</a>
+						<!--{/if}-->
+					</div>
+				<!--{/if}-->
+			<!--{else}-->
+				<div class="ow_column_no_articles">
+					<p>記事がありません。</p>
+				</div>
+			<!--{/if}-->
+		</div>
+		<!-- /.ow_column_list -->
+
+		<!-- ow_free -->
+		<div class="ow_free_title ow_tac">
+			<img src="img/pc/top/free_title.png" alt="無料鑑定" title="無料鑑定"/>
+		</div>
+		<div class="ow_free ow_tac">
+				<div class="ow_free_btn ow_tac"><a href="<!--{$smarty.const.ISP_BASE_URL}-->web/?menu=13" class="ow_free_btn_link ow_free_btn_link_1"><img src="img/pc/top/btn_free_1.png" alt="恋愛　真実がここにある!　【奇跡の算命学】今あの人があなたに対して思っていること　完全無料で占う" title="恋愛　真実がここにある!　【奇跡の算命学】今あの人があなたに対して思っていること　完全無料で占う"/></a></div>
+				<div class="ow_free_btn ow_tac"><a href="<!--{$smarty.const.ISP_BASE_URL}-->web/?menu=14" class="ow_free_btn_link ow_free_btn_link_2"><img src="img/pc/top/btn_free_2.png" alt="結婚　結婚運命を算出!　1年以内に出会いはある？あなたの婚期と運命の相手　完全無料で占う" title="結婚　結婚運命を算出!　1年以内に出会いはある？あなたの婚期と運命の相手　完全無料で占う"/></a></div>
+		</div>
+		<!-- /.ow_free -->
+
+<!--{include file="file:./parts/sample.html"}-->
+<!--{include file="file:./parts/recommend.html"}-->
+
+</div>
+		</div>
+
+<!--{include file="file:./parts/footer_menu.html"}-->
+	</div>
+</div>
+
+<style>
+/* コラム一覧のスタイル */
+.ow_column_list {
+	margin: 20px 0;
+}
+
+.ow_column_list_title {
+	margin-bottom: 20px;
+}
+
+.ow_column_list_title h1 {
+	font-size: 24px;
+	color: #8B4513;
+	margin: 0;
+	padding: 15px;
+	background: linear-gradient(to bottom, #f8f4e6, #f0e68c);
+	border: 2px solid #daa520;
+	border-radius: 8px;
+}
+
+.ow_column_list_count {
+	text-align: center;
+	margin-bottom: 30px;
+	color: #666;
+	font-size: 14px;
+}
+
+.ow_column_articles {
+	margin-bottom: 40px;
+}
+
+.ow_column_article_item {
+	margin-bottom: 30px;
+	padding: 20px;
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.ow_column_article_title {
+	margin-bottom: 10px;
+}
+
+.ow_column_article_title h2 {
+	margin: 0;
+	font-size: 18px;
+	line-height: 1.4;
+}
+
+.ow_column_article_title a {
+	color: #8B4513;
+	text-decoration: none;
+}
+
+.ow_column_article_title a:hover {
+	color: #654321;
+	text-decoration: underline;
+}
+
+.ow_column_article_meta {
+	margin-bottom: 15px;
+	color: #666;
+	font-size: 12px;
+}
+
+.ow_column_article_summary {
+	margin-bottom: 15px;
+	color: #333;
+	line-height: 1.6;
+	font-size: 14px;
+}
+
+.ow_column_article_keywords {
+	margin-bottom: 15px;
+	font-size: 12px;
+	color: #888;
+}
+
+.ow_column_keywords_label {
+	font-weight: bold;
+}
+
+.ow_column_keywords_list {
+	background: #f0f0f0;
+	padding: 2px 6px;
+	border-radius: 4px;
+}
+
+.ow_column_article_link {
+	text-align: right;
+}
+
+.ow_column_read_more {
+	display: inline-block;
+	padding: 8px 16px;
+	background: #8B4513;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 4px;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.ow_column_read_more:hover {
+	background: #654321;
+}
+
+.ow_column_pagination {
+	text-align: center;
+	margin: 40px 0;
+}
+
+.ow_column_pagination a,
+.ow_column_pagination span {
+	display: inline-block;
+	padding: 8px 12px;
+	margin: 0 4px;
+	text-decoration: none;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	font-size: 14px;
+}
+
+.ow_column_pagination_link {
+	color: #8B4513;
+	background: #fff;
+}
+
+.ow_column_pagination_link:hover {
+	background: #f0f0f0;
+}
+
+.ow_column_pagination_current {
+	background: #8B4513;
+	color: #fff;
+	border-color: #8B4513;
+}
+
+.ow_column_pagination_prev,
+.ow_column_pagination_next {
+	color: #8B4513;
+	background: #fff;
+	font-weight: bold;
+}
+
+.ow_column_pagination_prev:hover,
+.ow_column_pagination_next:hover {
+	background: #f0f0f0;
+}
+
+.ow_column_no_articles {
+	text-align: center;
+	padding: 40px;
+	color: #666;
+	font-size: 16px;
+}
+</style>
+
+</body>
+</html>

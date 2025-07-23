@@ -1,0 +1,180 @@
+<!-- conductor -->
+<div class="ow_conductor">
+	<div class="ow_result_item_wrap">
+		<div class="ow_result_item_wrap_top ow_tac">
+			<img class="ow_vab" src="img/smp/result/result_item_wrap_top.png" alt="">
+		</div>
+		<div class="ow_result_item_wrap_mid">
+<!-- ow_result_item_base -->
+<!--{foreach name=pickup_loop item=menu_data key=key from=$pickup.result_list}-->
+<!--{if $menu_data.astrology_category == 1}-->
+<!--{include file="file:./result_item1.html"}-->
+<div class="ow_result_body">
+	<div class="ow_result_body_text">
+		<div class="ow_conductor_caption_text">
+			ご利用には<!--{$pickup.contents_data.price_taxin|number_format}--><!--{$smarty.const.PRICE_UNIT}-->が必要です。<br />
+			占う前に内容のご確認をお願いします。<br />
+			ご購入いただくと、サービス・コンテンツの利用料金が発生します。
+		</div>
+	</div>
+</div>
+<!--{/if}-->
+<!--{if $menu_data.astrology_category == 2}-->
+<!--{include file="file:./result_item2.html"}-->
+<div class="ow_result_body">
+	<div class="ow_result_body_text">
+		<div class="ow_conductor_caption_text">
+			ご利用には<!--{$pickup.contents_data.price_taxin|number_format}--><!--{$smarty.const.PRICE_UNIT}-->が必要です。<br />
+			占う前に内容のご確認をお願いします。<br />
+			ご購入いただくと、サービス・コンテンツの利用料金が発生します。
+		</div>
+	</div>
+</div>
+<!--{/if}-->
+<!--{if $menu_data.astrology_category == 3}-->
+<!--{include file="file:./result_item3.html"}-->
+<div class="ow_result_body">
+	<div class="ow_result_body_text">
+		<div class="ow_conductor_caption_text">
+			ご利用には<!--{$pickup.contents_data.price_taxin|number_format}--><!--{$smarty.const.PRICE_UNIT}-->が必要です。<br />
+			占う前に内容のご確認をお願いします。<br />
+			ご購入いただくと、サービス・コンテンツの利用料金が発生します。
+		</div>
+	</div>
+</div>
+<!--{/if}-->
+<!--{if $menu_data.astrology_category == 4}-->
+<!--{include file="file:./result_item3.html"}-->
+<div class="ow_result_body">
+	<div class="ow_result_body_text">
+		<div class="ow_conductor_caption_text">
+			ご利用には<!--{$pickup.contents_data.price_taxin|number_format}--><!--{$smarty.const.PRICE_UNIT}-->が必要です。<br />
+			占う前に内容のご確認をお願いします。<br />
+			ご購入いただくと、サービス・コンテンツの利用料金が発生します。
+		</div>
+	</div>
+</div>
+<!--{/if}-->
+<!--{if $menu_data.astrology_category == 5}-->
+<!--{include file="file:./result_item3.html"}-->
+<div class="ow_result_body">
+	<div class="ow_result_body_text">
+		<div class="ow_conductor_caption_text">
+			ご利用には<!--{$pickup.contents_data.price_taxin|number_format}--><!--{$smarty.const.PRICE_UNIT}-->が必要です。<br />
+			占う前に内容のご確認をお願いします。<br />
+			ご購入いただくと、サービス・コンテンツの利用料金が発生します。
+		</div>
+	</div>
+</div>
+<!--{/if}-->
+<!--{/foreach}-->
+		</div>
+		<div class="ow_result_item_wrap_btm ow_tac">
+			<img class="ow_vat" src="img/smp/result/result_item_wrap_btm.png" alt=""/>
+		</div>
+	</div>
+
+	<div class="ow_common_menu">
+		<div class="ow_common_menu_top ow_tac">
+			<img class="ow_vab" src="img/smp/common/common_menu_top.png" alt="" title="" />
+		</div>
+		<div class="ow_common_menu_mid">
+			<div class="ow_menu_head">
+				<div class="ow_menu_icon">
+					<div class="ow_menu_category"><img src="img/smp/category/<!--{$pickup.contents_data.category}-->.png"alt="<!--{$category_data[$pickup.contents_data.category].name}-->　<!--{if $pickup.contents_data.target_count == 2}-->二<!--{else}-->一<!--{/if}-->人用" title="<!--{$category_data[$pickup.contents_data.category].name}-->　<!--{if $pickup.contents_data.target_count == 2}-->二<!--{else}-->一<!--{/if}-->人用"/></div>
+				</div>
+				<div class="ow_menu_title">
+					<!--{$pickup.contents_data.name}-->
+				</div>
+			</div>
+		</div>
+		<div class="ow_common_menu_btm ow_tac">
+			<img class="ow_vat" src="img/smp/common/common_menu_btm.png" alt="">
+		</div>
+	</div>
+	<!-- /.ow_common_menu -->
+
+
+	<div class="ow_sub_menu">
+		<div class="ow_sub_menu_top ow_tac">
+			<img class="ow_vab" src="img/smp/entry/sub_menu_top.png" alt="以下の項目を鑑定します" title="以下の項目を鑑定します">
+		</div>
+		<div class="ow_sub_menu_mid">
+			<div class="ow_sub_menu_list">
+	<!--{if $contents_data.target_count == 1}-->
+				<div class="ow_sub_menu_item ow_sub_menu_item_2 ow_dot_2">
+					クラック水晶で視る～あなたがもつ気質と特性
+				</div>
+				<div class="ow_sub_menu_item ow_sub_menu_item_2 ow_dot_2">
+					あなたがこの人生で生きていくために
+				</div>
+	<!--{else}-->
+				<div class="ow_sub_menu_item ow_sub_menu_item_2 ow_dot_2">
+					クラック水晶で視る～あの人がもつ気質と特性
+				</div>
+				<div class="ow_sub_menu_item ow_sub_menu_item_2 ow_dot_2">
+					あの人が歩んでいく人生の道筋
+				</div>
+	<!--{/if}-->
+<!--{foreach name=menu_data_loop item=pickup_menu key=key from=$pickup.menu_list}-->
+		<!--{if !$smarty.foreach.menu_data_loop.last}-->
+			<!--{if $pickup_menu.astrology_category == 5}-->
+				<div class="ow_sub_menu_item ow_sub_menu_item_3 ow_dot_3">
+					<!--{$pickup_menu.name}-->
+				</div>
+			<!--{elseif $pickup_menu.astrology_category >= 2}-->
+				<div class="ow_sub_menu_item ow_sub_menu_item_3 ow_dot_3">
+					<!--{$pickup_menu.name}-->
+				</div>
+			<!--{else}-->
+				<div class="ow_sub_menu_item ow_sub_menu_item ow_dot_base">
+					<!--{$pickup_menu.name}-->
+				</div>
+			<!--{/if}-->
+		<!--{else}-->
+					<div class="ow_sub_menu_item ow_sub_menu_item_2 ow_dot_2">
+						<!--{$pickup_menu.name}-->
+					</div>
+		<!--{/if}-->
+<!--{/foreach}-->
+
+			</div>
+		</div>
+		<!-- ow_sub_menu_mid -->
+		<div class="ow_sub_menu_btm ow_tac">
+			<img class="ow_vat" src="img/smp/entry/sub_menu_btm.png" alt="">
+		</div>
+	</div>
+	<!-- /.ow_sub_menu -->
+	<!-- /.ow_sub_menu_list -->
+	<div class="ow_conductor_caption">
+		<div class="ow_conductor_btn">
+			<a href="javascript:nc_submit('astrology_form<!--{$pickup_num}-->')" class="ow_nc_btn ow_nc_btn_default"><img src="img/smp/nc/btn_submit_2.png"></a>
+		</div>
+		<div class="ow_conductor_caption_text ow_conductor_caption_text_border">
+<!--{if $contents_data.price_taxin == 1}-->
+			<span class="ow_conductor_caption_text_strong">
+			ご利用には
+			<div class="ow_yellow ow_nif">
+				プレミアム価格　<!--{$pickup.contents_data.price_off10|number_format}--><!--{$smarty.const.PRICE_UNIT}-->
+			</div>
+				<span class="ow_nif">通常価格　</span><!--{$pickup.contents_data.price_taxin|number_format}--><!--{$smarty.const.PRICE_UNIT}-->
+			が必要です
+			</span>
+<!--{elseif !empty($pickup.base_contents_data)}-->
+			<span class="ow_conductor_caption_text_strong">このメニューは通常<!--{$pickup.base_contents_data.price_taxin|number_format}--><!--{$smarty.const.PRICE_UNIT}-->のところを<br>
+			<span class="ow_yellow"><!--{$pickup.contents_data.price_taxin|number_format}--><!--{$smarty.const.PRICE_UNIT}-->でご利用できます。</span></span><br>
+<!--{else}-->
+			<span class="ow_conductor_caption_text_strong">このメニューは<!--{$pickup.contents_data.price_taxin|number_format}--><!--{$smarty.const.PRICE_UNIT}-->でご利用できます。</span><br>
+<!--{/if}-->
+			占う前に内容のご確認をお願いします。<br>
+			ご購入いただくと、サービス・コンテンツの利用料金が発生します。
+		</div>
+	</div>
+	<form id="astrology_form<!--{$pickup_num}-->" method="POST" action="<!--{$smarty.const.API_DOMAIN}-->web/?menu=<!--{$pickup.contents_data.id}-->">
+		<input type="hidden" name="qid" value="<!--{$pickup.qid}-->">
+		<input type="hidden" name="nc" value="0">
+	</form>
+	<!-- /.ow_sub_menu_caption -->
+</div>
+<!-- /.ow_conductor -->

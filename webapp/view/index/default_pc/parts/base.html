@@ -1,0 +1,84 @@
+<!-- ▽▽▽結果 基本性格▽▽▽ -->
+<!-- BASE -->
+<div class="ow_base">
+<!--{if $contents_data.target_count == 1}-->
+	<div class="ow_base_main ow_tac">
+		<div class="ow_base_main_bg">
+			<img src="img/pc/result/base/main_bg.png" alt="">
+		</div>
+		<div class="ow_base_item ow_base_name_my">
+			<!--{$base_data.entry_data.yy1}-->年<!--{$base_data.entry_data.mm1}-->月<!--{$base_data.entry_data.dd1}-->日生　<!--{$base_data.name1}-->　<!--{if $base_data.entry_data.sex1 == 1}-->男性<!--{else}-->女性<!--{/if}-->
+		</div>
+		<div class="ow_base_item ow_parallel_world_bg">
+			<img src="img/pc/result/base/parallel_world_bg.png" alt="">
+		</div>
+		<!-- 左側 -->
+		<div class="ow_base_item ow_parallel_world_1">
+			<img src="img/pc/result/base/parallel_world_1.png" alt="並行世界のあなた" title="並行世界のあなた">
+		</div>
+		<div class="ow_base_item ow_parallel_world_human_1">
+			<img src="img/pc/result/base/parallel_world_human_1_<!--{$base_data.entry_data.sex1}-->.png" alt="">
+		</div>
+		<div class="ow_base_item ow_parallel_world_1_type">
+			<img src="img/pc/result/base/parallel_world_1_type.png" alt="">
+		</div>
+		<div class="ow_base_item ow_parallel_world_1_seikaku">
+			<!--{$base_data.base_list.base_pattern_mean_1}-->
+		</div>
+
+		<!-- 中央 -->
+		<div class="ow_base_item ow_this_world">
+			<img src="img/pc/result/base/this_world.png" alt="この世界のあなた" title="この世界のあなた">
+		</div>
+		<div class="ow_base_item ow_this_world_human">
+			<img src="img/pc/result/base/this_world_human_1_<!--{$base_data.entry_data.sex1}-->.png" alt="">
+		</div>
+		<div class="ow_base_item ow_this_world_type">
+			<img src="img/pc/result/base/this_world_type.png" alt="">
+		</div>
+		<div class="ow_base_item ow_this_world_seikaku">
+			<!--{$base_data.base_list.base_pattern_mean_2}-->
+		</div>
+
+		<!-- 右側 -->
+		<div class="ow_base_item ow_parallel_world_2">
+			<img src="img/pc/result/base/parallel_world_2.png" alt="並行世界のあなた" title="並行世界のあなた">
+		</div>
+		<div class="ow_base_item ow_parallel_world_human_2">
+			<img src="img/pc/result/base/parallel_world_human_2_<!--{$base_data.entry_data.sex1}-->.png" alt="">
+		</div>
+		<div class="ow_base_item ow_parallel_world_2_type">
+			<img src="img/pc/result/base/parallel_world_2_type.png" alt="">
+		</div>
+		<div class="ow_base_item ow_parallel_world_2_seikaku">
+			<!--{$base_data.base_list.base_pattern_mean_3}-->
+		</div>
+
+	</div>
+	<!-- /.ow_base_main -->
+<!--{else}-->
+	<div class="ow_base_main ow_tac">
+		<div class="ow_base_main_bg">
+			<img src="img/pc/result/base/main_bg.png" alt="">
+		</div>
+		<div class="ow_base_item ow_base_name_my">
+			<!--{$base_data.entry_data.yy1}-->年<!--{$base_data.entry_data.mm1}-->月<!--{$base_data.entry_data.dd1}-->日生　<!--{$base_data.name1}-->　<!--{if $base_data.entry_data.sex1 == 1}-->男性<!--{else}-->女性<!--{/if}-->
+		</div>
+		<div class="ow_base_item ow_base_name_target">
+			<!--{$base_data.entry_data.yy2}-->年<!--{$base_data.entry_data.mm2}-->月<!--{$base_data.entry_data.dd2}-->日生　<!--{$base_data.name2}-->　<!--{if $base_data.entry_data.sex1 == 2}-->男性<!--{else}-->女性<!--{/if}-->
+		</div>
+		<div class="ow_base_item ow_kankei_view_0">
+			<img src="img/pc/result/base/kankei/view_0.png" alt="">
+		</div>
+		<div class="ow_base_item ow_kankei_view">
+			<img src="img/pc/result/base/kankei/view_<!--{$base_data.base_list.base_pattern_num}-->.png" alt="">
+		</div>
+		<div class="ow_base_item ow_kankei_title">
+			<img src="img/pc/result/base/kankei/title_<!--{$base_data.base_list.base_pattern_num}-->.png" alt="<!--{$base_data.base_list.base_pattern_mean}-->">
+		</div>
+	</div>
+	<!-- /.ow_base_main -->
+<!--{/if}-->
+
+</div>
+<!-- /.ow_base -->

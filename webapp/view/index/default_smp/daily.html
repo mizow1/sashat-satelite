@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="ja" lang="ja" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<base href="<!--{$smarty.const.ISP_BASE_URL}-->web/">
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<meta name="viewport" content="width=device-width" />
+	<title><!--{if ISP == nifty}-->@nifty:<!--{/if}-->今日の運勢◇当たる無料占い12星座ランキング｜<!--{$smarty.const.CONTENTS_NAME}--></title>
+	<link rel="stylesheet" href="css/smp/sp.css" type="text/css" />
+	<link rel="stylesheet" href="css/font-awesome.css?ver4.5" type="text/css" />
+	<script type="text/javascript" src="js/jquery1.8.js"></script>
+	<script type="text/javascript" src="js/default_form_ie.js"></script>
+	<script type="text/javascript" src="js/sashat/consultation_form.js"></script>
+	<script type="text/javascript" src="js/date.js"></script>
+	<script src="js/jquery.tile.js" type="text/javascript"></script>
+	<script type="text/javascript" src="js/smp/profile.js"></script>
+	<script type="text/javascript" src="js/smp/pagetop.js"></script>
+	<script type="text/javascript" src="js/rakuten_logo.js"></script>
+	<meta name="description" content="１日を最高のスタートにするための～12星座による今日の運勢ランキング【無料で毎日更新中】恋愛、仕事、勉強、人間関係など、様々な運勢のラッキーポイントをあなたにお届けします。その運勢に合わせたラッキーランチやラッキー方角、ラッキーファッションなどユニークな角度での開運方法も公開しています！毎日の生活にポジティブな刺激を与え、自分自身をさらに理解し、成長していくためのヒントを得られるはずです。">
+	<!--{include file="file:./parts/ga.html"}-->
+</head>
+<body class="ow_body">
+
+<!--{include file="file:../../../../../common/header_isp.html"}-->
+<!--{include file="file:./parts/header_menu.html"}-->
+
+	<div class="ow_main">
+
+		<div class="block block_fortune_ranking" id="fortune_rank_part">
+			<div class="fortune_rank_head">
+				<h2 class="fortune_rank_head_catch">
+					<div class="fortune_rank_head_title">今日の運勢</div>
+					<div class="fortune_rank_head_icon"><img src="//static-n.goodfortune.jp/files/img/horoscope/rank_icon_tomorrow.svg" alt="今日の運勢12星座ランキング"></div>
+					<div class="fortune_rank_head_title">ランキング</div>
+				</h2>
+				<div class="fortune_rank_head_lead"><!--{$smarty.now|date_format:'%Y'}-->年<!--{$smarty.now|date_format:'%m'}-->月<!--{$smarty.now|date_format:'%d'}-->日はどうなる？</div>
+			</div>
+			<ul class="tab">
+				<li class="tab_btn active"><a href="">総合運</a></li>
+				<li class="tab_btn tab_renaiun"><a href="https://www.goodfortune.jp/fortune/today/renai#fortune_rank_part">恋愛運</a></li>
+				<li class="tab_btn tab_kinun"><a href="https://www.goodfortune.jp/fortune/today/kinun#fortune_rank_part">金運</a></li>
+				<li class="tab_btn tab_shigotoun"><a href="https://www.goodfortune.jp/fortune/today/sigoto#fortune_rank_part">仕事運</a></li>
+				<li class="tab_btn tab_taijinun"><a href="https://www.goodfortune.jp/fortune/today/taijin#fortune_rank_part">対人運</a></li>
+
+			</ul>
+			<div class="wrapper tab_panel_wrap">
+				<div class="tab_panel tab_panel_show">
+					<ul class="holoscope_rank">
+						<!--{foreach $api_data as $data }-->
+						<!--{* var_dump($data) *}-->
+						<!--{if $data.ranking <= 3}-->
+						<li class="holoscope_rank_item">
+							<a href="<!--{$smarty.const.ISP_BASE_URL}-->web/daily_detail?tgt=<!--{$data.seiza_e_name}-->">
+								<div class="holoscope_rank_head">
+									<div class="holoscope_rank_thm">
+										<img src="//static-n.goodfortune.jp/files/img/horoscope/icon/<!--{$data.seiza_e_name}-->.png" alt="<!--{$data.seiza_name}-->座（<!--{$data.seiza_kana}-->座）の今日の運勢">
+									</div>
+									<div class="holoscope_rank_contents">
+										<div class="holoscope_rank_info">
+											<h3 class="holoscope_rank_name"><!--{$data.seiza_name}-->座</h3>
+											<div class="holoscope_rank_date"><!--{$data.seiza_period}--></div>
+										</div>
+										<ul class="holoscope_rank_lucky">
+											<li>ラッキーナンバー ｜ <!--{"または"|implode:$data.lucky_number}--></li>
+											<li>ラッキーカラー<br><span style="color: <!--{$data.color_code}-->">●</span> <!--{$data.color_name}--></li>
+										</ul>
+									</div>
+								</div>
+								<div class="holoscope_rank_foot">
+									<div class="holoscope_rank_text">
+									<!--{$data.sougou_body}--><br>
+									<span class="more"><!--{$data.seiza_name}-->座の今日の運勢の詳細を見る</span>
+									</div>
+								</div>
+							</a>
+						</li><!-- /.holoscope_rank_item -->
+						<!--{else}-->
+						<li class="holoscope_rank_item">
+							<a href="<!--{$smarty.const.ISP_BASE_URL}-->web/daily_detail?tgt=<!--{$data.seiza_e_name}-->">
+								<div class="holoscope_rank_head">
+									<div class="holoscope_rank_thm">
+										<img src="//static-n.goodfortune.jp/files/img/horoscope/icon/<!--{$data.seiza_e_name}-->.png" alt="<!--{$data.seiza_name}-->座（<!--{$data.seiza_kana}-->座）の今日の運勢">
+									</div>
+									<div class="holoscope_rank_contents">
+										<div class="holoscope_rank_info">
+											<h3 class="holoscope_rank_name"><!--{$data.seiza_name}-->座</h3>
+											<div class="holoscope_rank_date"><!--{$data.seiza_period}--></div>
+										</div>
+										<div class="holoscope_rank_text">
+										<!--{$data.sougou_body}--><br>
+										<span class="more"><!--{$data.seiza_name}-->座の今日の運勢の詳細を見る</span>
+										</div>
+										<ul class="holoscope_rank_lucky">
+											<li>ラッキーカラー <span style="color: <!--{$data.color_code}-->">●</span> <!--{$data.color_name}--></li>
+										</ul>
+									</div>
+								</div>
+							</a>
+						</li><!-- /.holoscope_rank_item -->
+						<!--{/if}-->
+						<!--{/foreach}-->
+
+					</ul>
+				</div>
+				<ul class="link_button_wrap">
+					<li class="link_button link_button_01"><a href="//www.goodfortune.jp/fortune/tomorrow">明日の運勢</a></li>
+					<li class="link_button link_button_01"><a href="//www.goodfortune.jp/fortune/week">今週の運勢</a></li>
+				</ul>
+
+			</div>
+			<!-- /.wrapper -->
+		</div>
+		<!-- /.block -->
+
+
+	</div>
+	<!-- /.ow_main -->
+
+<!--{include file="file:./parts/footer_menu.html"}-->
+
+</body>
+</html>

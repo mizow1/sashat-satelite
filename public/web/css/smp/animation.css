@@ -1,0 +1,367 @@
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/*welcome*/
+.ow_balloon_menu {
+  opacity: 0;
+  transform: scale(0)
+}
+
+.ow_balloon_menu_anime {
+  animation: 1s ease-out 1 ow_balloon_menu_anime forwards;
+}
+
+@keyframes ow_balloon_menu_anime {
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/*base*/
+/*一人用*/
+.ow_parallel_world_bg,
+.ow_this_world_human,
+.ow_this_world,
+.ow_this_world_type,
+.ow_this_world_seikaku,
+.ow_parallel_world_1,
+.ow_parallel_world_1_type,
+.ow_parallel_world_1_seikaku,
+.ow_parallel_world_2,
+.ow_parallel_world_2_type,
+.ow_parallel_world_2_seikaku {
+  opacity: 0;
+}
+
+.ow_parallel_world_human_1 {
+  left: -10%;
+  transform: scale(0);
+}
+
+.ow_parallel_world_human_2 {
+  right: -10%;
+  transform: scale(0);
+}
+
+.ow_parallel_world_bg_anime {
+  animation: 1s ease-out 1 fadein forwards;
+}
+
+.ow_this_world_anime {
+  animation: 1s ease-out 1 fadein 1s forwards;
+}
+
+.ow_this_world_human_anime {
+  animation: 1s ease-out 1 fadein 2s forwards;
+}
+
+.ow_this_world_type_anime {
+  animation: 0.5s ease-out 1 fadein 3s forwards;
+}
+
+.ow_parallel_world_human_1_anime {
+  animation: 0.5s ease-out 1 left-in 4s forwards;
+}
+
+.ow_parallel_world_1_type_anime {
+  animation: 0.5s ease-out 1 fadein 5s forwards;
+}
+
+.ow_parallel_world_human_2_anime {
+  animation: 0.5s ease-out 1 right-in 6s forwards;
+}
+
+.ow_parallel_world_2_type_anime {
+  animation: 0.5s ease-out 1 fadein 7s forwards;
+}
+
+@keyframes left-in {
+  100% {
+    left: 1%;
+    transform: scale(1);
+  }
+}
+
+@keyframes right-in {
+  100% {
+    right: 0%;
+    transform: scale(1);
+  }
+}
+/*二人用*/
+.ow_kankei_view_0 {
+  width: 94%;
+  top: 14%;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.ow_kankei_view_0,
+.ow_kankei_view,
+.ow_kankei_title {
+  opacity: 0;
+}
+
+.ow_kankei_title {
+  transform: translateY(-10%);
+}
+
+.ow_kankei_view_0_amime {
+  animation: 1.5s ease-out 1 fadein forwards;
+}
+
+.ow_kankei_view_anime {
+  animation: 1.5s ease-out 1 fadein 0.5s forwards;
+}
+
+.ow_kankei_title_anime {
+  animation: 1.5s ease-out 1 ow_kankei_title_anime 2s forwards;
+}
+
+@keyframes ow_kankei_title_anime {
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+/*ow_result_item_wrap*/
+.ow_result_intro_img {
+  opacity: 0;
+  transform: translateX(-10%);
+}
+
+.ow_result_intro_img_anime {
+  animation: 1s ease-out 1 ow_result_intro_img_anime forwards;
+}
+
+@keyframes ow_result_intro_img_anime {
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+/*霊視*/
+.ow_parallel_view_1,
+.ow_parallel_teller_1,
+.ow_parallel_teller_2,
+.ow_parallel_light,
+.ow_parallel_teller_3,
+.ow_parallel_view_2,
+.ow_parallel_teller_4,
+.ow_parallel_idea_1,
+.ow_parallel_idea_2,
+.ow_parallel_idea_3 {
+  opacity: 0;
+  transition: all 0.8;
+}
+
+.ow_parallel_view_1_anime {
+  animation: 1s ease-out 1 fadein forwards;
+}
+
+.ow_parallel_teller_1_anime {
+  animation: 1s ease-out 1 fadein 1s forwards;
+}
+
+.ow_parallel_teller_2_anime {
+  animation: 0.5s ease-out 1 fadein 2s forwards;
+}
+
+.ow_parallel_light_anime {
+  animation: 1.6s ease-out 1 ow_parallel_light_anime 3s forwards;
+}
+@keyframes ow_parallel_light_anime {
+  0% {
+    opacity: 0;
+    transform: rotate(180deg) scale(0);
+  }
+
+  80% {
+    opacity: 1;
+    transform: rotate(0deg) scale(1.1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}
+.ow_parallel_teller_1_anime_2,
+.ow_parallel_teller_2_anime_2,
+.ow_parallel_light_anime_2 {
+  animation: 0.5s ease-out 1 fadeout forwards;
+}
+
+.ow_parallel_teller_3_anime {
+  animation: 1s ease-out 1 fadein 5s forwards;
+}
+
+.ow_parallel_teller_3_anime_2 {
+  animation: 2s ease-out 1 scaleout forwards;
+}
+
+.ow_parallel_view_1_anime_2 {
+  animation: 2s ease-out 1 scaleout forwards;
+}
+
+@keyframes scaleout {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.ow_parallel_view_2,
+.ow_parallel_teller_4 {
+  transform: scale(1.5);
+}
+
+.ow_parallel_view_2_anime,
+.ow_parallel_teller_4_anime {
+  animation: 1s ease-out 1 scalein 7.5s forwards;
+}
+
+
+@keyframes scalein {
+  0% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.ow_parallel_idea_1_anime {
+  animation: 1s ease-out 1 fadein 9s forwards;
+}
+
+.ow_parallel_idea_2_anime {
+  animation: 1s ease-out 1 fadein 9.5s forwards;
+}
+
+.ow_parallel_idea_3_anime {
+  animation: 1s ease-out 1 fadein 10s forwards;
+}
+
+.ow_parallel_idea_1_anime_2 {
+  animation: 3s linear infinite ow_parallel_idea_1_anime_2;
+  opacity: 1;
+}
+
+@keyframes ow_parallel_idea_1_anime_2 {
+  0% {
+    top: 3%;
+  }
+
+  25% {
+    top: 2%;
+  }
+
+  75% {
+    top: 4%;
+  }
+
+  100% {
+    top: 3%;
+  }
+}
+
+.ow_parallel_idea_2_anime_2 {
+  animation: 5s linear infinite ow_parallel_idea_2_anime_2;
+  opacity: 1;
+}
+
+@keyframes ow_parallel_idea_2_anime_2 {
+  0% {
+    top: 30%;
+  }
+
+  25% {
+    top: 28%;
+  }
+
+  75% {
+    top: 31%;
+  }
+
+  100% {
+    top: 30%;
+  }
+}
+
+.ow_parallel_idea_3_anime_2 {
+  animation: 7s linear infinite ow_parallel_idea_3_anime_2;
+  opacity: 1;
+}
+
+@keyframes ow_parallel_idea_3_anime_2 {
+  0% {
+    top: 40%;
+  }
+
+  25% {
+    top: 39%;
+  }
+
+  75% {
+    top: 42%;
+  }
+
+  100% {
+    top: 40%;
+  }
+}
+
+.ow_calendar_day {
+  opacity: 0;
+  transform: translateY(-10%);
+}
+
+.ow_calendar_day_anime {
+  animation: 1s ease-out 1 ow_calendar_day_anime forwards;
+}
+
+@keyframes ow_calendar_day_anime {
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+/*ow_result_item_wrap*/
+.ow_message_teller {
+  opacity: 0;
+}
+
+.ow_message_teller_anime {
+  animation: 1s ease-out 1 fadein forwards;
+}

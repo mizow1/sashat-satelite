@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+<status><!--{$status}--></status>
+<openId><!--{$openid}--></openId>
+<cartId><!--{$cart_id}--></cartId>
+<itemsInfo>
+	<item>
+		<itemSettlementResult><!--{$item_settlement}--></itemSettlementResult>
+<!--{if !$item_settlement}-->
+		<itemCancelMessage><!--{$cancel_message}--></itemCancelMessage>
+		<itemCancelUrl><!--{$cancel_url}--></itemCancelMessage>
+<!--{/if}-->
+		<itemId><!--{$item_id}--></itemId>
+	</item>
+</itemsInfo>
+</root>

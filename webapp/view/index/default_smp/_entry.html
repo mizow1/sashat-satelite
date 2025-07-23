@@ -1,0 +1,438 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="ja" lang="ja" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<meta name="viewport" content="width=device-width" />
+	<title><!--{if ISP == nifty}-->@nifty:<!--{/if}--><!--{$smarty.const.CONTENTS_NAME}-->：<!--{$contents_data.name_rakuten|default:$contents_data.name}--></title>
+	<link rel="stylesheet" href="css/smp/sp.css" type="text/css" />
+	<script type="text/javascript" src="js/jquery1.8.js"></script>
+	<script type="text/javascript" src="js/date.js"></script>
+	<script type="text/javascript" src="js/default_form_ie.js"></script>
+	<script type="text/javascript" src="js/sashat/consultation_form.js"></script>
+	<script type="text/javascript" src="js/sex_auto_change.js"></script>
+	<script type="text/javascript" src="js/smp/entry.js"></script>
+	<script type="text/javascript" src="js/smp/pagetop.js"></script>
+	<!--{include file="file:./parts/ga.html"}-->
+	<script type="text/javascript" src="js/rakuten_logo.js"></script>
+	<script type="text/javascript">
+		$(window).on('load', function() {
+				loadCookie(<!--{$contents_data.target_count}-->);
+		});
+	</script>
+</head>
+<body class="ow_body">
+
+<!--{include file="file:../../../../../common/header_isp.html"}-->
+<!--{include file="file:./parts/header_menu.html"}-->
+
+	<div class="ow_main">
+
+		<div class="ow_bread">
+			<a href="<!--{$smarty.const.CONTENTS_URL}-->">TOP</a> &gt;
+			入力ページ
+		</div>
+		<div class="ow_common_menu">
+			<div class="ow_common_menu_top ow_tac">
+				<img class="ow_vab" src="img/smp/common/common_menu_top.png" alt="">
+			</div>
+			<div class="ow_common_menu_mid">
+				<div class="ow_menu_head">
+					<div class="ow_menu_icon">
+						<div class="ow_menu_category">
+							<img src="img/smp/category/<!--{$contents_data.category}-->.png" alt="<!--{$category_data[$contents_data.category].name}-->　<!--{if $contents_data.target_count == 2}-->二<!--{else}-->一<!--{/if}-->人用" title="<!--{$category_data[$contents_data.category].name}-->　<!--{if $contents_data.target_count == 2}-->二<!--{else}-->一<!--{/if}-->人用" />
+						</div>
+					</div>
+					<div class="ow_menu_title">
+						<!--{$contents_data.name_rakuten|default:$contents_data.name}-->
+					</div>
+				</div>
+			</div>
+			<div class="ow_common_menu_btm ow_tac">
+				<img class="ow_vat" src="img/smp/common/common_menu_btm.png" alt="">
+			</div>
+		</div>
+		<!-- /.ow_common_menu -->
+
+		<div class="ow_entry">
+			<div class="ow_entry_btn">
+				<a href="#my_form"><img src="img/smp/entry/entry_btn.png" alt="鑑定を始める" title="鑑定を始める"></a>
+			</div>
+
+			<div class="ow_rec_intro ow_tac">
+				<div class="ow_rec_top">
+					<img class="ow_vab" src="img/smp/top/rec_top.jpg" alt="" title="" />
+				</div>
+				<div class="ow_rec_intro_item ow_rec_intro_title_1">
+					<img src="img/smp/top/rec_intro_title_1.png" alt="ただ悩みを解決するだけじゃない!!" title="ただ悩みを解決するだけじゃない!!" />
+				</div>
+				<div class="ow_rec_intro_item ow_rec_intro_title_2">
+					<img src="img/smp/top/rec_intro_title_2.png" alt="ここまで“わかる”！" title="ここまで“わかる”！" />
+				</div>
+
+				<div class="ow_rec_intro_item ow_eikyou_image">
+					<img src="img/smp/top/rec_eikyou_image.png" alt="" title="" />
+				</div>
+				<div class="ow_rec_intro_item ow_eikyou_text">
+					<img src="img/smp/top/rec_eikyou_text.png" alt="並行世界を通して視たこの世界のあなたにも影響する、　「あなたの本来の姿」「あなたとあの人ふたりの関係」" title="並行世界を通して視たこの世界のあなたにも影響する、　「あなたの本来の姿」「あなたとあの人ふたりの関係」" />
+				</div>
+
+				<div class="ow_rec_intro_item ow_himotoku_image">
+					<img src="img/smp/top/rec_himotoku_image.png" alt="" title="" />
+				</div>
+				<div class="ow_rec_intro_item ow_himotoku_text">
+					<img src="img/smp/top/rec_himotoku_text.png" alt="並行世界のあなたはどんな姿？そこから紐解く　「現状の原因」「今後起こりうる転機・変化」" title="並行世界のあなたはどんな姿？そこから紐解く　「現状の原因」「今後起こりうる転機・変化」" />
+				</div>
+
+				<div class="ow_rec_intro_item ow_bunki_image">
+					<img src="img/smp/top/rec_bunki_image.png" alt="" title="" />
+				</div>
+				<div class="ow_rec_intro_item ow_bunki_text">
+					<img src="img/smp/top/rec_bunki_text.png" alt="見逃したくない「運命の分岐点」　“タラレバ”な後悔をもうしない為にできること" title="見逃したくない「運命の分岐点」　“タラレバ”な後悔をもうしない為にできること" />
+				</div>
+
+			</div>
+			<!-- /.ow_rec_intro -->
+
+			<div class="ow_sub_menu ow_sub_menu_entry">
+				<div class="ow_sub_menu_top ow_tac">
+					<img class="ow_vab" src="img/smp/entry/sub_menu_top.png" alt="以下の項目を鑑定します" title="以下の項目を鑑定します">
+				</div>
+				<div class="ow_sub_menu_mid">
+					<div class="ow_sub_menu_list">
+<!--{foreach name=pack_contents_list key=key item=val from=$pack_contents_list}-->
+	<!--{foreach name=menu_data_loop key=key2 item=val2 from=$menu_data.$key}-->
+		<!--{if $contents_data.price_notax == 1}-->
+						<div class="ow_sub_menu_item ow_sub_menu_item ow_dot_base">
+							<!--{$val2.name}-->
+						</div>
+		<!--{elseif !$smarty.foreach.menu_data_loop.last}-->
+			<!--{if $val2.astrology_category == 3}-->
+						<div class="ow_sub_menu_item ow_sub_menu_item_3 ow_dot_3">
+							<!--{$val2.name}-->
+						</div>
+			<!--{elseif $val2.astrology_category >= 5}-->
+						<div class="ow_sub_menu_item ow_sub_menu_item_3 ow_dot_3">
+							<!--{$val2.name}-->
+						</div>
+			<!--{elseif $val2.astrology_category >= 2}-->
+						<div class="ow_sub_menu_item ow_sub_menu_item_3 ow_dot_3">
+							<!--{$val2.name}-->
+						</div>
+			<!--{elseif $val2.astrology_category >= 4}-->
+						<div class="ow_sub_menu_item ow_sub_menu_item_3 ow_dot_3">
+							<!--{$val2.name}-->
+						</div>
+			<!--{else}-->
+						<div class="ow_sub_menu_item ow_sub_menu_item ow_dot_base">
+							<!--{$val2.name}-->
+						</div>
+			<!--{/if}-->
+		<!--{else}-->
+						<div class="ow_sub_menu_item ow_sub_menu_item_2 ow_dot_2">
+							<!--{$val2.name}-->
+						</div>
+		<!--{/if}-->
+	<!--{/foreach}-->
+<!--{/foreach}-->
+	<!--{if $contents_data.picup_contents_id_1 > 500}-->
+	<div class="ow_waribiki">
+										こちらを購入頂くと、<span class="ow_yellow">通常メニューを
+										割引価格で2つご紹介</span>致します。<br>
+										お好きな方を選んでご利用いただけます。
+	</div>
+	<!--{/if}-->
+
+					</div>
+					<!-- /.ow_sub_menu_list -->
+				</div>
+				<!-- /.ow_sub_menu_mid -->
+				<div class="ow_sub_menu_btm ow_tac">
+					<img class="ow_vat" src="img/smp/entry/sub_menu_btm.png" alt="">
+				</div>
+			</div>
+			<!-- /.ow_sub_menu -->
+
+			<div class="ow_entry_form">
+				<form id="astrology_form" name="astrology_form" method="post" action="">
+				<input type="hidden" name="nc" id="nc_flag" value="<!--{$contents_data.nc_flag}-->">
+				<input type="hidden" name="menu_id" value="<!--{$contents_data.id}-->">
+				<input type="hidden" name="nif_menukey" value="niu_<!--{$contents_data.id}-->">
+				<input type="text" style="display:none;">
+					<div class="ow_my_form" id="my_form">
+						<div class="ow_my_form_top ow_tac">
+							<img class="ow_vab" src="img/smp/entry/my_form_top.png" alt="あなたのことを教えてください" title="あなたのことを教えてください">
+						</div>
+						<div class="ow_my_form_mid">
+							<div class="ow_form_body">
+								<div class="ow_entry_form_item">
+									<div class="ow_entry_form_label ow_entry_form_label_name">
+										お 名 前
+									</div>
+									<div class="ow_entry_form_input_wrap">
+										<input class="ow_entry_form_input" type="text" name="name1" id="name1" value="">
+										<div class="ow_entry_form_caution">
+											※お名前は、姓名あわせて全角10文字まで入力できます。<br />
+											※一部入力できない文字があります。
+										</div>
+									</div>
+								</div><!-- /.ow_entry_form_item -->
+
+								<div class="ow_entry_form_item">
+									<div class="ow_entry_form_label">
+										生年月日<span>(必須)</span>
+									</div>
+
+									<!-- ▽▽▽PC用 生年月日入力▽▽▽ -->
+									<div class="ow_entry_form_select_wrap ow_pc_block">
+
+										<div class="ow_select ow_select_year">
+
+											<select class="ow_entry_form_select" onchange="setDay(this.form.yy1,this.form.mm1,this.form.dd1);" id="yy1" name="yy1">
+	<!--{section name=year start=1925 loop=2018 step=1}-->
+	<!--{if $smarty.section.year.index eq 1985}-->
+												<option value="-1" selected>----</option>
+	<!--{/if}-->
+												<option value="<!--{$smarty.section.year.index}-->"><!--{$smarty.section.year.index}-->年</option>
+	<!--{/section}-->
+											</select>
+										</div>
+										<!-- /.ow_select -->
+										<div class="ow_select ow_select_month">
+											<select class="ow_entry_form_select ow_entry_form_select_month" onchange="setDay(this.form.yy1,this.form.mm1,this.form.dd1);" id="mm1" name="mm1">
+												<option value="-1">--</option>
+												<!--{section name=mon start=1 loop=13 step=1}-->
+												<option value="<!--{$smarty.section.mon.index|string_format:"%02d"}-->"><!--{$smarty.section.mon.index}-->月</option>
+											<!--{/section}-->
+											</select>
+										</div>
+										<!-- /.ow_select -->
+										<div class="ow_select ow_select_day">
+											<select class="ow_entry_form_select ow_entry_form_select_day" id="dd1" name="dd1">
+												<option value="-1">--</option>
+												<!--{section name=day start=1 loop=32 step=1}-->
+												<option value="<!--{$smarty.section.day.index|string_format:"%02d"}-->"><!--{$smarty.section.day.index}-->日</option>
+												<!--{/section}-->
+											</select>
+										</div>
+										<!-- /.ow_select -->
+
+									</div>
+									<!-- /.ow_entry_form_select_wrap -->
+
+								</div>
+								<!-- /.ow_entry_form_item -->
+
+
+								<div class="ow_entry_form_item">
+									<div class="ow_entry_form_label">
+										性　　別<span class="ow_red_2">(必須)</span>
+									</div>
+	<!--{if $contents_data.sex_flag eq 2}-->
+									<div class="ow_entry_form_radio_wrap">
+										<div class="sex_caution">このメニューは女性限定です。</div>
+										<input type="radio" name="sex1" id="sex11" value="1" style="visibility:hidden">
+										<input type="radio" name="sex1" id="sex12" value="2" checked="checked" style="visibility:hidden">
+									</div>
+	<!--{else}-->
+										<div class="ow_entry_form_radio_wrap">
+											<label><input type="radio" name="sex1" id="sex12" value="2" checked="checked" class="js-sexAutoChange1"><span class="ow_radiotxt female">女性で占う</span></label><label><input type="radio" name="sex1" id="sex11" value="1"  class="js-sexAutoChange1"><span class="ow_radiotxt male">男性で占う</span></label>
+										</div>
+	<!--{/if}-->
+									</div><!-- /.ow_entry_form_item -->
+<!--{if $contents_data.target_count == 1}-->
+									<div class="ow_entry_form_save">
+										※今回入力した情報を記録しますか？　<br>
+										<label><input type="checkbox" style="margin-right: 3px; vertical-align:middle;" name="default_check" value="1" id="default_check">記録する</label>
+									</div>
+<!--{/if}-->
+								</div>
+<!--{if $contents_data.target_count == 1}-->
+								<div class="ow_form_btm ow_tac">
+									<img class="ow_vat" src="img/smp/entry/my_form_btm.png" alt="">
+								</div>
+<!--{/if}-->
+							</div>
+							<!-- /.ow_my_form_mid -->
+						</div>
+						<!-- /.ow_my_form -->
+	<!--{if $contents_data.target_count == 2}-->
+						<div class="ow_target_form">
+							<div class="ow_target_form_top ow_tac">
+								<img class="ow_vab" src="img/smp/entry/target_form_top.png" alt="あの人のことを教えてください" title="あの人のことを教えてください">
+							</div>
+							<div class="ow_entry_form_mid ow_target_form_mid">
+								<div class="ow_form_body">
+										<div class="ow_entry_form_item">
+											<div class="ow_entry_form_label ow_entry_form_label_name">
+												お 名 前
+											</div>
+											<div class="ow_entry_form_input_wrap">
+												<input class="ow_entry_form_input" type="text" name="name2" id="name2" value="">
+												<div class="ow_entry_form_caution">
+													※各5文字以内、特殊記号は使用できません。
+												</div>
+											</div>
+										</div><!-- /.ow_entry_form_item -->
+
+										<div class="ow_entry_form_item">
+											<div class="ow_entry_form_label">
+												生年月日<span>(必須)</span>
+											</div>
+
+											<!-- ▽▽▽PC用 生年月日入力▽▽▽ -->
+											<div class="ow_entry_form_select_wrap ow_pc_block">
+												<div class="ow_select ow_select_year">
+													<select class="ow_entry_form_select ow_entry_form_select_wide" onchange="setDay(this.form.yy2,this.form.mm1,this.form.dd1);" id="yy2" name="yy2">
+	<!--{section name=year start=1925 loop=2018 step=1}-->
+		<!--{if $smarty.section.year.index eq 1985}-->
+														<option value="-1" selected>----</option>
+		<!--{/if}-->
+														<option value="<!--{$smarty.section.year.index}-->"><!--{$smarty.section.year.index}-->年</option>
+	<!--{/section}-->
+													</select>
+												</div>
+												<!-- /.ow_select -->
+												<div class="ow_select ow_select_month">
+													<select class="ow_entry_form_select" onchange="setDay(this.form.yy2,this.form.mm1,this.form.dd1);" id="mm2" name="mm2">
+														<option value="-1">--</option>
+	<!--{section name=mon start=1 loop=13 step=1}-->
+														<option value="<!--{$smarty.section.mon.index|string_format:"%02d"}-->"><!--{$smarty.section.mon.index}-->月</option>
+	<!--{/section}-->
+													</select>
+												</div>
+												<!-- /.ow_select -->
+												<div class="ow_select ow_select_day">
+													<select class="ow_entry_form_select" id="dd2" name="dd2">
+														<option value="-1">--</option>
+	<!--{section name=day start=1 loop=32 step=1}-->
+														<option value="<!--{$smarty.section.day.index|string_format:"%02d"}-->"><!--{$smarty.section.day.index}-->日</option>
+	<!--{/section}-->
+													</select>
+												</div>
+												<!-- /.ow_select -->
+											</div>
+											<!-- /.ow_entry_form_select_wrap -->
+											<!-- △△△PC用 生年月日入力△△△ -->
+
+										</div><!-- /.ow_entry_form_item -->
+
+										<div class="ow_entry_form_item">
+											<div class="ow_entry_form_label">
+												性　　別<span class="ow_red_2">(必須)</span>
+											</div>
+	<!--{if $contents_data.sex_flag eq 2}-->
+											<div class="ow_entry_form_radio_wrap">
+												<div class="sex_caution">お相手は男性が自動的に選ばれます</div>
+												<input type="radio" name="sex2" id="sex21" value="1" checked="checked" style="visibility:hidden">
+												<input type="radio" name="sex2" id="sex22" value="2" style="visibility:hidden">
+											</div>
+	<!--{else}-->
+
+											<div class="ow_entry_form_radio_wrap">
+												<label><input type="radio" name="sex2" id="sex22" value="2" checked="checked" class="js-sexAutoChange2"><span class="ow_radiotxt female">女性で占う</span></label><label><input type="radio" name="sex2" id="sex21" value="1" class="js-sexAutoChange2"><span class="ow_radiotxt male">男性で占う</span></label>
+											</div>
+	<!--{/if}-->
+										</div><!-- /.ow_entry_form_item -->
+										<div class="ow_entry_form_save">
+											※今回入力した情報を記録しますか？　<br>
+											<label><input type="checkbox" style="margin-right: 3px; vertical-align:middle;" name="default_check" value="1" id="default_check">記録する</label>
+										</div>
+
+									</div>
+									<!-- /.ow_form_body -->
+								</div>
+								<!-- /.ow_entry_form_mid -->
+
+								<div class="ow_form_btm ow_tac">
+									<img class="ow_vat" src="img/smp/entry/my_form_btm.png" alt="">
+								</div>
+							</div>
+							<!-- /.ow_target_form -->
+	<!--{/if}-->
+
+
+<div class="ow_entry_form_mid">
+	<!--{if $contents_data.price_notax > 1}-->
+								<div class="ow_entry_form_btn_wrap">
+									<!-- ▼▼▼一部無料ボタン▼▼▼ -->
+									<div class="ow_entry_form_btn ow_tac">
+										<a class="ow_entry_form_nc" href="javascript:gtag_submit('nc','<!--{$smarty.const.GTAG_KEY}--><!--{$contents_data.id}-->');form_submit(1,<!--{$contents_data.target_count}-->,'astrology_form')">
+											<img src="img/smp/entry/btn_nc.png" alt="一部無料で鑑定する" title="一部無料で鑑定する">
+										</a>
+									</div>
+									<div class="ow_entry_form_btn_text">
+										次の鑑定結果ページの一部を<br>
+										無料でご覧いただけます
+									</div>
+									<!-- ▲▲▲一部無料ボタン▲▲▲ -->
+								</div>
+								<div class="ow_entry_form_btn_wrap">
+									<!-- ▼▼▼有料ボタン▼▼▼ -->
+									<div class="ow_entry_form_btn ow_tac">
+										<a class="ow_entry_form_submit" href="javascript:gtag_submit('result','<!--{$smarty.const.GTAG_KEY}--><!--{$contents_data.id}-->');form_submit(0,<!--{$contents_data.target_count}-->,'astrology_form')">
+											<img src="img/smp/entry/btn_submit.png" alt="有料で鑑定する" title="有料で鑑定する">
+										</a>
+									</div>
+									<!-- ▲▲▲有料ボタン▲▲▲ -->
+								</div>
+
+								<div class="ow_entry_form_btn_text ow_entry_form_btn_text_border">
+									ご利用には
+									<span class="ow_premium_price ow_nif">
+										プレミアム価格　<!--{$contents_data.price_off10|number_format}--><!--{$smarty.const.PRICE_UNIT}-->
+									</span>
+										<span class="ow_nif">通常価格　</span><span class="ow_red"><!--{$contents_data.price_taxin|number_format}--><!--{$smarty.const.PRICE_UNIT}--></span>が必要です。
+								</div>
+
+								<div class="ow_entry_form_btn_text ow_entry_form_btn_text_2">
+									ご利用前には、メニュー内容のご確認をお願いいたします。<br>
+									ご購入されるとサービス・コンテンツの利用料金が<br>
+									発生いたします。
+								</div>
+	<!--{else}-->
+								<div class="ow_entry_form_btn_wrap">
+									<div class="ow_entry_form_btn">
+										<a class="ow_entry_form_free" href="javascript:form_submit(2,<!--{$contents_data.target_count}-->,'astrology_form')">
+											<img src="img/smp/entry/btn_free_sp.png" alt="無料で鑑定する" title="無料で鑑定する">
+										</a>
+									</div>
+									<div class="ow_entry_form_btn_text">
+										次のページは無料でご利用いただけます。<br>
+										※鑑定結果の一部を無料でご覧になれます。
+									</div>
+								</div>
+	<!--{/if}-->
+								<div class="ow_policy">
+									<div class="ow_policy_inner">
+										株式会社アウトワードは、ご入力いただいた情報を、<br>
+										占いサービスを提供するためにのみ使用し,<br>
+										情報の蓄積を行ったり、他の目的で使用することはありません。<br>
+										ご利用の際は、当社「<a href="privacy.html">個人情報の取り扱いについて</a>」に同意の上、必要事項をご入力ください。
+									</div>
+								</div>
+								<!-- /.ow_policy -->
+
+							</div>
+							<!-- /.ow_entry_form_mid-->
+							<div class="ow_form_btm ow_tac">
+								<img class="ow_vat" src="img/smp/entry/form_btm.png" alt="">
+							</div>
+						</form>
+					</div>
+			<!-- /.ow_entry_form -->
+
+		</div>
+		<!-- /.ow_entry -->
+
+<!-- ▽▽▽占者紹介ページパーツ移植▽▽▽ -->
+<!--{include file="file:./parts/sample.html"}-->
+<!-- △△△占者紹介ページパーツ移植△△△ -->
+
+	</div>
+	<!-- /.ow_main -->
+
+<!--{include file="file:./parts/footer_menu.html"}-->
+
+</body>
+</html>

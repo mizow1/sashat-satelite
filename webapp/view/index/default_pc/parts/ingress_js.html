@@ -1,0 +1,10 @@
+<!--{* 基本性格　星座の配置とアニメーション *}-->
+<script type="text/javascript">
+	$(window).scroll(function(){
+		var t = $('.ow_base_main_spc').offset().top;
+		var p = t - $(window).height();
+		if($(window).scrollTop() > p){
+			animationIngress('<!--{$base_data.ingress_data.base_json}-->');
+		}
+	});
+</script>

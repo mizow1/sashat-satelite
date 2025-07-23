@@ -1,0 +1,44 @@
+<!--{* カレンダー *}-->
+<!-- calender -->
+<div class="ow_result_item ow_calendar">
+	<div class="ow_result_title">
+		<div class="ow_result_title_top ow_tac">
+			<img class="ow_vab" src="img/pc/result/result_title_top.png" alt="">
+		</div>
+		<div class="ow_result_title_mid">
+			<!--{$menu_data.name}-->
+		</div>
+		<div class="ow_result_title_btm ow_tac">
+			<img class="ow_vat" src="img/pc/result/result_title_btm.png" alt="">
+		</div>
+	</div>
+	<div class="ow_result_body">
+		<div class="ow_area">
+			<div class="ow_calendar_canvas">
+				<img src="img/pc/result/calendar_canvas.png" alt="">
+			</div>
+			<div class="ow_area_item ow_calendar_day ow_yellow">
+				<!--{if $page_identify == $smarty.const.PAY}-->
+				<!--{$menu_data.calendar.yy}-->年<!--{$menu_data.calendar.mm}-->月<!--{if !empty($menu_data.calendar.dd)}--><!--{$menu_data.calendar.dd}-->日
+				<!--{/if}-->
+				<!--{else}-->
+				XXXX年XX月XX日
+				<!--{/if}-->
+			</div>
+		</div>
+		<!-- /.ow_area-->
+		<div class="ow_result_body_text">
+			<!--{if empty($menu_data.pickup_flag) && ( $page_identify == $smarty.const.PAY || $page_identify == $smarty.const.FREE) }-->
+			<!--{$menu_data.result.body}-->
+
+			<!--{else}-->
+			<!--{$menu_data.result.cut_body}--><br>
+			<div class="ow_nc ow_nc_white">
+				<a href="javascript:<!--{if empty($menu_data.pickup_flag)}-->gtag_submit('result','<!--{$smarty.const.GTAG_KEY}--><!--{$contents_data.id}-->');<!--{/if}-->nc_submit('astrology_form<!--{$pickup_num}-->')" class="ow_nc_btn ow_nc_btn_default"><img src="img/pc/nc/btn_nc.png" alt="続きを見る(有料)" title="続きを見る(有料)"></a>
+			</div>
+			<!--{/if}-->
+		</div>
+	</div>
+	<!-- /.ow_result_body -->
+</div>
+<!-- /.calender -->

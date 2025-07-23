@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="ja" lang="ja" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<base href="<!--{$smarty.const.ISP_BASE_URL}-->web/">
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<meta name="viewport" content="width=device-width" />
+	<title><!--{if ISP == nifty}-->@nifty:<!--{/if}--><!--{$smarty.const.CONTENTS_NAME}-->：<!--{$contents_data.name_biglobe|default:$contents_data.name_rakuten|default:$contents_data.name}--></title>
+	<link rel="stylesheet" href="css/pc/common.css" type="text/css" />
+	<link rel="stylesheet" href="css/pc/animation.css" type="text/css" />
+	<script type="text/javascript" src="js/jquery1.8.js"></script>
+	<script type="text/javascript" src="js/default_form_ie.js"></script>
+	<script src="js/jquery.tile.js" type="text/javascript"></script>
+	<script type="text/javascript" src="js/pc/result.js"></script>
+	<script type="text/javascript" src="js/pc/animation.js"></script>
+	<!--{include file="file:./parts/ga.html"}-->
+</head>
+<body class="ow_body">
+
+<!--{include file="file:../../../../../common/header_isp.html"}-->
+
+<div class="ow_body_bg_01">
+<div class="ow_body_bg_02">
+
+<!--{include file="file:./parts/header_menu.html"}-->
+
+
+	<div class="ow_main">
+
+		<div class="ow_bread">
+			<a href="<!--{$smarty.const.CONTENTS_URL}-->">TOP</a> &gt;
+<!--{if $contents_data.id != 901}-->
+			<a href="<!--{$smarty.const.ISP_BASE_URL}-->web/?menu=<!--{if $contents_data.id > 500 && $contents_data.id < 900}--><!--{$contents_data.id-500}--><!--{else}--><!--{$contents_data.id}--><!--{/if}-->">入力画面</a> &gt;
+<!--{/if}-->
+<!--{if $contents_data.price_taxin > 1}-->
+			有料鑑定結果
+<!--{else}-->
+			無料鑑定結果
+<!--{/if}-->
+		</div>
+		<div class="ow_sp_contents">
+<!--{if $contents_data.id == 901}-->
+<!--{include file="file:./parts/complete.html"}-->
+<!--{else}-->
+		<div class="ow_common_menu">
+			<div class="ow_common_menu_top ow_tac">
+				<img class="ow_vab" src="img/pc/common/common_menu_top.png" alt="">
+			</div>
+			<div class="ow_common_menu_mid">
+				<div class="ow_menu_head">
+					<div class="ow_menu_icon">
+						<div class="ow_menu_category"><img src="img/pc/category/<!--{$contents_data.category}-->.png" alt="<!--{$category_data[$contents_data.category].name}-->　<!--{if $contents_data.target_count == 2}-->二<!--{else}-->一<!--{/if}-->人用" title="<!--{$category_data[$contents_data.category].name}-->　<!--{if $contents_data.target_count == 2}-->二<!--{else}-->一<!--{/if}-->人用" /></div>
+					</div>
+					<div class="ow_menu_title">
+						<!--{$contents_data.name_biglobe|default:$contents_data.name_rakuten|default:$contents_data.name}-->
+					</div>
+				</div>
+			</div>
+			<div class="ow_common_menu_btm ow_tac">
+				<img class="ow_vat" src="img/pc/common/common_menu_btm.png" alt="">
+			</div>
+		</div>
+		<!-- /.ow_common_menu -->
+
+	<div class="ow_result_wrap">
+		<div class="ow_result_wrap_mid">
+
+	<!-- ▽▽▽本題ここから▽▽▽ -->
+スペシャル鑑定
+
+
+
+<!--{foreach key=pickup_num item=pickup from=$pickup_list}-->
+<!--{include file="file:./parts/result_pickup.html"}-->
+<!--{/foreach}-->
+		  <!-- △△△本題ここまで△△△ -->
+			</div>
+			<div class="ow_result_wrap_btm ow_tac">
+				<img class="ow_vat" src="img/pc/result/result_wrap_btm.png" alt="">
+			</div>
+		</div>
+		<!-- /.ow_result_wrap-->
+
+<!-- ▼▼▼TOPページおすすめメニュー移植▼▼▼ -->
+<!--{include file="file:./parts/recommend.html"}-->
+<!-- ▲▲▲TOPページおすすめメニュー移植▲▲▲ -->
+<!--{/if}-->
+		</div>
+		<!-- /.ow_sp_contents -->
+	</div>
+	<!-- /.ow_main -->
+
+	<!--{include file="file:./parts/footer_menu.html"}-->
+		</div>
+	</div>
+</body>
+</html>

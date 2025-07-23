@@ -1,0 +1,118 @@
+<!-- ow_sample -->
+<div class="ow_sample">
+	<div class="ow_sample_intro_top">
+		<img src="img/pc/top/sample_intro_top.jpg" alt="おすすめ鑑定　苦しい片思いの結末は?!あなたが得る恋の運命" title="おすすめ鑑定　苦しい片思いの結末は?!あなたが得る恋の運命" />
+	</div>
+
+
+	<!--{foreach name=recommend_data item=val from=$recommend_list}-->
+	<!--{if $smarty.foreach.recommend_data.iteration < 5}-->
+	<!--{if !in_array($val.pickup_menu,$ignore_recommend_id)}-->
+
+	<!--{assign var="pickup_contents_data" value=$contents_list[$val.pickup_menu]}-->
+	<!--{assign var="pickup_category" value=$contents_list[$val.pickup_menu].category}-->
+	<!--{assign var="pickup_category_group" value=$contents_list[$val.pickup_menu].category_group}-->
+	<!--{assign var="pickup_target_count" value=$contents_list[$val.pickup_menu].target_count}-->
+	<!--{if $smarty.foreach.recommend_data.iteration == 1}-->
+	<div class="ow_menu">
+		<div class="ow_menu_head">
+			<div class="ow_menu_icon"><img src="img/pc/category/<!--{$pickup_category}-->.png" alt="<!--{$category_data[$pickup_category].name}-->　<!--{if $pickup_target_count == 1}-->一人用<!--{else}-->二人用<!--{/if}-->" title="<!--{$category_data[$pickup_category].name}-->　<!--{if $pickup_target_count == 1}-->一人用<!--{else}-->二人用<!--{/if}-->" /></div>
+			<div class="ow_menu_title">
+				<a href="<!--{$smarty.const.ISP_BASE_URL}-->web/?menu=<!--{$pickup_contents_data.id}-->" class="ow_menu_link">
+					<!--{$pickup_contents_data.name_biglobe|default:$pickup_contents_data.name_rakuten|default:$pickup_contents_data.name}-->
+				</a>
+			</div>
+		</div>
+		<div class="ow_menu_tail">
+			<span class="ow_menu_price ow_premium_price"><span class="ow_nif">プレミアム価格　
+					<!--{$pickup_contents_data.price_off10|number_format}-->
+					<!--{$smarty.const.PRICE_UNIT}-->
+				</span></span>
+			<span class="ow_menu_price ow_default_price"><span class="ow_nif">通常価格　</span>
+				<!--{$pickup_contents_data.price_taxin|number_format}-->
+				<!--{$smarty.const.PRICE_UNIT}-->
+			</span>
+		</div>
+	</div>
+	<!--{elseif $smarty.foreach.recommend_data.iteration == 2}-->
+	<div class="ow_menu">
+		<div class="ow_sample_menu_title ow_tac">
+			<img src="img/pc/top/sample_intro_hurin.png" alt="不倫でも幸せになれる？あの人の本当の気持ち" title="不倫でも幸せになれる？あの人の本当の気持ち" />
+		</div>
+		<div class="ow_menu_head">
+			<div class="ow_menu_icon"><img src="img/pc/category/<!--{$pickup_category}-->.png" alt="<!--{$category_data[$pickup_category].name}-->　<!--{if $pickup_target_count == 1}-->一人用<!--{else}-->二人用<!--{/if}-->" title="<!--{$category_data[$pickup_category].name}-->　<!--{if $pickup_target_count == 1}-->一人用<!--{else}-->二人用<!--{/if}-->" /></div>
+			<div class="ow_menu_title">
+				<a href="<!--{$smarty.const.ISP_BASE_URL}-->web/?menu=<!--{$pickup_contents_data.id}-->" class="ow_menu_link">
+					<!--{$pickup_contents_data.name_biglobe|default:$pickup_contents_data.name_rakuten|default:$pickup_contents_data.name}-->
+				</a>
+			</div>
+		</div>
+		<div class="ow_menu_tail">
+			<span class="ow_menu_price ow_premium_price"><span class="ow_nif">プレミアム価格　
+					<!--{$pickup_contents_data.price_off10|number_format}-->
+					<!--{$smarty.const.PRICE_UNIT}-->
+				</span></span>
+			<span class="ow_menu_price ow_default_price"><span class="ow_nif">通常価格　</span>
+				<!--{$pickup_contents_data.price_taxin|number_format}-->
+				<!--{$smarty.const.PRICE_UNIT}-->
+			</span>
+		</div>
+	</div>
+	<!--{elseif $smarty.foreach.recommend_data.iteration == 3}-->
+	<div class="ow_menu">
+		<div class="ow_sample_menu_title ow_tac">
+			<img src="img/pc/top/sample_intro_deai.png" alt="運命の相手って本当にいるの？恋の出会い" title="運命の相手って本当にいるの？恋の出会い" />
+		</div>
+		<div class="ow_menu_head">
+			<div class="ow_menu_icon"><img src="img/pc/category/<!--{$pickup_category}-->.png" alt="<!--{$category_data[$pickup_category].name}-->　<!--{if $pickup_target_count == 1}-->一人用<!--{else}-->二人用<!--{/if}-->" title="<!--{$category_data[$pickup_category].name}-->　<!--{if $pickup_target_count == 1}-->一人用<!--{else}-->二人用<!--{/if}-->" /></div>
+			<div class="ow_menu_title">
+				<a href="<!--{$smarty.const.ISP_BASE_URL}-->web/?menu=<!--{$pickup_contents_data.id}-->" class="ow_menu_link">
+					<!--{$pickup_contents_data.name_biglobe|default:$pickup_contents_data.name_rakuten|default:$pickup_contents_data.name}-->
+				</a>
+			</div>
+		</div>
+		<div class="ow_menu_tail">
+			<span class="ow_menu_price ow_premium_price"><span class="ow_nif">プレミアム価格　
+					<!--{$pickup_contents_data.price_off10|number_format}-->
+					<!--{$smarty.const.PRICE_UNIT}-->
+				</span></span>
+			<span class="ow_menu_price ow_default_price"><span class="ow_nif">通常価格　</span>
+				<!--{$pickup_contents_data.price_taxin|number_format}-->
+				<!--{$smarty.const.PRICE_UNIT}-->
+			</span>
+		</div>
+	</div>
+	<!--{elseif $smarty.foreach.recommend_data.iteration == 4}-->
+	<div class="ow_menu">
+		<div class="ow_sample_menu_title ow_tac">
+			<img src="img/pc/top/sample_intro_mirai.png" alt="大きな壁にぶつかる前に…あなたの未来を先取り" title="大きな壁にぶつかる前に…あなたの未来を先取り" />
+		</div>
+		<div class="ow_menu_head">
+			<div class="ow_menu_icon"><img src="img/pc/category/<!--{$pickup_category}-->.png" alt="<!--{$category_data[$pickup_category].name}-->　<!--{if $pickup_target_count == 1}-->一人用<!--{else}-->二人用<!--{/if}-->" title="<!--{$category_data[$pickup_category].name}-->　<!--{if $pickup_target_count == 1}-->一人用<!--{else}-->二人用<!--{/if}-->" /></div>
+			<div class="ow_menu_title">
+				<a href="<!--{$smarty.const.ISP_BASE_URL}-->web/?menu=<!--{$pickup_contents_data.id}-->" class="ow_menu_link">
+					<!--{$pickup_contents_data.name_biglobe|default:$pickup_contents_data.name_rakuten|default:$pickup_contents_data.name}-->
+				</a>
+			</div>
+		</div>
+		<div class="ow_menu_tail">
+			<span class="ow_menu_price ow_premium_price"><span class="ow_nif">プレミアム価格　
+					<!--{$pickup_contents_data.price_off10|number_format}-->
+					<!--{$smarty.const.PRICE_UNIT}-->
+				</span></span>
+			<span class="ow_menu_price ow_default_price"><span class="ow_nif">通常価格　</span>
+				<!--{$pickup_contents_data.price_taxin|number_format}-->
+				<!--{$smarty.const.PRICE_UNIT}-->
+			</span>
+		</div>
+	</div>
+	<!--{/if}-->
+	<!--{/if}-->
+	<!--{/if}-->
+	<!--{/foreach}-->
+	<div class="ow_sample_intro_btm">
+		<img src="img/pc/top/sample_intro_btm.jpg" alt="" />
+	</div>
+
+</div>
+<!-- /.ow_sample -->

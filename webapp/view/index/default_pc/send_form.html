@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="ja" lang="ja" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<base href="<!--{$smarty.const.ISP_BASE_URL}-->web/" />
+		<meta http-equiv="content-type" content="text/html;charset=utf8" />
+		<meta http-equiv="Content-Script-Type" content="text/javascript" />
+		<meta name="viewport" content="width=device-width" />
+		<title><!--{$smarty.const.CONTENTS_NAME}-->：<!--{$contents_data.name_biglobe|default:$contents_data.name_rakuten|default:$contents_data.name}--></title>
+		<link rel="stylesheet" href="css/pc/common.css" type="text/css" />
+		<script type="text/javascript" src="js/jquery1.8.js"></script>
+		<script type="text/javascript" src="js/rakuten_logo.js"></script>
+		<script type="text/javascript" src="js/pc/profile.js"></script>
+<!--{include file="file:./parts/ga.html"}-->
+		<script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+	</head>
+<body class="ow_body">
+
+<!--{include file="file:../../../../../common/header_isp.html"}-->
+
+<div class="ow_body_bg_01">
+<div class="ow_body_bg_02">
+
+<!--{include file="file:./parts/header_menu.html"}-->
+
+	<div class="ow_main">
+
+<!-- ▼パンくず -->
+		<div class="ow_bread">
+			<a href="<!--{$smarty.const.CONTENTS_URL}-->">TOP</a>
+			<!--{if $entry_data.menu_id != 901}-->
+			&gt;
+			<a href="./?menu=<!--{if $contents_data.id > 500 && $contents_data.id < 900}--><!--{$contents_data.id-500}--><!--{else}--><!--{$contents_data.id}--><!--{/if}-->">入力画面</a>
+			<!--{/if}-->
+			&gt; 購入確認
+		</div>
+<!-- ▲パンくず -->
+<div class="ow_sp_contents">
+		<div class="ow_common_wrap">
+			<div class="ow_common_wrap_mid">
+				<div class="ow_common_menu">
+					<div class="ow_common_menu_top ow_tac">
+						<img class="ow_vab ow_pc_inline" src="img/pc/common/common_menu_top.png" alt="" />
+					</div>
+					<div class="ow_common_menu_mid">
+						<div class="ow_menu_head">
+							<div class="ow_menu_icon">
+								<div class="ow_menu_category"><img src="img/pc/category/<!--{$contents_data.category}-->.png" alt="<!--{$category_data[$contents_data.category].name}-->　<!--{if $contents_data.target_count == 2}-->二<!--{else}-->一<!--{/if}-->人用" title="<!--{$category_data[$contents_data.category].name}-->　<!--{if $contents_data.target_count == 2}-->二<!--{else}-->一<!--{/if}-->人用" /></div>
+							</div>
+							<div class="ow_menu_title">
+								<!--{$contents_data.name_biglobe|default:$contents_data.name_rakuten|default:$contents_data.name}-->
+							</div>
+						</div>
+					</div>
+					<div class="ow_tac">
+						<img class="ow_vat ow_pc_inline" src="img/pc/common/common_menu_btm.png" alt="" />
+					</div>
+				</div>
+				<!-- /.ow_common_menu -->
+
+
+				<div class="ow_send_confirm" style="text-align:center; padding-top:3rem; color: #fff">
+					<div class="ow_send_confirm_mid">
+<!--{if $contents_data.id == 901}-->
+	<div class="ow_send_confirm_text">お 名 前：<!--{$entry_data.sashat_name}--></div>
+	<div class="ow_send_confirm_text">生年月日：<!--{$entry_data.sashat_yy}-->年<!--{$entry_data.sashat_mm}-->月<!--{$entry_data.sashat_dd}-->日</div>
+	<div class="ow_send_confirm_text">メールアドレス：<!--{$entry_data.sashat_email}--></div>
+	<div class="ow_send_confirm_text">相談内容：<!--{$entry_data.sashat_text}--></div>
+<!--{else}-->
+						<div class="ow_send_confirm_head">
+							<!--{if $entry_data.name1}-->
+							<div class="ow_send_confirm_text">あなたの名前：<!--{$entry_data.name1}--></div>
+							<!--{/if}-->
+							<div class="ow_send_confirm_text">あなたの生年月日：<!--{$entry_data.yy1}-->/<!--{$entry_data.mm1|string_format:"%d"}-->/<!--{$entry_data.dd1|string_format:"%d"}-->
+							<!--{*<div class="ow_send_confirm_text">あなたの性別：<!--{if $entry_data.sex1 == 1}-->男性<!--{else}-->女性<!--{/if}-->*}--></div>
+							<br>
+							<!--{if $contents_data.target_count == 2}-->
+							<!--{if $entry_data.name2}-->
+							<div class="ow_send_confirm_text">あの人の名前：<!--{$entry_data.name2}--></div>
+							<!--{/if}-->
+							<div class="ow_send_confirm_text">あの人の生年月日：<!--{$entry_data.yy2}-->/<!--{$entry_data.mm2|string_format:"%d"}-->/<!--{$entry_data.dd2|string_format:"%d"}-->
+							<!--{*<div class="ow_send_confirm_text">あの人の性別：<!--{if $entry_data.sex2 == 1}-->男性<!--{else}-->女性<!--{/if}-->*}--></div>
+							<br>
+							<!--{/if}-->
+						</div>
+						<!-- /.ow_send_confirm_head -->
+<!--{/if}-->
+						<div class="ow_send_confirm_foot">
+							<div class="ow_send_confirm_text ow_send_confirm_text-large">結果を確認するには、<br class="ow_sp_block" /><!--{$contents_data.price_taxin|number_format}-->円（税込）が必要です。</div>
+							<div class="ow_send_confirm_text ow_send_confirm_text-small">購入の内容をご確認の上、<br class="ow_sp_block" />お支払いボタンを押してください。</div>
+
+							<form action="https://my.checkout.rakuten.co.jp/myc/cdodl/1.0/stepin" method="post" accept-charset="UTF-8">
+								<!--{*form action="../post.php" method="post" accept-charset="UTF-8"*}-->
+								<input type="hidden" name="checkout" value="<!--{$form_data.checkout}-->">
+								<input type="hidden" name="sig" value="<!--{$form_data.sig}-->" >
+								<input type="image" src='http://checkout.rakuten.co.jp/p/common/img/btn_check_00.gif?86eaaa8bf9c0cc6139961b8cb4a0426a' border="0" onclick="gtag_submit('rakuten','<!--{$smarty.const.GTAG_KEY}--><!--{$contents_data.id}-->');">
+							</form>
+							<div class="ow_send_confirm_textLink">
+								<a href="https://checkout.rakuten.co.jp/">楽天ペイについてはこちら</a>
+							</div>
+						</div>
+						<!-- /.ow_send_confirm_foot -->
+						<div class="ow_send_confirm_caution">
+						ご購入された占い結果の観覧期限は、購入日より7日間以内となります。<br />
+						期間中であれば、注文受付メールのダウンロードURLから再観覧は可能です。<br />
+						<br /><br />
+						</div>
+						<!-- /.ow_send_confirm_caution -->
+					</div>
+					<!-- /.ow_send_confirm_mid -->
+				</div>
+
+			</div>
+			<!-- /.ow_sub_menu -->
+		</div>
+		<!-- /.ow_common_wrap -->
+</div>
+	</div>
+	<!-- /.ow_main -->
+
+<!--{include file="file:./parts/footer_menu.html"}-->
+		</div>
+	</div>
+</body>
+</html>

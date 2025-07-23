@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="ja" lang="ja" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<base href="<!--{$smarty.const.ISP_BASE_URL}-->web/">
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<meta name="viewport" content="width=device-width" />
+	<title><!--{if ISP == nifty}-->@nifty:<!--{/if}--><!--{$smarty.const.CONTENTS_NAME}-->：<!--{$contents_data.name_biglobe|default:$contents_data.name_rakuten|default:$contents_data.name}--></title>
+	<link rel="stylesheet" href="css/pc/common.css" type="text/css" />
+	<link rel="stylesheet" href="css/pc/animation.css" type="text/css" />
+	<script type="text/javascript" src="js/jquery1.8.js"></script>
+	<script type="text/javascript" src="js/default_form_ie.js"></script>
+	<script src="js/jquery.tile.js" type="text/javascript"></script>
+	<script type="text/javascript" src="js/pc/result.js"></script>
+	<script type="text/javascript" src="js/pc/animation.js"></script>
+	<!--{include file="file:./parts/ga.html"}-->
+</head>
+<body class="ow_body">
+
+<!--{include file="file:../../../../../common/header_isp.html"}-->
+
+<div class="ow_body_bg_01">
+<div class="ow_body_bg_02">
+
+<!--{include file="file:./parts/header_menu.html"}-->
+
+
+	<div class="ow_main">
+
+		<div class="ow_bread">
+			<a href="<!--{$smarty.const.CONTENTS_URL}-->">TOP</a> &gt;
+<!--{if $contents_data.id != 901}-->
+			<a href="<!--{$smarty.const.ISP_BASE_URL}-->web/?menu=<!--{if $contents_data.id > 500 && $contents_data.id < 900}--><!--{$contents_data.id-500}--><!--{else}--><!--{$contents_data.id}--><!--{/if}-->">入力画面</a> &gt;
+<!--{/if}-->
+<!--{if $contents_data.price_taxin > 1}-->
+			有料鑑定結果
+<!--{else}-->
+			無料鑑定結果
+<!--{/if}-->
+		</div>
+		<div class="ow_sp_contents">
+<!--{if $contents_data.id == 901}-->
+<!--{include file="file:./parts/complete.html"}-->
+<!--{else}-->
+		<div class="ow_common_menu">
+			<div class="ow_common_menu_top ow_tac">
+				<img class="ow_vab" src="img/pc/common/common_menu_top.png" alt="">
+			</div>
+			<div class="ow_common_menu_mid">
+				<div class="ow_menu_head">
+					<div class="ow_menu_icon">
+						<div class="ow_menu_category"><img src="img/pc/category/<!--{$contents_data.category}-->.png" alt="<!--{$category_data[$contents_data.category].name}-->　<!--{if $contents_data.target_count == 2}-->二<!--{else}-->一<!--{/if}-->人用" title="<!--{$category_data[$contents_data.category].name}-->　<!--{if $contents_data.target_count == 2}-->二<!--{else}-->一<!--{/if}-->人用" /></div>
+					</div>
+					<div class="ow_menu_title">
+						<!--{$contents_data.name_biglobe|default:$contents_data.name_rakuten|default:$contents_data.name}-->
+					</div>
+				</div>
+			</div>
+			<div class="ow_common_menu_btm ow_tac">
+				<img class="ow_vat" src="img/pc/common/common_menu_btm.png" alt="">
+			</div>
+		</div>
+		<!-- /.ow_common_menu -->
+
+		<!-- ウェルカムメッセージ -->
+		<div class="ow_welcome">
+			<div class="ow_welcome_inr">
+				<div class="ow_balloon_menu">
+					<div class="ow_balloon_menu_top">
+						<img class="ow_vab" src="img/pc/common/balloon_menu_top.png" alt=""/>
+					</div>
+					<div class="ow_balloon_menu_mid">
+						<div class="ow_balloon_text">
+						<!--{if $contents_data.target_count == 1 && $contents_data.category_group == jinsei}-->
+							ようこそいらっしゃいました。<br>
+							この鑑定ではあなたという人に授けられた性質や、パラレルワールド（並行世界）のあなたを通して本来の人生、あなたが幸せになるための道の選び方を一緒に探していきます。数カ月後、数年後に「あの時ああしていればよかった」と後悔しないために、あなたの未来の姿も見ていきましょう。
+						<!--{elseif $contents_data.target_count == 1 && $contents_data.category_group == deai}-->
+							ようこそいらっしゃいました。<br>
+							この鑑定ではあなたという人に授けられた性質や、そんなあなたに惹かれる相手について、パラレルワールド（並行世界）で結ばれたあなたの人生などを見ていきます。これからどんな出会いがありどんな人生をだれと歩んでいくのか一緒にみていきましょう。
+						<!--{elseif $contents_data.target_count == 2 && $contents_data.category_group == renai}-->
+							ようこそいらっしゃいました。<br>
+							この鑑定ではあなたとあの人に授けられた性質を見ていきます。パラレルワールド（並行世界）の2人の姿から、恋愛における最善の選択肢や、付き合った時の2人の様子、あの人の恋愛観やあなたへの気持ちを一緒にみていきましょう。
+						<!--{else}-->
+						<!--{/if}-->
+						</div>
+					</div>
+					<div class="ow_balloon_menu_btm">
+						<img class="ow_vat" src="img/pc/common/balloon_menu_btm.png" alt=""/>
+					</div>
+				</div>
+				<!-- /.ow_balloon_menu -->
+			</div>
+			<!-- /.ow_welcome_inr -->
+		</div>
+		<!-- /.ow_welcome -->
+	<div class="ow_result_wrap">
+		<div class="ow_result_wrap_top">
+			<!--{if $contents_data.target_count == 1}-->
+			<img class="ow_vab" src="img/pc/result/result_wrap_top_1.png" alt="パラレルワールドと今の世界から見た　あなたの本質" title="パラレルワールドと今の世界から見た　あなたの本質">
+			<!--{else}-->
+			<img class="ow_vab" src="img/pc/result/result_wrap_top_2.png" alt="今の世界に大きく影響する　並行世界の2人の関係" title="今の世界に大きく影響する　並行世界の2人の関係">
+			<!--{/if}-->
+		</div>
+		<div class="ow_result_wrap_mid">
+<!--{include file="file:./parts/base.html"}-->
+
+	<!-- ▽▽▽本題ここから▽▽▽ -->
+	<div class="ow_result_item_wrap">
+		<div class="ow_result_item_wrap_top ow_tac">
+			<img class="ow_vab" src="img/pc/result/result_item_wrap_top.png" alt="">
+		</div>
+		<div class="ow_result_item_wrap_mid">
+			<div class="ow_result_intro">
+				<div class="ow_result_intro_img"><img src="img/pc/result/result_intro_img.png" alt=""></div> 
+				<div class="ow_result_intro_text">
+				<!--{if $contents_data.target_count == 1}-->
+					あなたと、あなたに特に影響を与えている他の世界にいるあなたたちが視えてきました。あなたも自覚されていると思いますが「<span class="ow_blue"><!--{$base_data.base_list.base_pattern_mean_2}--></span>」な一面がありますね。<br>他のあなたたちは、それぞれ「<span class="ow_pink"><!--{$base_data.base_list.base_pattern_mean_1}--></span>」なあなたと「<span class="ow_green"><!--{$base_data.base_list.base_pattern_mean_3}--></span>」なあなたがいます。意外でしたか？他の世界とはいえこの性格は、あなた自身にも大きく影響しているんですよ。<br><br>ではあなたの本質を踏まえて、あなたの悩みについて解き明かしていきますね。
+				<!--{else}-->
+					パラレルワールドでのあなたと、あの人の今の関係は「<span class="ow_yellow"><!--{$base_data.base_list.base_pattern_mean}--></span>」です。<br>今の関係とは少し違ったものでしょうか？それとも似たような関係でしょうか？<br><br>並行世界での2人の関係は、こちらの世界のあなた達とも大きく関わってきます。それを踏まえて、あなたやあの人の事を読み解いて行きましょう。
+				<!--{/if}-->
+				</div>
+			</div>
+<!--{foreach key=menu_id item=menu_data from=$result_item_data.menu_list}-->
+	<!--{if $menu_data.astrology_category == 1}-->
+	<!--{include file="file:./parts/result_item1.html"}-->
+	<!--{/if}-->
+	<!--{if $menu_data.astrology_category == 2}-->
+	<!--{include file="file:./parts/result_item2.html"}-->
+	<!--{/if}-->
+	<!--{if $menu_data.astrology_category == 3}-->
+	<!--{include file="file:./parts/result_item3.html"}-->
+	<!--{/if}-->
+	<!--{if $menu_data.astrology_category == 4}-->
+	<!--{include file="file:./parts/result_item3.html"}-->
+	<!--{/if}-->
+	<!--{if $menu_data.astrology_category == 5}-->
+	<!--{include file="file:./parts/result_item3.html"}-->
+	<!--{/if}-->
+<!--{/foreach}-->
+<!--{if $contents_data.price_taxin > 1}-->
+		<div class="ow_result_item ow_message">
+			<div class="ow_result_title ow_result_title_2">
+				<div class="ow_result_title_top ow_tac">
+					<img class="ow_vat" src="img/pc/result/result_title_top_2.png" alt="">
+				</div>
+				<div class="ow_result_title_mid"><!--{$result_item_data.last_result.name}--></div>
+				<div class="ow_result_title_btm ow_tac">
+					<img class="ow_vat" src="img/pc/result/result_title_btm_2.png" alt="">
+				</div>
+				</div>
+				<div class="ow_result_body">
+					<div class="ow_area">
+						<div class="ow_message_canvas">
+							<img src="img/pc/result/message_canvas.png" alt="">
+						</div>
+						<div class="ow_area_item ow_message_teller">
+							<img src="img/pc/result/message_teller.png" alt="">
+						</div>
+					</div>
+					<div class="ow_panel">
+						<div class="ow_panel_top ow_tac">
+							<img class="ow_vab" src="img/pc/result/panel_top.png" alt="">
+						</div>
+						<div class="ow_panel_mid">
+							<!--{$result_item_data.last_result.result.body}-->
+						</div>
+						<div class="ow_panel_btm ow_tac">
+							<img class="ow_vat" src="img/pc/result/panel_btm.png" alt="">
+						</div>
+					</div>
+					<!-- /.ow_panel -->
+				</div>
+				<!-- /.ow_result_body -->
+			</div>
+		<!-- /.ow_result_item -->
+<!--{/if}-->
+		</div>
+		<!-- /.ow_result_item_wrap_mid-->
+		<div class="ow_result_item_wrap_btm ow_tac">
+			<img class="ow_vat" src="img/pc/result/result_item_wrap_btm.png" alt=""/>
+		</div>
+	</div>
+	<!-- /.ow_result_item_wrap-->
+	<div class="ow_joint">
+		<div class="ow_joint_inr">
+			<div class="ow_joint_img ow_joint_img_left">
+				<img src="img/pc/result/joint_img.png" alt="">
+			</div>
+			<div class="ow_balloon_menu">
+				<div class="ow_balloon_menu_top">
+					<img class="ow_vab" src="img/pc/common/balloon_menu_top_2.png" alt="">
+				</div>
+				<div class="ow_balloon_menu_mid">
+					<div class="ow_balloon_text">
+						いかがでしたか？<br>
+						あなたが知らないあなたの姿を思い浮かべることはできましたが？<span class="ow_pink">あなたが今上手くいかない理由、モヤモヤした気持ちになる原因…</span>並行世界のあなたを通して一部を知ることが出来たのではないでしょうか？<br>
+						<br>
+						並行世界はまだまだたくさんあります。<span class="ow_pink">まだ解決できていない事を他の世界も観ながら解き明かして行きましょう。</span>
+					</div>
+				</div>
+				<div class="ow_balloon_menu_btm">
+					<img class="ow_vat" src="img/pc/common/balloon_menu_btm_2.png" alt=""/>
+				</div>
+			</div>
+			<!-- /.ow_balloon_menu -->
+		</div>
+		<!-- /.ow_joint_inr -->
+	</div>
+	<!-- /.ow_joint -->
+
+<!--{foreach key=pickup_num item=pickup from=$pickup_list}-->
+<!--{include file="file:./parts/result_pickup.html"}-->
+<!--{/foreach}-->
+		  <!-- △△△本題ここまで△△△ -->
+			</div>
+			<div class="ow_result_wrap_btm ow_tac">
+				<img class="ow_vat" src="img/pc/result/result_wrap_btm.png" alt="">
+			</div>
+		</div>
+		<!-- /.ow_result_wrap-->
+
+<!-- ▼▼▼TOPページおすすめメニュー移植▼▼▼ -->
+<!--{include file="file:./parts/recommend.html"}-->
+<!-- ▲▲▲TOPページおすすめメニュー移植▲▲▲ -->
+<!--{/if}-->
+		</div>
+		<!-- /.ow_sp_contents -->
+	</div>
+	<!-- /.ow_main -->
+
+	<!--{include file="file:./parts/footer_menu.html"}-->
+		</div>
+	</div>
+</body>
+</html>

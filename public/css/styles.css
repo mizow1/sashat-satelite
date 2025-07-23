@@ -1,0 +1,268 @@
+* {
+	font-family: "ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3";
+	font-size:12px;
+	margin:0px;
+	padding:0px;
+}
+
+body {
+	margin: 0px;
+	background-image: url(../img/base/bg_01.gif);
+}
+
+/*テキスト*/
+.text10px {
+	font-size: 10px;
+}
+.text10pxw {
+	font-size: 10px;
+	color:fff;
+}
+.text11px {
+	font-size: 11px;
+}
+.text12px {
+	font-size: 12px;
+}
+.text12pxw {
+	font-size: 12px;
+	color:fff;
+}
+
+/*クリア*/
+.clear {
+	clear: both;
+}
+
+
+/*ナビゲーション*/
+.nav a {
+	height: 44px;
+	width: 156px;
+	display: block;
+	font-size:0px;
+	float:left;
+	text-decoration:none;
+	text-indent:-9999px;
+	margin-top:10px;
+}
+.nav a:hover {
+	background-position:0px -44px;
+}
+
+.nav_head a {
+	height: 69px;
+	width: 69px;
+	display: block;
+	font-size:0px;
+	float:left;
+	text-decoration:none;
+	text-indent:-9999px;
+}
+.nav_head a:hover {
+	background-position:0px -69px;
+}
+.nav a {
+	height: 44px;
+	width: 156px;
+	display: block;
+	font-size:0px;
+	float:left;
+	text-decoration:none;
+	text-indent:-9999px;
+}
+.nav_top a:hover {
+	background-position:0px -44px;
+}
+.nav_top a {
+	height: 33px;
+	width: 273px;
+	display: block;
+	font-size:0px;
+	float:left;
+	text-decoration:none;
+	text-indent:-9999px;
+}
+.nav_top a:hover {
+	background-position:0px -33px;
+}
+
+
+
+/*タイトル画像*/
+.title {
+	margin: 40px 0px 0px 0px;
+}
+
+/*入力画面*/
+.form_name {
+	height: 20px;
+	width: 202px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 3px;
+}
+.form_year {
+	height: 20px;
+	width: 58px;
+	margin: 0px 0px 0px 3px;
+	padding: 0px;
+}
+.form_month {
+	height: 20px;
+	width: 44px;
+	margin: 0px;
+	padding: 0px;
+}
+.menu_title {
+	margin: 0px 0px 0px 10px;
+	font-size:14px;
+	font-weight:bold;
+	color:#713222;
+}
+.menu_list {
+	font-size:12px;
+	color:#333;
+	line-height:18px;
+}
+.menu_list p {
+	margin:0px;
+}
+.menu_list img {
+	margin:10px 0px;
+}
+
+
+/*鑑定結果*/
+.chart_text {
+	font-size:12px;
+	color:fff;
+	line-height:17px;
+}
+.result_title {
+	font-size:14px;
+	font-weight:bold;
+	line-height:18px;
+	color:#460000;
+}
+.result_text {
+	font-size:12px;
+	margin:10px 0px;
+	line-height:24px;
+}
+.result_break {
+	font-size:12px;
+	margin:200px 72px 10px 72px;
+	line-height:21px;
+}
+
+
+/*メニューリスト*/
+.update {
+	font-size: 12px;
+	font-weight: bold;
+	color: #777;
+	margin:38px 120px 0px 0px;
+}
+.price {
+	padding: 2px;
+	height: 26px;
+	width: 46px;
+	color:#666;
+	border: 1px solid #999;
+	background-color: #fff;
+	text-align: center;
+	margin: 0px auto 0px auto;
+	font-size: 11px;
+}
+.price p {
+	margin:0px;
+}
+.tax {
+	font-size: 10px;
+	color:#999;
+}
+.list {
+	margin:8px 0px;
+}
+.list_title a {
+	font-size:14px;
+	color:#713222;
+	font-weight:bold;
+	line-height:18px;
+	text-decoration:none;
+}
+.list_title a:hover {
+	color:#713222;
+	text-decoration:underline;
+}
+.list_text {
+	font-size:12px;
+	color:#333;
+	line-height:18px;
+}
+.menu_box {
+	width:260px;
+	float:left;
+	padding:12px;
+}
+
+
+/*数秘術とは？*/
+.numerology_text {
+	font-size:14px;
+	color:fff;
+	line-height:24px;
+}
+.numerology_text p {
+	font-size:12px;
+	color:333;
+	line-height:21px;
+	margin:10px 0px;
+}
+
+
+/*動作環境*/
+.operating {
+
+}
+.operating table {
+	font-size:12px;
+	line-height:18px;
+	color:#333;
+	margin:10px 0px;
+	padding:10px;
+	background-color:#efefef;
+	border: 1px solid #999;
+}
+.operating a {
+	text-decoration:none;
+}
+.operating a:hover {
+	text-decoration:underline;
+}
+
+/*コピーライト*/
+.copyright { width: 645px; color: #666; text-align: center; font-size: 12px; line-height: 12pt; margin:0px auto 0px auto; }
+.copyright a:link { color: #666; text-decoration:underline; }
+.copyright a:visited { color: #666; text-decoration:underline; }
+.copyright a:hover { color: #666; text-decoration:none; }
+
+/*テキストリンク*/
+.textlink {
+	font-size: 12px;
+	margin: 0px;
+}
+.textlink a {
+	text-decoration:none;
+}
+.textlink a:hover {
+	text-decoration:underline;
+}
+.textlink hr {
+	width: 580px;
+	margin: 5px auto 5px auto;
+}
+
+.packMenuTextArea {display:none;}

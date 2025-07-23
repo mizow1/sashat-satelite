@@ -1,0 +1,20 @@
+<div class="ow_menu_mid">
+	<div class="ow_menu_head">
+		<div class="ow_menu_icon">
+		<img src="img/pc/category/<!--{$fix.category}-->.png" alt="<!--{$category_data[$fix.category].name}-->　<!--{if $fix.target_count == 1}-->一<!--{else}-->二<!--{/if}-->人用" title="<!--{$category_data[$fix.category].name}-->　<!--{if $fix.target_count == 1}-->一<!--{else}-->二<!--{/if}-->人用" />
+		</div>
+
+		<div class="ow_menu_title">
+			<a href="<!--{$smarty.const.ISP_BASE_URL}-->web/?menu=<!--{$fix.id}-->" class="ow_menu_link"><!--{$fix.name_biglobe|default:$fix.name_rakuten|default:$fix.name}--></a>
+		</div>
+	</div>
+	<div class="ow_menu_tail">
+		<span class="ow_menu_price ow_premium_price"><span class="ow_nif">プレミアム価格　<!--{$fix.price_off10|number_format}--><!--{$smarty.const.PRICE_UNIT}--></span></span>
+		<span class="ow_menu_price ow_default_price"><span class="ow_nif">通常価格　</span><!--{$fix.price_taxin|number_format}--><!--{$smarty.const.PRICE_UNIT}--></span>
+	</div>
+	<!--{if !empty($fix_caption)}-->
+	<div class="ow_menu_caption">
+		<!--{$fix.caption}-->
+	</div>
+	<!--{/if}-->
+</div>

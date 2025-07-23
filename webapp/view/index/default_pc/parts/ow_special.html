@@ -1,0 +1,134 @@
+		<div class="ow_special" id="special">
+			<div class="ow_special_intro ow_tac">
+				<div class="ow_special_top">
+					<img class="ow_vab" src="img/pc/top/special_top.jpg" alt="お悩み別鑑定　あの人は私の事が好き？それとも…" title="お悩み別鑑定　あの人は私の事が好き？それとも…" />
+				</div>
+				<div class="ow_special_intro_item ow_special_intro_teller">
+					<img src="img/pc/top/special_intro_teller.png" alt="" title="" />
+				</div>
+				<div class="ow_special_intro_item ow_special_intro_title">
+					<img src="img/pc/top/special_intro_title.png" alt="「この時に〇〇してください」あなたの未来を的確に示唆‼" title="「この時に〇〇してください」あなたの未来を的確に示唆‼" />
+				</div>
+				<div class="ow_special_intro_item ow_special_intro_speech_balloon">
+					<img src="img/pc/top/special_intro_speech_balloon.png" alt="別世界のあなたが教えてくれます" title="別世界のあなたが教えてくれます" />
+				</div>
+				<div class="ow_special_intro_item ow_special_intro_arawareru">
+					<img src="img/pc/top/special_intro_arawareru.png" alt="いつか本当に愛してくれる人は現れる？" title="いつか本当に愛してくれる人は現れる？" />
+				</div>
+				<div class="ow_special_intro_item ow_special_intro_saigo">
+					<img src="img/pc/top/special_intro_saigo.png" alt="あの人とは結ばれる？最後はどうなる？" title="あの人とは結ばれる？最後はどうなる？" />
+				</div>
+				<div class="ow_special_intro_item ow_special_intro_suunen">
+					<img src="img/pc/top/special_intro_suunen.png" alt="数年後の私は何をしているの？" title="数年後の私は何をしているの？" />
+				</div>
+			</div>
+			<!-- /.ow_rec_intro -->
+			<div class="ow_special_mid">
+				<div class="ow_menu">
+		<!--{assign var="pickup_contents_data" value=$contents_list[2]}-->
+		<!--{assign var="pickup_category" value=$contents_list[2].category}-->
+		<!--{assign var="pickup_category_group" value=$contents_list[2].category_group}-->
+		<!--{assign var="pickup_target_count" value=$contents_list[2].target_count}-->
+					<div class="ow_menu_mid">
+						<div class="ow_menu_head">
+							<div class="ow_menu_icon">
+								<img src="img/pc/category/<!--{$pickup_category}-->.png" alt="<!--{$category_data[$pickup_category].name}-->　<!--{if $pickup_target_count == 1}-->一<!--{else}-->二<!--{/if}-->人用" title="<!--{$category_data[$pickup_category].name}-->　<!--{if $pickup_target_count == 1}-->一<!--{else}-->二<!--{/if}-->人用" />
+							</div>
+
+							<div class="ow_menu_title">
+								<a href="<!--{$smarty.const.ISP_BASE_URL}-->web/?menu=<!--{$pickup_contents_data.id}-->" class="ow_menu_link">
+						<!--{$pickup_contents_data.name_biglobe|default:$pickup_contents_data.name_rakuten|default:$pickup_contents_data.name}--></a>
+							</div>
+						</div>
+						<div class="ow_menu_tail">
+							<span class="ow_menu_price ow_premium_price"><span class="ow_nif">プレミアム価格　<!--{$pickup_contents_data.price_off10|number_format}--><!--{$smarty.const.PRICE_UNIT}--></span></span>
+							<span class="ow_menu_price ow_default_price"><span class="ow_nif">通常価格　</span><!--{$pickup_contents_data.price_taxin|number_format}--><!--{$smarty.const.PRICE_UNIT}--></span>
+						</div>
+					</div>
+				</div>
+				<!-- /.ow_menu -->
+				<div class="ow_special_menu_title ow_tac">
+					<img src="img/pc/top/special_intro_aisyou.png" alt="あの人と私の体の相性は良い？" title="あの人と私の体の相性は良い？" />
+				</div>
+				<div class="ow_menu">
+		<!--{assign var="pickup_contents_data" value=$contents_list[4]}-->
+		<!--{assign var="pickup_category" value=$contents_list[4].category}-->
+		<!--{assign var="pickup_category_group" value=$contents_list[4].category_group}-->
+		<!--{assign var="pickup_target_count" value=$contents_list[4].target_count}-->
+					<div class="ow_menu_mid">
+						<div class="ow_menu_head">
+							<div class="ow_menu_icon">
+								<img src="img/pc/category/<!--{$pickup_category}-->.png" alt="<!--{$category_data[$pickup_category].name}-->　<!--{if $pickup_target_count == 1}-->一<!--{else}-->二<!--{/if}-->人用" title="<!--{$category_data[$pickup_category].name}-->　<!--{if $pickup_target_count == 1}-->一<!--{else}-->二<!--{/if}-->人用" />
+							</div>
+
+							<div class="ow_menu_title">
+								<a href="<!--{$smarty.const.ISP_BASE_URL}-->web/?menu=<!--{$pickup_contents_data.id}-->" class="ow_menu_link">
+						<!--{$pickup_contents_data.name_biglobe|default:$pickup_contents_data.name_rakuten|default:$pickup_contents_data.name}--></a>
+							</div>
+						</div>
+						<div class="ow_menu_tail">
+							<span class="ow_menu_price ow_premium_price"><span class="ow_nif">プレミアム価格　<!--{$pickup_contents_data.price_off10|number_format}--><!--{$smarty.const.PRICE_UNIT}--></span></span>
+							<span class="ow_menu_price ow_default_price"><span class="ow_nif">通常価格　</span><!--{$pickup_contents_data.price_taxin|number_format}--><!--{$smarty.const.PRICE_UNIT}--></span>
+						</div>
+					</div>
+				</div>
+				<!-- /.ow_menu -->
+				<div class="ow_special_menu_title ow_tac">
+					<img src="img/pc/top/special_intro_ketukon.png" alt="好きな人と結婚したい…恋の未来を教えて！" title="好きな人と結婚したい…恋の未来を教えて！" />
+				</div>
+				<div class="ow_menu">
+		<!--{assign var="pickup_contents_data" value=$contents_list[8]}-->
+		<!--{assign var="pickup_category" value=$contents_list[8].category}-->
+		<!--{assign var="pickup_category_group" value=$contents_list[8].category_group}-->
+		<!--{assign var="pickup_target_count" value=$contents_list[8].target_count}-->
+					<div class="ow_menu_mid">
+						<div class="ow_menu_head">
+							<div class="ow_menu_icon">
+								<img src="img/pc/category/<!--{$pickup_category}-->.png" alt="<!--{$category_data[$pickup_category].name}-->　<!--{if $pickup_target_count == 1}-->一<!--{else}-->二<!--{/if}-->人用" title="<!--{$category_data[$pickup_category].name}-->　<!--{if $pickup_target_count == 1}-->一<!--{else}-->二<!--{/if}-->人用" />
+							</div>
+
+							<div class="ow_menu_title">
+								<a href="<!--{$smarty.const.ISP_BASE_URL}-->web/?menu=<!--{$pickup_contents_data.id}-->" class="ow_menu_link">
+						<!--{$pickup_contents_data.name_biglobe|default:$pickup_contents_data.name_rakuten|default:$pickup_contents_data.name}--></a>
+							</div>
+						</div>
+						<div class="ow_menu_tail">
+							<span class="ow_menu_price ow_premium_price"><span class="ow_nif">プレミアム価格　<!--{$pickup_contents_data.price_off10|number_format}--><!--{$smarty.const.PRICE_UNIT}--></span></span>
+							<span class="ow_menu_price ow_default_price"><span class="ow_nif">通常価格　</span><!--{$pickup_contents_data.price_taxin|number_format}--><!--{$smarty.const.PRICE_UNIT}--></span>
+						</div>
+					</div>
+				</div>
+				<!-- /.ow_menu -->
+				<div class="ow_special_menu_title ow_tac">
+					<img src="img/pc/top/special_intro_yarinaosu.png" alt="別れた人ともう一度やり直すためには…？" title="別れた人ともう一度やり直すためには…？" />
+				</div>
+				<div class="ow_menu">
+		<!--{assign var="pickup_contents_data" value=$contents_list[6]}-->
+		<!--{assign var="pickup_category" value=$contents_list[6].category}-->
+		<!--{assign var="pickup_category_group" value=$contents_list[6].category_group}-->
+		<!--{assign var="pickup_target_count" value=$contents_list[6].target_count}-->
+					<div class="ow_menu_mid">
+						<div class="ow_menu_head">
+							<div class="ow_menu_icon">
+								<img src="img/pc/category/<!--{$pickup_category}-->.png" alt="<!--{$category_data[$pickup_category].name}-->　<!--{if $pickup_target_count == 1}-->一<!--{else}-->二<!--{/if}-->人用" title="<!--{$category_data[$pickup_category].name}-->　<!--{if $pickup_target_count == 1}-->一<!--{else}-->二<!--{/if}-->人用" />
+							</div>
+
+							<div class="ow_menu_title">
+								<a href="<!--{$smarty.const.ISP_BASE_URL}-->web/?menu=<!--{$pickup_contents_data.id}-->" class="ow_menu_link">
+						<!--{$pickup_contents_data.name_biglobe|default:$pickup_contents_data.name_rakuten|default:$pickup_contents_data.name}--></a>
+							</div>
+						</div>
+						<div class="ow_menu_tail">
+							<span class="ow_menu_price ow_premium_price"><span class="ow_nif">プレミアム価格　<!--{$pickup_contents_data.price_off10|number_format}--><!--{$smarty.const.PRICE_UNIT}--></span></span>
+							<span class="ow_menu_price ow_default_price"><span class="ow_nif">通常価格　</span><!--{$pickup_contents_data.price_taxin|number_format}--><!--{$smarty.const.PRICE_UNIT}--></span>
+						</div>
+					</div>
+				</div>
+				<!-- /.ow_menu -->
+			</div>
+
+			<div class="ow_special_btm ow_tac">
+				<img class="ow_vat" src="img/pc/top/special_btm.jpg" alt="" />
+			</div>
+		</div>
+		<!-- /.ow_special -->

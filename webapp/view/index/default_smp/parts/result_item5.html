@@ -1,0 +1,69 @@
+<!--{* yes_no *}-->
+<div class="ow_result_item ow_yesno">
+	<div class="ow_result_item_top ow_tac">
+		<img class="ow_vab" src="img/smp/result/yesno_top.png" alt="白黒ハッキリさせます！※目をそらさないで※あなたが知りたい真実の答え" title="白黒ハッキリさせます！※目をそらさないで※あなたが知りたい真実の答え">
+	</div>
+	<div class="ow_result_item_mid">
+		<div class="ow_result_title">
+			<div class="ow_result_title_top ow_tac">
+				<img class="ow_vab" src="img/smp/result/yesno_title_top.png" alt="">
+			</div>
+			<div class="ow_result_title_mid"><!--{$menu_data.name}--></div>
+			<div class="ow_result_title_btm ow_tac">
+				<img class="ow_vat" src="img/smp/result/yesno_title_btm.png" alt="">
+			</div>
+		</div>
+		<div class="ow_result_body">
+			<div class="ow_area ow_tac">
+			<!--{if empty($menu_data.pickup_flag) && ( $page_identify == $smarty.const.PAY || $page_identify == $smarty.const.FREE) }-->
+				<div class="ow_yesno_canvas_<!--{$menu_data.result.yesno_img}-->">
+					<img src="img/smp/result/yesno_canvas_<!--{$menu_data.result.yesno_img}-->.png" alt="">
+				</div>
+				<div class="ow_area_item ow_yesno_teller_<!--{$menu_data.result.yesno_img}-->">
+					<img src="img/smp/result/yesno_teller_<!--{$menu_data.result.yesno_img}-->.png" alt="">
+				</div>
+				<div class="ow_area_item ow_yesno_judge_<!--{$menu_data.result.yesno_img}-->">
+					<img src="img/smp/result/yesno_<!--{$menu_data.result.yesno_img}-->.png" alt="" title="">
+				</div>
+			<!--{else}-->
+				<div class="ow_yesno_canvas_nc">
+					<img src="img/smp/result/yesno_canvas_nc.png" alt="">
+				</div>
+				<div class="ow_area_item ow_yesno_teller_nc">
+					<img src="img/smp/result/yesno_teller_nc.png" alt="">
+				</div>
+				<div class="ow_area_item ow_yesno_judge_nc">
+					<img src="img/smp/result/yesno_nc.png" alt="" title="">
+				</div>
+			<!--{/if}-->
+			</div>
+			<!-- /.ow_area -->
+			<div class="ow_panel">
+				<div class="ow_panel_top ow_tac">
+					<img class="ow_vab" src="img/smp/result/yesno_panel_top.png" alt="">
+				</div>
+				<div class="ow_panel_mid">
+				<!--{if empty($menu_data.pickup_flag) && ( $page_identify == $smarty.const.PAY || $page_identify == $smarty.const.FREE) }-->
+					<!--{$menu_data.result.body}-->
+				<!--{else}-->
+					<!--{$menu_data.result.cut_body}--><br>
+					<div class="ow_nc ow_nc_white">
+						<a href="javascript:<!--{if empty($menu_data.pickup_flag)}-->gtag_submit('result',<!--{$contents_data.id}-->');<!--{/if}-->nc_submit('astrology_form<!--{$pickup_num}-->')" class="ow_nc_btn ow_nc_btn_default"><img src="img/smp/nc/btn_nc.png" alt="続きを見る(有料)" title="続きを見る(有料)"></a>
+					</div>
+				<!--{/if}-->
+				</div>
+				<!-- /.ow_panel_mid -->
+				<div class="ow_panel_btm ow_tac">
+					<img class="ow_vat" src="img/smp/result/yesno_panel_btm.png" alt="">
+				</div>
+			</div>
+			<!-- /.ow_panel -->
+		</div>
+		<!-- /.ow_result_body -->
+	</div>
+	<!-- /.ow_result_item_mid -->
+	<div class="ow_result_item_btm ow_tac">
+		<img class="ow_vat" src="img/smp/result/yesno_btm.png" alt="">
+	</div>
+</div>
+<!-- /.ow_result_item ow_yesno -->

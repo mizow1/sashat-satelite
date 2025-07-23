@@ -1,0 +1,587 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="ja" lang="ja" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<base href="<!--{$smarty.const.ISP_BASE_URL}-->web/">
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+	<meta name="viewport" content="width=device-width" />
+	<title><!--{if ISP == nifty}-->@nifty:<!--{/if}--><!--{$api_data.seiza_name}-->座（<!--{$api_data.seiza_kana}-->座）今日の運勢｜<!--{$smarty.const.CONTENTS_NAME}--></title>
+	<link rel="stylesheet" href="css/smp/sp.css" type="text/css" />
+	<link rel="stylesheet" href="css/font-awesome.css?ver4.5" type="text/css" />
+	<script type="text/javascript" src="js/jquery1.8.js"></script>
+	<script type="text/javascript" src="js/default_form_ie.js"></script>
+	<script type="text/javascript" src="js/sashat/consultation_form.js"></script>
+	<script type="text/javascript" src="js/date.js"></script>
+	<script src="js/jquery.tile.js" type="text/javascript"></script>
+	<script type="text/javascript" src="js/smp/profile.js"></script>
+	<script type="text/javascript" src="js/smp/pagetop.js"></script>
+	<script type="text/javascript" src="js/rakuten_logo.js"></script>
+	<meta name="description" content="１日を最高のスタートにするための～12星座による今日の運勢ランキング【無料で毎日更新中】恋愛、仕事、勉強、人間関係など、様々な運勢のラッキーポイントをあなたにお届けします。その運勢に合わせたラッキーランチやラッキー方角、ラッキーファッションなどユニークな角度での開運方法も公開しています！毎日の生活にポジティブな刺激を与え、自分自身をさらに理解し、成長していくためのヒントを得られるはずです。">
+	<!--{include file="file:./parts/ga.html"}-->
+</head>
+<body class="ow_body">
+
+<!--{include file="file:../../../../../common/header_isp.html"}-->
+<!--{include file="file:./parts/header_menu.html"}-->
+
+	<div class="ow_main">
+
+		<div class="ow_bread daily">
+			<a href="<!--{$smarty.const.CONTENTS_URL}-->">TOP</a> &gt; <a href="<!--{$smarty.const.CONTENTS_URL}-->web/daily/">今日の運勢</a> &gt;
+			<!--{$api_data.seiza_name}-->座（<!--{$api_data.seiza_kana}-->座）今日の運勢
+		</div>
+
+		<div class="block block_fortune_daily">
+		<div class="wrapper">
+			<div class="fortune_daily_name"><span class="fortune_daily_rank"><!--{$api_data.ranking}-->位</span><!--{$api_data.seiza_name}-->座</div>
+			<div class="fortune_daily_head cf">
+				<div class="fortune_daily_icon">
+					<img src="//static-n.goodfortune.jp/files/img/horoscope/icon/<!--{$api_data.seiza_e_name}-->.png" alt="<!--{$api_data.seiza_name}-->座（<!--{$api_data.seiza_kana}-->座）の今日の運勢">
+				</div>
+				<div class="fortune_daily_info">
+					<dl class="fortune_daily_subject">
+						<dt>ラッキーナンバー</dt>
+						<dd><!--{"または"|implode:$api_data.lucky_number}--></dd>
+					</dl>
+					<dl class="fortune_daily_subject">
+					<dt>ラッキーカラー</dt>
+					<dd><span style="color: <!--{$api_data.color_code}-->;">●</span><!--{$api_data.color_name}--></dd>
+					</dl>
+				</div>
+			</div>
+
+			<ul class="fortune_daily_button_wrap">
+				<li class="fortune_daily_button"><a href="<!--{$smarty.const.ISP_BASE_URL}-->web/daily_detail?tgt=<!--{$api_data.seiza_e_name}-->#renaiun">恋愛運</a></li>
+				<li class="fortune_daily_button"><a href="<!--{$smarty.const.ISP_BASE_URL}-->web/daily_detail?tgt=<!--{$api_data.seiza_e_name}-->#deaiun">出会い運</a></li>
+				<li class="fortune_daily_button"><a href="<!--{$smarty.const.ISP_BASE_URL}-->web/daily_detail?tgt=<!--{$api_data.seiza_e_name}-->#kinun">金運</a></li>
+				<li class="fortune_daily_button"><a href="<!--{$smarty.const.ISP_BASE_URL}-->web/daily_detail?tgt=<!--{$api_data.seiza_e_name}-->#shigotoun">仕事・勉強運</a></li>
+				<li class="fortune_daily_button"><a href="<!--{$smarty.const.ISP_BASE_URL}-->web/daily_detail?tgt=<!--{$api_data.seiza_e_name}-->#jobun">求職・転職運</a></li>
+				<li class="fortune_daily_button"><a href="<!--{$smarty.const.ISP_BASE_URL}-->web/daily_detail?tgt=<!--{$api_data.seiza_e_name}-->#taijinun">対人運</a></li>
+			</ul>
+			<div class="mt_4 mb_4"><a href="//www.goodfortune.jp/fortune/week">今日から1週間先まで、毎日の運勢を先取りできる！さちこいの12星座別・今週の運勢はこちら</a></div>
+
+			<div class="fortune_daily_item fortune_daily_item_sougouun" id="sougouun">
+				<h3 class="fortune_daily_item_title f_color_sougouun">総合運<span><!--{for $i = 0; $i<= $api_data.sougou_point; $i++}--><img src="//static-n.goodfortune.jp/files/img/horoscope/sougouun_on.jpg" alt="" ><!--{/for}--></span></h3>
+				<div class="fortune_daily_item_body">
+					<!--{$api_data.sougou_body}-->
+				</div>
+			</div>
+			<div class="fortune_daily_item fortune_daily_item_renaiun" id="renaiun">
+				<h3 class="fortune_daily_item_title f_color_renaiun">恋愛運<span><!--{for $i = 0; $i<= $api_data.renai_point; $i++}--><img src="//static-n.goodfortune.jp/files/img/horoscope/renaiun_on.jpg" alt="" ><!--{/for}--></span></h3>
+				<div class="fortune_daily_item_body">
+					<!--{$api_data.renai_body}-->
+				</div>
+				<h4 class="f_color_renaiun fortune_daily_item_title_deai" id="deaiun" >★出会い運は…</h4>
+				<div class="fortune_daily_item_body">
+					<!--{$api_data.deai_body}-->
+				</div>
+			</div>
+			<dl class="lucky_list">
+				<dt>例えば運命の出会いはココに</dt>
+				<dd><!--{$api_data.deai_scene}--></dd>
+				<dt>恋愛強化アイテム</dt>
+				<dd><!--{$api_data.love_item}--></dd>
+				<dt>ラッキーファッション</dt>
+				<dd><!--{$api_data.lucky_fashion}--></dd>
+			</dl>
+	<div id='div-gpt-ad-1579056676422-0' style='margin:auto;text-align:center;'>
+		<script>
+			googletag.cmd.push(function() { googletag.display('div-gpt-ad-1579056676422-0'); });
+		</script>
+	</div>
+			<div class="fortune_daily_item fortune_daily_item_kinun" id="kinun">
+				<h3 class="fortune_daily_item_title f_color_kinun">金運<span><!--{for $i = 0; $i<= $api_data.sougou_point; $i++}--><img src="//static-n.goodfortune.jp/files/img/horoscope/kinun_on.jpg" alt=""><!--{/for}--></span></h3>
+				<div class="fortune_daily_item_body">
+					<!--{$api_data.kinun_body}-->
+				</div>
+			</div>
+			<dl class="lucky_list">
+				<dt>金運上昇アクション</dt>
+				<dd><!--{$api_data.money_action}--></dd>
+				<dt>ラッキー方角</dt>
+				<dd><!--{$api_data.lucky_direction}--></dd>
+				<dt>今日の節約方法</dt>
+				<dd><!--{$api_data.money_saving}--></dd>
+			</dl>
+	<div class="adspace_detail">
+	<div id='div-gpt-ad-1584078298469-0' style='margin:auto;text-align:center;'>
+		<script>
+			googletag.cmd.push(function() { googletag.display('div-gpt-ad-1584078298469-0'); });
+		</script>
+	</div>
+	</div>
+			<div class="fortune_daily_item fortune_daily_item_shigotoun" id="shigotoun">
+				<h3 class="fortune_daily_item_title f_color_shigotoun">仕事・勉強運<span><!--{for $i = 0; $i <= $api_data.sigoto_point; $i++}--><img src="//static-n.goodfortune.jp/files/img/horoscope/shigotoun_on.jpg" alt=""><!--{/for}--></span></h3>
+				<div class="fortune_daily_item_body">
+					<!--{$api_data.sigoto_body}-->
+					<h4 class="f_color_shigotoun fortune_daily_item_title_job" id="jobun">★求職・転職運は…</h4>
+					<!--{$api_data.job_body}-->
+				</div>
+			</div>
+			<dl class="lucky_list">
+				<dt>ラッキーランチ</dt>
+				<dd><!--{$api_data.lucky_lunch}--></dd>
+				<dt>ラッキーおやつ</dt>
+				<dd><!--{$api_data.lucky_snack}--></dd>
+				<dt>ラッキー文房具</dt>
+				<dd><!--{$api_data.lucky_stationery}--></dd>
+			</dl>
+
+			<div class="fortune_daily_item fortune_daily_item_taijinun" id="taijinun">
+				<h3 class="fortune_daily_item_title f_color_taijinun">対人運<span><!--{for $i = 0; $i <= $api_data.taijin_point; $i++}--><img src="//static-n.goodfortune.jp/files/img/horoscope/taijinun_on.jpg" alt=""><!--{/for}--></span></h3>
+				<div class="fortune_daily_item_body">
+					<!--{$api_data.taijin_body}-->
+				</div>
+			</div>
+			<dl class="lucky_list">
+				<dt>連絡を取りたい人</dt>
+				<dd><!--{$api_data.lucky_person}--></dd>
+				<dt>好感度アクション</dt>
+				<dd><!--{$api_data.favorite_action}--></dd>
+			</dl>
+			<div class="mt_4"><a href="//www.goodfortune.jp/<!--{$smarty.now|date_format:'%Y'}-->year">あなたの<!--{$smarty.now|date_format:'%Y'}-->年の運勢は？総合運・恋愛運・仕事運・金運など、当たると評判の先生らによる鑑定＆コラムが大集合！</a></div>
+			<ul class="link_button_wrap">
+				<li class="link_button link_button_01"><a href="//www.goodfortune.jp/fortune/tomorrow/<!--{$api_data.seiza_e_name}-->"><!--{$api_data.seiza_name}-->座<br>明日の運勢</a></li>
+				<li class="link_button link_button_01"><a href="//www.goodfortune.jp/fortune/week/<!--{$api_data.seiza_e_name}-->"><!--{$api_data.seiza_name}-->座<br>今週の運勢</a></li>
+			</ul>
+			<ul class="link_button_wrap">
+				<li class="link_button link_button_01"><a href="//www.goodfortune.jp/fortune/today/#fortune_rank_part">今日の運勢<br>12星座ランキング</a></li>
+			</ul>
+		</div>
+		<!-- /.wrapper -->
+		</div>
+		<!-- /.block -->
+
+		<div class="block bg_gray">
+			<div class="block_title block_title_01">
+				<h2>今日の運勢 / 12星座から選ぶ</h2>
+			</div>
+			<div class="wrapper">
+				<p class="pb_4 block_txt align_center">
+					<strong>今日の運勢をランキング形式で毎日更新！</strong><br>
+					12星座の恋愛運、出会い運、金運、<br>
+					仕事・勉強運、求職・転職運、対人運<br>
+					それぞれの運気をさちこいが詳しく鑑定中。<br>
+					登録不要・もちろん無料！
+				</p>
+			<ul class="horo_list">
+				<li class="horo_item">
+					<a href="<!--{$smarty.const.ISP_BASE_URL}-->web/daily_detail?tgt=aries">
+						<div class="horo_icon"><img src="//static-n.goodfortune.jp/files/img/horoscope/icon/aries.png" alt="今日の牡羊座（おひつじ座）"></div>
+						<div class="horo_name">牡羊座</div>
+					</a>
+				</li>
+				<li class="horo_item">
+					<a href="<!--{$smarty.const.ISP_BASE_URL}-->web/daily_detail?tgt=taurus">
+						<div class="horo_icon"><img src="//static-n.goodfortune.jp/files/img/horoscope/icon/taurus.png" alt="今日の牡牛座（おうし座）"></div>
+						<div class="horo_name">牡牛座</div>
+					</a>
+				</li>
+				<li class="horo_item">
+					<a href="<!--{$smarty.const.ISP_BASE_URL}-->web/daily_detail?tgt=gemini">
+						<div class="horo_icon"><img src="//static-n.goodfortune.jp/files/img/horoscope/icon/gemini.png" alt="今日の双子座（ふたご座）"></div>
+						<div class="horo_name">双子座</div>
+					</a>
+				</li>
+				<li class="horo_item">
+					<a href="<!--{$smarty.const.ISP_BASE_URL}-->web/daily_detail?tgt=cancer">
+						<div class="horo_icon"><img src="//static-n.goodfortune.jp/files/img/horoscope/icon/cancer.png" alt="今日の蟹座（かに座）"></div>
+						<div class="horo_name">蟹座</div>
+					</a>
+				</li>
+				<li class="horo_item">
+					<a href="<!--{$smarty.const.ISP_BASE_URL}-->web/daily_detail?tgt=leo">
+						<div class="horo_icon"><img src="//static-n.goodfortune.jp/files/img/horoscope/icon/leo.png" alt="今日の獅子座（しし座）"></div>
+						<div class="horo_name">獅子座</div>
+					</a>
+				</li>
+				<li class="horo_item">
+					<a href="<!--{$smarty.const.ISP_BASE_URL}-->web/daily_detail?tgt=virgo">
+						<div class="horo_icon"><img src="//static-n.goodfortune.jp/files/img/horoscope/icon/virgo.png" alt="今日の乙女座（おとめ座）"></div>
+						<div class="horo_name">乙女座</div>
+					</a>
+				</li>
+				<li class="horo_item">
+					<a href="<!--{$smarty.const.ISP_BASE_URL}-->web/daily_detail?tgt=libra">
+						<div class="horo_icon"><img src="//static-n.goodfortune.jp/files/img/horoscope/icon/libra.png" alt="今日の天秤座（てんびん座）"></div>
+						<div class="horo_name">天秤座</div>
+					</a>
+				</li>
+				<li class="horo_item">
+					<a href="<!--{$smarty.const.ISP_BASE_URL}-->web/daily_detail?tgt=scorpio">
+						<div class="horo_icon"><img src="//static-n.goodfortune.jp/files/img/horoscope/icon/scorpio.png" alt="今日の蠍座（さそり座）"></div>
+						<div class="horo_name">蠍座</div>
+					</a>
+				</li>
+				<li class="horo_item">
+					<a href="<!--{$smarty.const.ISP_BASE_URL}-->web/daily_detail?tgt=sagittarius">
+						<div class="horo_icon"><img src="//static-n.goodfortune.jp/files/img/horoscope/icon/sagittarius.png" alt="今日の射手座（いて座）"></div>
+						<div class="horo_name">射手座</div>
+					</a>
+				</li>
+				<li class="horo_item">
+					<a href="<!--{$smarty.const.ISP_BASE_URL}-->web/daily_detail?tgt=capricornus">
+						<div class="horo_icon"><img src="//static-n.goodfortune.jp/files/img/horoscope/icon/capricornus.png" alt="今日の山羊座（やぎ座）"></div>
+						<div class="horo_name">山羊座</div>
+					</a>
+				</li>
+				<li class="horo_item">
+					<a href="<!--{$smarty.const.ISP_BASE_URL}-->web/daily_detail?tgt=aquarius">
+						<div class="horo_icon"><img src="//static-n.goodfortune.jp/files/img/horoscope/icon/aquarius.png" alt="今日の水瓶座（みずがめ座）"></div>
+						<div class="horo_name">水瓶座</div>
+					</a>
+				</li>
+				<li class="horo_item">
+					<a href="<!--{$smarty.const.ISP_BASE_URL}-->web/daily_detail?tgt=pisces">
+						<div class="horo_icon"><img src="//static-n.goodfortune.jp/files/img/horoscope/icon/pisces.png" alt="今日の魚座（うお座）"></div>
+						<div class="horo_name">魚座</div>
+					</a>
+				</li>
+			</ul>
+				<ul class="link_button_wrap">
+					<li class="link_button link_button_01"><a href="//www.goodfortune.jp/fortune/tomorrow">明日の運勢</a></li>
+					<li class="link_button link_button_01"><a href="//www.goodfortune.jp/fortune/week">今週の運勢</a></li>
+				</ul>
+			</div>
+			<!-- /.wrapper -->
+		</div>
+		<!-- /.block -->
+
+
+
+		<div class="block">
+			<div class="wrapper">
+				<div class="appeal_title">今日の運勢はいかがでしたか？<br>運勢が良かった人にも悪かった人にも</div>
+				<div class="block_title block_title_02">
+					<h2>さちこいオススメの占いをご紹介！</h2>
+				</div>
+			<ul>
+				<li class="mb_6">
+					<div class="mb_2">
+						<a href="//www.goodfortune.jp/fortune/today"><img src="//static-n.goodfortune.jp/files/img/bnr_today_fortune.jpg" alt="TODAY 12星座占い 今日の運勢" width="584" height="120"></a>
+					</div>
+					<h3 class="f26">当たりすぎ！星座で今日の運勢</h3>
+					<p class="f18 mb_4">
+						あなたの星座（生年月日・誕生日）でわかる「恋愛運、出会い運、金運、仕事・勉強運、求職・転職運、対人運」を無料で占います。気を付けておくと良いことや、ラッキーファッション、ラッキーカラーなどの開運方法も公開しています！
+					</p>
+					<p class="f18 mb_2">▼こんな記事も読まれています</p>
+					<ul class="relate_list">
+						<li class="relate_item">
+							<div class="relate_thm">
+								<a href="//www.goodfortune.jp/article/34037">
+									<div class="relate_thm_bg">
+										<img src="//static-n.goodfortune.jp/image/article/middle/f/d/8/9/fd89443d1568e6ac14125a95313003dc_1.jpg" alt="さちこい無料ピックアップ│12星座別…風の時代への順応度と順応するためのアドバイスメッセージ">
+									</div>
+								</a>
+							</div>
+							<div class="relate_contents">
+								<ul class="relate_genre">
+									<li class="relate_genre_item"><a href="//www.goodfortune.jp/column/column_uranai">コラム</a></li>
+								</ul>
+								<h4 class="relate_title">
+									<a href="//www.goodfortune.jp/article/34037">
+										12星座別…風の時代への順応度と順応するためのアドバイスメッセージ
+									</a>
+								</h4>
+							</div>
+						</li>
+						<li class="relate_item">
+							<div class="relate_thm">
+								<a href="//www.goodfortune.jp/article/15662">
+									<div class="relate_thm_bg">
+										<img src="//static-n.goodfortune.jp/image/article/middle/d/2/1/f/d21f7abaaf0e8a9ba1d35ab0a9aaa5ef.jpg" alt="占いコラム│人間だけではない！ペットにも星座の影響はあるの？">
+									</div>
+								</a>
+							</div>
+							<div class="relate_contents">
+								<ul class="relate_genre">
+									<li class="relate_genre_item"><a href="//www.goodfortune.jp/column/column_uranai">コラム</a></li>
+								</ul>
+								<h4 class="relate_title">
+									<a href="//www.goodfortune.jp/article/15662">
+										人間だけではない！<br>ペットにも星座の影響はあるの？
+									</a>
+								</h4>
+							</div>
+						</li>
+					</ul>
+					<div class="align_right f18"><a href="//www.goodfortune.jp/fortune/today">12星座で今日の運勢を見る</a></div>
+				</li>
+				<li class="mb_6">
+					<div class="mb_2">
+						<a href="//www.goodfortune.jp/fortune/today/blood"><img src="//static-n.goodfortune.jp/files/img/bnr_today_bloodtype.jpg" alt="星座×血液型で占う今日の運勢" width="584" height="120"></a>
+					</div>
+					<h3 class="f26">最強運ランキング！星座×血液型で今日の運勢</h3>
+					<p class="f18 mb_4">
+						星座×血液型の組み合わせから今日の運勢をランキング形式でご紹介。基本性格をはじめ、総合運／恋愛出会い運／金運／対人運／健康運などが占えます。今日の運気を上げるためのアドバイスも要チェック！
+					</p>
+					<div class="align_right f18"><a href="//www.goodfortune.jp/fortune/today/blood">星座×血液型で今日の運勢を占う</a></div>
+				</li>
+				<li class="mb_6">
+					<div class="mb_2">
+						<a href="//www.goodfortune.jp/fortune/today/shichusuimei"><img src="//static-n.goodfortune.jp/files/img/bnr_today_shichusuimei.jpg" alt="四柱推命で占う今日の運勢" width="584" height="120"></a>
+					</div>
+					<h3 class="f26">的中率“高”！四柱推命で今日の運勢</h3>
+					<p class="f18 mb_4">
+						より精密に今日の運勢を占いたいあなたへ～生年月日／出生時刻から導き出される命式から、吉凶／恋愛運／仕事運／ラッキーポイントなど、今日一日のあなたをひと押しするアドバイスをお伝えします。
+					</p>
+					<p class="f18 mb_2">▼こんな記事も読まれています</p>
+					<ul class="relate_list">
+						<li class="relate_item">
+							<div class="relate_thm">
+								<a href="//www.goodfortune.jp/article/21067">
+									<div class="relate_thm_bg">
+										<img src="//static-n.goodfortune.jp/image/article/middle/d/8/8/d/d88dc3fce7ec5daf6f12a8c05c3b2216.jpg" alt="占いコラム│避けたほうがいいのはどの日？">
+									</div>
+								</a>
+							</div>
+							<div class="relate_contents">
+								<ul class="relate_genre">
+									<li class="relate_genre_item"><a href="//www.goodfortune.jp/column/column_uranai">コラム</a></li>
+								</ul>
+								<h4 class="relate_title">
+									<a href="//www.goodfortune.jp/article/21067">
+										避けたほうがいいのはどの日？
+									</a>
+								</h4>
+							</div>
+						</li>
+						<li class="relate_item">
+							<div class="relate_thm">
+								<a href="//www.goodfortune.jp/article/10277">
+									<div class="relate_thm_bg">
+										<img src="//static-n.goodfortune.jp/image/article/middle/f/8/f/1/f8f1cfb6a0f7ee749cf6770bb5c5cd2c.jpg" alt="占いコラム│国内外のちょっと変わったおもしろ占い特集！">
+									</div>
+								</a>
+							</div>
+							<div class="relate_contents">
+								<ul class="relate_genre">
+									<li class="relate_genre_item"><a href="//www.goodfortune.jp/column/column_uranai">コラム</a></li>
+								</ul>
+								<h4 class="relate_title">
+									<a href="//www.goodfortune.jp/article/10277">
+										国内外のちょっと変わったおもしろ占い特集！
+									</a>
+								</h4>
+							</div>
+						</li>
+					</ul>
+					<div class="align_right f18"><a href="//www.goodfortune.jp/fortune/today/shichusuimei">四柱推命で今日の運勢を占う</a></div>
+				</li>
+				<li class="mb_6">
+					<div class="mb_2">
+						<a href="//www.goodfortune.jp/fortune/today/tarot"><img src="//static-n.goodfortune.jp/files/img/bnr_today_tarot.jpg" alt="今日の運勢～タロット占い～" width="584" height="120"></a>
+					</div>
+					<h3 class="f26">大人気！タロットで今日の運勢</h3>
+					<p class="f18 mb_4">
+						タロットカードを使って、今日のあなたの状況や課題について占います。心を落ち着け、今日への質問を心に抱きながら、これだと思う１枚をめくってください。あなたが選んだカードから今日起こりうる運命を読み解いていきます。
+					</p>
+					<p class="f18 mb_2">▼こんな記事も読まれています</p>
+					<ul class="relate_list">
+						<li class="relate_item">
+							<div class="relate_thm">
+								<a href="//www.goodfortune.jp/article/7107">
+									<div class="relate_thm_bg">
+										<img src="//static-n.goodfortune.jp/image/article/middle/9/1/c/8/91c8717aeaa48db40a8b484387028bae_1.jpg" alt="タロット占い│今日チャンスを活かしたい！タロットが教える【今日すべきこと】って？">
+									</div>
+								</a>
+							</div>
+							<div class="relate_contents">
+								<ul class="relate_genre">
+									<li class="relate_genre_item"><a href="//www.goodfortune.jp/uranai/uranai_tarot">タロット</a></li>
+								</ul>
+								<h4 class="relate_title">
+									<a href="//www.goodfortune.jp/article/7107">
+										今日チャンスを活かしたい！<br>タロットが教える【今日すべきこと】って？
+									</a>
+								</h4>
+							</div>
+						</li>
+						<li class="relate_item">
+							<div class="relate_thm">
+								<a href="//www.goodfortune.jp/article/15298">
+									<div class="relate_thm_bg">
+										<img src="//static-n.goodfortune.jp/image/article/middle/0/8/5/7/085751e53ba154734342e18fee738b7c_1.jpg" alt="タロット占い│辛口覚悟の転職占い！その決心する前に！！１０秒タロット">
+									</div>
+								</a>
+							</div>
+							<div class="relate_contents">
+								<ul class="relate_genre">
+									<li class="relate_genre_item"><a href="//www.goodfortune.jp/uranai/uranai_tarot">タロット</a></li>
+								</ul>
+								<h4 class="relate_title">
+									<a href="//www.goodfortune.jp/article/15298">
+										辛口覚悟の転職占い！<br>その決心する前に！！１０秒タロット
+									</a>
+								</h4>
+							</div>
+						</li>
+					</ul>
+					<div class="align_right f18"><a href="//www.goodfortune.jp/fortune/today/tarot">タロットで今日の運勢を占う</a></div>
+				</li>
+				<li class="mb_6">
+					<div class="mb_2">
+						<a href="//www.goodfortune.jp/tarot#today"><img src="//static-n.goodfortune.jp/files/img/bnr_holoholo.jpg" alt="完全無料のholoholoタロット占い　今日の運勢「ラキタロット」" width="584" height="120"></a>
+					</div>
+					<h3 class="f26">毎日に癒しを～ハワイアンな気分で今日の運勢</h3>
+					<p class="f18 mb_4">
+						当たる！幸せにな気持ちになれる！と話題の「ホロホロタロット占い」～ハワイの神聖な力・マナが宿った44枚のカードが本来のあなたの姿・未来の可能性について教えてくれます。今日をハッピーに過ごすヒントを見つけてみましょう♪
+					</p>
+					<p class="f18 mb_2">▼こんな記事も読まれています</p>
+					<ul class="relate_list">
+						<li class="relate_item">
+							<div class="relate_thm">
+								<a href="//www.goodfortune.jp/article/15735">
+									<div class="relate_thm_bg">
+										<img src="//static-n.goodfortune.jp/image/article/middle/6/9/3/c/693cc58795a51cda8b52fa194a1c4d43_1.jpg" alt="タロット占い│今日のパーソナルラッキーカラー占い～身に着けてハッピーに！">
+									</div>
+								</a>
+							</div>
+							<div class="relate_contents">
+								<ul class="relate_genre">
+									<li class="relate_genre_item"><a href="//www.goodfortune.jp/uranai/uranai_tarot">タロット</a></li>
+								</ul>
+								<h4 class="relate_title">
+									<a href="//www.goodfortune.jp/article/15735">
+										今日のパーソナルラッキーカラー占い～<br>身に着けてハッピーに！
+									</a>
+								</h4>
+							</div>
+						</li>
+						<li class="relate_item">
+							<div class="relate_thm">
+								<a href="/article/12458">
+									<div class="relate_thm_bg">
+										<img src="//static-n.goodfortune.jp/image/article/middle/3/a/9/1/3a914e40fdddb6486316575897e2c609_1.jpg" alt="タロット占い│人生に『癒し』は必要です◆あなたに今必要なリフレッシュ方法">
+									</div>
+								</a>
+							</div>
+							<div class="relate_contents">
+								<ul class="relate_genre">
+									<li class="relate_genre_item"><a href="//www.goodfortune.jp/uranai/uranai_tarot">タロット</a></li>
+								</ul>
+								<h4 class="relate_title">
+									<a href="//www.goodfortune.jp/article/12458">
+										人生に『癒し』は必要です◆<br>あなたに今必要なリフレッシュ方法
+									</a>
+								</h4>
+							</div>
+						</li>
+					</ul>
+					<div class="align_right f18"><a href="//www.goodfortune.jp/tarot#today">ホロホロタロット占いで今日の運勢を占う</a></div>
+				</li>
+				<li class="mb_6">
+					<div class="mb_2">
+						<a href="//www.goodfortune.jp/fortune/birthday_cat"><img src="//static-n.goodfortune.jp/files/img/bnr_birthday_cat.jpg" alt="今日の運勢～ねこ占い～" width="584" height="120"></a>
+					</div>
+					<h3 class="f26">ねこ好きにオススメの今日の運勢</h3>
+					<p class="f18 mb_4">
+						生年月日から導き出した“ねこのタイプ別”に、今日一日の運勢をお伝えします。可愛らしいねこと数秘術を合わせた大注目の占いで、日々の幸せのヒントを見つけていきましょう。今日の運勢の他に「あなたの特徴・性格」も確認することができます。
+					</p>
+					<p class="f18 mb_2">▼こんな記事も読まれています</p>
+					<ul class="relate_list">
+						<li class="relate_item">
+							<div class="relate_thm">
+								<a href="//www.goodfortune.jp/article/17284">
+									<div class="relate_thm_bg">
+										<img src="//static-n.goodfortune.jp/image/article/middle/0/7/8/e/078e3a6f135b05eba142295cdd7d0867.jpg" alt="占いコラム│好きな動物で分かる！彼のタイプと恋愛傾向">
+									</div>
+								</a>
+							</div>
+							<div class="relate_contents">
+								<ul class="relate_genre">
+									<li class="relate_genre_item"><a href="//www.goodfortune.jp/column/column_uranai">コラム</a></li>
+								</ul>
+								<h4 class="relate_title">
+									<a href="//www.goodfortune.jp/article/17284">
+										好きな動物で分かる！彼のタイプと恋愛傾向
+									</a>
+								</h4>
+							</div>
+						</li>
+						<li class="relate_item">
+							<div class="relate_thm">
+								<a href="//www.goodfortune.jp/article/13676">
+									<div class="relate_thm_bg">
+										<img src="//static-n.goodfortune.jp/image/article/middle/9/6/a/b/96ab88c6f8237492fa4fcbc67d7eeb34_1.jpg" alt="タロット占い│気づいて欲しいにゃん！◆ペットの気持ち◆大切な家族がタロットを通してあなたに伝えたいこと">
+									</div>
+								</a>
+							</div>
+							<div class="relate_contents">
+								<ul class="relate_genre">
+									<li class="relate_genre_item"><a href="//www.goodfortune.jp/uranai/uranai_tarot">タロット</a></li>
+								</ul>
+								<h4 class="relate_title">
+									<a href="//www.goodfortune.jp/article/13676">
+										気づいて欲しいにゃん！◆ペットの気持ち◆大切な家族があなたに伝えたいこと
+									</a>
+								</h4>
+							</div>
+						</li>
+					</ul>
+					<div class="align_right f18"><a href="//www.goodfortune.jp/fortune/birthday_cat">ねこ占いで今日の運勢を占う</a></div>
+				</li>
+				<li>
+					<div class="mb_2">
+						<a href="//www.goodfortune.jp/fortune/today/omikuji"><img src="//static-n.goodfortune.jp/files/img/bnr_today_omikuji.jpg" alt="今日の運勢〜開運おみくじ占い〜" width="584" height="120"></a>
+					</div>
+					<h3 class="f26">王道！おみくじで今日の運勢</h3>
+					<p class="f18 mb_4">
+						神社や寺院で引くことができる人気の運勢占い「おみくじ」を、さちこいでも楽しむことができます。吉凶判断の総合評価から、恋愛、仕事、健康、金運、失うせ物、待ち人、健康などのアドバイスまで…本格的なおみくじで毎日の運試しをしてみましょう！
+					</p>
+					<p class="f18 mb_2">▼こんな記事も読まれています</p>
+					<ul class="relate_list">
+						<li class="relate_item">
+							<div class="relate_thm">
+								<a href="//www.goodfortune.jp/article/18675">
+									<div class="relate_thm_bg">
+										<img src="//static-n.goodfortune.jp/image/article/middle/d/b/5/6/db56e06d0607c8fa5fa34119aaa0b0f9.jpg" alt="占いコラム│すぐに役立つ★おみくじ雑学いろいろ">
+									</div>
+								</a>
+							</div>
+							<div class="relate_contents">
+								<ul class="relate_genre">
+									<li class="relate_genre_item"><a href="//www.goodfortune.jp/column/column_uranai">コラム</a></li>
+								</ul>
+								<h4 class="relate_title">
+									<a href="//www.goodfortune.jp/article/18675">
+										すぐに役立つ★おみくじ雑学いろいろ
+									</a>
+								</h4>
+							</div>
+						</li>
+						<li class="relate_item">
+							<div class="relate_thm">
+								<a href="//www.goodfortune.jp/article/14036">
+									<div class="relate_thm_bg">
+										<img src="//static-n.goodfortune.jp/image/article/middle/6/0/d/2/60d221753be18bc7d0c7486e7448c490_1.jpg" alt="占いコラム│おみくじＱ＆Ａ！引いたおみくじ持ち帰る？結んでくる？">
+									</div>
+								</a>
+							</div>
+							<div class="relate_contents">
+								<ul class="relate_genre">
+									<li class="relate_genre_item"><a href="//www.goodfortune.jp/column/column_uranai">コラム</a></li>
+								</ul>
+								<h4 class="relate_title">
+									<a href="//www.goodfortune.jp/article/14036">
+										おみくじＱ＆Ａ！引いたおみくじ持ち帰る？<br>結んでくる？
+									</a>
+								</h4>
+							</div>
+						</li>
+					</ul>
+					<div class="align_right f18"><a href="//www.goodfortune.jp/fortune/today/omikuji">おみくじで今日の運勢を占う</a></div>
+				</li>
+			</ul>
+			</div>
+			<!-- /.wrapper -->
+		</div>
+		<!-- /.block -->
+
+	</div>
+	<!-- /.ow_main -->
+
+<!--{include file="file:./parts/footer_menu.html"}-->
+
+</body>
+</html>

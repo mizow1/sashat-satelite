@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="ja" lang="ja" xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<base href="<!--{$smarty.const.ISP_BASE_URL}-->web/" />
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<meta http-equiv="Content-Script-Type" content="text/javascript" />
+		<meta name="viewport" content="width=device-width" />
+		<title><!--{if ISP == nifty}-->@nifty:<!--{/if}--><!--{$smarty.const.CONTENTS_NAME}--></title>
+		<link rel="stylesheet" href="css/pc/common.css" type="text/css" />
+		<script type="text/javascript" src="js/jquery1.8.js"></script>
+		<script type="text/javascript" src="js/pc/entry.js"></script>
+		<script type="text/javascript" src="js/rakuten_logo.js"></script>
+		<!--{include file="file:./parts/ga.html"}-->
+	</head>
+	<body class="ow_body" id="body">
+<!--{include file="file:../../../../../common/header_isp.html"}-->
+
+<div class="ow_body_bg_01">
+<div class="ow_body_bg_02">
+
+<!--{include file="file:./parts/header_menu.html"}-->
+
+	<div class="ow_bread">
+	<a href="<!--{$smarty.const.CONTENTS_URL}-->">TOP</a> &gt; エラー
+	</div>
+
+	<div style="padding:300px 0; text-align:center; color:#ff0; font-weight:bold">
+	こちらのページはURLが間違っているか、公開を終了しております。<br />
+	<br />
+	<a style="color:#fff;" href="<!--{$smarty.const.CONTENTS_URL}-->">TOPへ戻る</a>
+	<br />
+	</div>
+
+	<!--{include file="file:./parts/footer_menu.html"}-->
+</div>
+</div>
+</body>
+</html>
