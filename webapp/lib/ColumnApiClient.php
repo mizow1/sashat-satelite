@@ -195,6 +195,8 @@ class ColumnApiClient
                 $relatedColumns[] = [
                     'id' => $article['id'],
                     'title' => $article['title'],
+                    'summary' => $article['summary'],
+                    'post_date' => $article['post_date'],
                     'url' => "/column/{$article['id']}/"
                 ];
                 $count++;

@@ -14,7 +14,14 @@ class TopAction extends AbstractController{
 		$disp_array = $api->getApi(API_TOP);
 		
 		// コラム最新4件を取得
-		$disp_array['latest_columns'] = $this->getLatestColumns(4);
+		$latest_columns = $this->getLatestColumns(4);
+		$disp_array['latest_columns'] = $latest_columns;
+		
+		// デバッグ用：コラムデータが取得できているか確認
+		if(!empty($GLOBALS['debug_flag'])){
+			error_log("@@@ TopAction latest_columns count: " . count($latest_columns));
+			error_log("@@@ TopAction disp_array keys: " . implode(', ', array_keys($disp_array)));
+		}
 		
 		$this->display($disp_array, 'preview_rakuten');
 	}
@@ -22,6 +29,12 @@ class TopAction extends AbstractController{
 	private function getLatestColumns($limit = 4){
 		$articles = array();
 		$csv_file = dirname(dirname(dirname(dirname(__FILE__)))) . '/column.csv';
+		
+		// デバッグ用：CSVファイルパスとファイル存在確認
+		if(!empty($GLOBALS['debug_flag'])){
+			error_log("@@@ CSV file path: " . $csv_file);
+			error_log("@@@ CSV file exists: " . (file_exists($csv_file) ? 'true' : 'false'));
+		}
 		
 		if (!file_exists($csv_file)) {
 			return $articles;
@@ -66,7 +79,15 @@ class TopAction extends AbstractController{
 			return strcmp($b['post_date'], $a['post_date']);
 		});
 		
-		return array_slice($articles, 0, $limit);
+		$result = array_slice($articles, 0, $limit);
+		
+		// デバッグ用：取得した記事数を確認
+		if(!empty($GLOBALS['debug_flag'])){
+			error_log("@@@ Total articles found: " . count($articles));
+			error_log("@@@ Returned articles count: " . count($result));
+		}
+		
+		return $result;
 	}
 	
 	private function formatPostDate($post_date){

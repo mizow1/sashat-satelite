@@ -38,12 +38,23 @@ class RewriteRequestUriParse{
 			case !empty($_GET['menu']) :
 				$_GET['action'] = 'Menu';
 				break;
+			case !empty($uri_param_list[0]) && $uri_param_list[0] == 'column' :
+				if (!empty($uri_param_list[1])) {
+					// /column/123/ の形式（記事詳細）
+					$_GET['action'] = 'Column_detail';
+					$_GET['id'] = $uri_param_list[1];
+				} else {
+					// /column/ の形式（記事一覧）
+					$_GET['action'] = 'Column';
+				}
+				break;
 			case !empty($uri_param_list[1]) :
 				$_GET['action'] = $uri_param_list[1];
 				break;
-			defalut:
+			default:
 				break;
 		}
+
 		return ;
 	}
 

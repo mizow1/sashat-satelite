@@ -1,7 +1,7 @@
 <?php
 ini_set('display_errors', "1");
 
-$GLOBALS['debug_flag']=0; //デバッグモード
+$GLOBALS['debug_flag']=1; //デバッグモード
 
 try {
 	require_once(dirname(dirname(__FILE__)).'/config/init.php');

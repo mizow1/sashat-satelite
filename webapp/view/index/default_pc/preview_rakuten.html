@@ -148,6 +148,47 @@
 				</div>
 				<!-- /.ow_new -->
 
+				<!-- コラム表示エリア -->
+				<!--{if isset($latest_columns) && $latest_columns}-->
+				<div class="ow_column_list">
+					<div class="ow_column_list_title ow_tac">
+						<h2>最新コラム</h2>
+					</div>
+					
+					<div class="ow_column_articles">
+						<!--{foreach from=$latest_columns item=column}-->
+							<div class="ow_column_article_item">
+								<div class="ow_column_article_title">
+									<h3><a href="/column/<!--{$column.id}-->/"><!--{$column.title}--></a></h3>
+								</div>
+								<div class="ow_column_article_meta">
+									<span class="ow_column_post_date">公開日：<time datetime="<!--{$column.post_date}-->"><!--{$column.formatted_post_date}--></time></span>
+								</div>
+								<div class="ow_column_article_summary">
+									<!--{$column.summary}-->
+								</div>
+								<!--{if $column.seo_keywords}-->
+									<div class="ow_column_article_keywords">
+										<span class="ow_column_keywords_label">キーワード：</span>
+										<span class="ow_column_keywords_list"><!--{$column.seo_keywords}--></span>
+									</div>
+								<!--{/if}-->
+								<div class="ow_column_article_link">
+									<a href="/column/<!--{$column.id}-->/" class="ow_column_read_more">続きを読む</a>
+								</div>
+							</div>
+						<!--{/foreach}-->
+					</div>
+					
+					<div class="ow_column_more_link_wrapper ow_tac">
+						<a href="/column/" class="ow_column_more_link_btn">
+							コラム一覧を見る
+						</a>
+					</div>
+				</div>
+				<!-- /.ow_column_list -->
+				<!--{/if}-->
+
 				<div class="ow_rec_intro ow_tac">
 					<div class="ow_rec_top">
 						<img class="ow_vab" src="img/pc/top/rec_top.jpg" alt="" title="" />

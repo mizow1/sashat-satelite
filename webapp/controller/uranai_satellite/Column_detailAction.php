@@ -42,7 +42,7 @@ class Column_detailAction extends AbstractController{
 				'seo_keywords' => $apiData['seo_keywords'],
 				'summary' => $apiData['summary'],
 				'content' => $apiData['content'],
-				'content_html' => $apiData['content'], // APIから既にHTMLで返される
+				'content_html' => $this->convertMarkdownToHtml($apiData['content']), // マークダウンをHTMLに変換
 				'post_date' => $apiData['post_date'],
 				'formatted_post_date' => $this->formatPostDate($apiData['post_date'])
 			];
@@ -68,7 +68,7 @@ class Column_detailAction extends AbstractController{
 				'seo_keywords' => $fallbackData['seo_keywords'],
 				'summary' => $fallbackData['summary'],
 				'content' => $fallbackData['content'],
-				'content_html' => $fallbackData['content'],
+				'content_html' => $this->convertMarkdownToHtml($fallbackData['content']),
 				'post_date' => $fallbackData['post_date'],
 				'formatted_post_date' => $this->formatPostDate($fallbackData['post_date'])
 			];
@@ -103,5 +103,131 @@ class Column_detailAction extends AbstractController{
 		}
 		
 		return date('Y年n月j日', $timestamp);
+	}
+	
+	/**
+	 * マークダウンをHTMLに変換
+	 */
+	private function convertMarkdownToHtml($markdown){
+		if (empty($markdown)) {
+			return '';
+		}
+		
+		$html = $markdown;
+		
+		// リンク記法 [text](url)
+		$html = preg_replace('/\[([^\]]+)\]\(([^)]+)\)/', '<a href="$2" target="_blank" rel="noopener">$1</a>', $html);
+		
+		// 太字 **text**
+		$html = preg_replace('/\*\*([^*]+)\*\*/', '<strong>$1</strong>', $html);
+		
+		// 斜体 *text*
+		$html = preg_replace('/\*([^*]+)\*/', '<em>$1</em>', $html);
+		
+		// 見出し
+		$html = preg_replace('/^#### (.+)$/m', '<h5>$1</h5>', $html);
+		$html = preg_replace('/^### (.+)$/m', '<h4>$1</h4>', $html);
+		$html = preg_replace('/^## (.+)$/m', '<h3>$1</h3>', $html);
+		$html = preg_replace('/^# (.+)$/m', '<h2>$1</h2>', $html);
+		
+		// 箇条書き（- または * で始まる行）
+		$html = preg_replace('/^[\-\*] (.+)$/m', '<li>$1</li>', $html);
+		
+		// 連続するliタグをulで囲む
+		$html = preg_replace('/(<li>.+<\/li>)/s', '<ul>$1</ul>', $html);
+		$html = preg_replace('/(<\/ul>)\s*(<ul>)/', '', $html); // 連続するul要素を統合
+		
+		// 番号付きリスト（1. で始まる行）
+		$html = preg_replace('/^\d+\. (.+)$/m', '<li>$1</li>', $html);
+		
+		// コードブロック ```は除去（内容のみ残す）
+		$html = preg_replace('/```([^`]+)```/s', '$1', $html);
+		
+		// インラインコード `code`は除去（内容のみ残す）
+		$html = preg_replace('/`([^`]+)`/', '$1', $html);
+		
+		// 水平線 ---
+		$html = preg_replace('/^---+$/m', '<hr>', $html);
+		
+		// 段落（空行で区切られたテキストをpタグで囲む）
+		$paragraphs = preg_split('/\n\s*\n/', $html);
+		$processedParagraphs = [];
+		
+		foreach ($paragraphs as $paragraph) {
+			$paragraph = trim($paragraph);
+			if (!empty($paragraph)) {
+				// 既にHTMLタグで始まっている場合はそのまま
+				if (preg_match('/^<(h[2-6]|ul|ol|pre|hr|div|blockquote)/', $paragraph)) {
+					$processedParagraphs[] = $paragraph;
+				} else {
+					// 改行をbrタグに変換してpタグで囲む
+					$paragraph = nl2br($paragraph);
+					$processedParagraphs[] = '<p>' . $paragraph . '</p>';
+				}
+			}
+		}
+		
+		$html = implode("\n\n", $processedParagraphs);
+		
+		// pre、code要素、「markdown」文字列を除去
+		$html = $this->removeUnwantedElements($html);
+		
+		return $html;
+	}
+	
+	/**
+	 * 不要な要素を除去
+	 */
+	private function removeUnwantedElements($html){
+		if (empty($html)) {
+			return '';
+		}
+		
+		// pre要素を除去（開始タグから終了タグまで）
+		$html = preg_replace('/<pre[^>]*>.*?<\/pre>/is', '', $html);
+		
+		// code要素を除去（開始タグから終了タグまで）
+		$html = preg_replace('/<code[^>]*>.*?<\/code>/is', '', $html);
+		
+		// 「markdown」文字列を除去（大文字小文字区別なし）
+		$html = preg_replace('/markdown/i', '', $html);
+		
+		// 改行の正規化処理
+		$html = $this->normalizeLineBreaks($html);
+		
+		// 余分な空白を整理（改行は除く）
+		$html = preg_replace('/[ \t]+/', ' ', $html);
+		$html = preg_replace('/\s*<\/p>\s*<p>\s*/', '</p><p>', $html);
+		$html = trim($html);
+		
+		return $html;
+	}
+	
+	/**
+	 * 改行の正規化処理
+	 */
+	private function normalizeLineBreaks($html){
+		if (empty($html)) {
+			return '';
+		}
+		
+		// Windows改行(\r\n)をUnix改行(\n)に統一
+		$html = str_replace("\r\n", "\n", $html);
+		$html = str_replace("\r", "\n", $html);
+		
+		// <br>タグと改行コードの混在パターンを正規化
+		// <br>\n, <br/>\n, <br />\n などを統一
+		$html = preg_replace('/<br\s*\/?>\s*\n/i', '<br>', $html);
+		
+		// 連続する<br>タグを1つにまとめる
+		$html = preg_replace('/(<br\s*\/?>[\s\n]*)+/i', '<br>', $html);
+		
+		// 連続する改行コード(\n)を1つにまとめる
+		$html = preg_replace('/\n+/', "\n", $html);
+		
+		// <br>タグの前後の余分な空白を除去
+		$html = preg_replace('/\s*<br\s*\/?>\s*/i', '<br>', $html);
+		
+		return $html;
 	}
 }
